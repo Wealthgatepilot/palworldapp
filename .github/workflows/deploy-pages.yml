@@ -25,8 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      # enablement: true legt die Pages-Site an, falls es sie noch nicht gibt.
+      # Ohne das bricht dieser Schritt bei einem frischen Repo nach ~10 s ab
+      # ("Get Pages site failed") und Upload/Deploy werden uebersprungen.
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
