@@ -1,0 +1,18 @@
+{
+  "name": "Palworld Tool",
+  "short_name": "Palworld",
+  "description": "Pal-Datenbank, Zucht-Pathfinder und Guide für Palworld",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1018",
+  "theme_color": "#2b7fc0",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

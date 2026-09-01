@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#2b7fc0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Palworld">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Palworld Tool</title>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header id="appHeader">
+    <div class="header-row">
+      <span class="header-title">Palworld&nbsp;Tool</span>
+      <button class="icon-btn" data-action="open-map" title="Interaktive Karte öffnen">🗺️</button>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main id="appMain">
+
+    <!-- ---- Pals ---- -->
+    <section id="tab-pals" class="tab-panel active">
+      <div class="sticky-bar">
+        <input id="palSearch" class="search-box" type="search"
+               placeholder="🔍 Pal suchen (Name, Titel, Drop)…" autocomplete="off">
+        <button id="filterToggle" class="icon-btn" data-action="toggle-filters" title="Filter">⚙️</button>
+      </div>
+
+      <div id="filterPanel" class="filter-panel" hidden>
+        <div class="filter-row">
+          <label>Element
+            <select id="fElement"></select>
+          </label>
+          <label>Arbeit
+            <select id="fWork"></select>
+          </label>
+        </div>
+        <div class="filter-row">
+          <label>min. Level
+            <select id="fWorkLv">
+              <option value="1">Lv 1+</option>
+              <option value="2">Lv 2+</option>
+              <option value="3">Lv 3+</option>
+              <option value="4">Lv 4+</option>
+            </select>
+          </label>
+          <label>Sortierung
+            <select id="fSort">
+              <option value="dex">Dex-Nummer</option>
+              <option value="name">Name (A–Z)</option>
+              <option value="rarity">Seltenheit</option>
+              <option value="breed">Breeding Power</option>
+            </select>
+          </label>
+        </div>
+        <div class="filter-row filter-checks">
+          <label class="chk"><input type="checkbox" id="fNocturnal"> nur nachtaktiv</label>
+          <label class="chk"><input type="checkbox" id="fVariant"> Varianten ausblenden</label>
+          <button class="tool-btn" data-action="reset-filters">Zurücksetzen</button>
+        </div>
+      </div>
+
+      <div id="palCount" class="result-count"></div>
+      <ul id="palList" class="pal-grid"></ul>
+      <button id="loadMore" class="add-btn" data-action="load-more" hidden>Weitere anzeigen</button>
+    </section>
+
+    <!-- ---- Platzhalter für die nächsten Ausbaustufen ---- -->
+    <section id="tab-breeding" class="tab-panel">
+      <h2 class="panel-title">Zucht</h2>
+      <p class="hint">Kommt als Nächstes: Reverse-Lookup (welche Eltern ergeben Pal X)
+        und der Pathfinder mit deinem eigenen Bestand.</p>
+      <div class="stub">🥚<span>Die Datenbasis steht bereits: <b id="stubPairs">–</b> Zuchtpaare
+        sind geladen, inklusive der Unique-Combos.</span></div>
+    </section>
+
+    <section id="tab-roster" class="tab-panel">
+      <h2 class="panel-title">Meine Pals</h2>
+      <p class="hint">Kommt als Nächstes: dein eigener Bestand als Basis für den Pathfinder.
+        Wird von Hand gepflegt — PlayStation-Saves lassen sich nicht auslesen.</p>
+      <div class="stub">📋<span>Noch nichts eingetragen.</span></div>
+    </section>
+
+    <section id="tab-tier" class="tab-panel">
+      <h2 class="panel-title">Tier List</h2>
+      <p class="hint">Kommt als Nächstes: editierbare Tier-Zuordnung, verknüpft mit den Pal-Einträgen.</p>
+      <div class="stub">🏆<span>Noch keine Tiers hinterlegt.</span></div>
+    </section>
+
+  </main>
+
+  <!-- ============ BOTTOM NAV ============ -->
+  <nav id="bottomNav">
+    <button class="nav-btn active" data-nav="pals"><span class="nav-ico">📖</span><span>Pals</span></button>
+    <button class="nav-btn" data-nav="breeding"><span class="nav-ico">🥚</span><span>Zucht</span></button>
+    <button class="nav-btn" data-nav="roster"><span class="nav-ico">📋</span><span>Meine Pals</span></button>
+    <button class="nav-btn" data-nav="tier"><span class="nav-ico">🏆</span><span>Tier List</span></button>
+  </nav>
+
+  <!-- ============ MODAL (Pal-Detail) ============ -->
+  <div id="modalOverlay" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <div id="modalContent"></div>
+      <button class="modal-close" data-action="modal-close">Schließen</button>
+    </div>
+  </div>
+
+  <script src="paldex.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 // AUTO-GENERIERT von tools/generate-paldex.mjs - nicht von Hand bearbeiten.
 //
 // Quellen: tylercamp/palcalc (MIT), mlg404/palworld-paldex-api (MIT), palworld.gg
-// {"generatedFrom":"tools/generate-paldex.mjs","palcalcVersion":"v27","palCount":299,"breedingPairs":44851,"passiveCount":115,"palsWithElements":298,"palsWithHabitat":127,"palsWithIcon":299}
+// {"generatedFrom":"tools/generate-paldex.mjs","palcalcVersion":"v27","palCount":299,"breedingPairs":44851,"passiveCount":115,"palsWithElements":298,"palsWithHabitat":127,"palsWithIcon":299,"palsWithPartnerSkill":298}
 
 const PALDEX_META = {
   "generatedFrom": "tools/generate-paldex.mjs",
@@ -11,7 +11,8 @@ const PALDEX_META = {
   "passiveCount": 115,
   "palsWithElements": 298,
   "palsWithHabitat": 127,
-  "palsWithIcon": 299
+  "palsWithIcon": 299,
+  "palsWithPartnerSkill": 298
 };
 
 // Alle 299 Pals. Feld "i" ist der Index, auf den BREEDING verweist.
@@ -40,7 +41,6 @@ const PALS = [
    "hp": 110,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -63,7 +63,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Shot-Nyan Mode",
+   "description": "When activated, Nyafia will fire a shotgun at nearby enemies for a limited time. While in party, increases the player's shotgun damage by 10~35%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BadCatgirl_icon_normal.png",
   "habitat": null
  },
@@ -76,7 +79,7 @@ const PALS = [
   "variant": false,
   "title": "Indigo Handmaiden",
   "elements": [
-   "Leaf",
+   "Grass",
    "Dark"
   ],
   "drops": [
@@ -95,7 +98,6 @@ const PALS = [
    "hp": 105,
    "attack": 95,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -118,7 +120,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Prayer for Abundant Harvest",
+   "description": "While at a base, Prunelia's prayers bless the crops, increasing their harvest by 18~35%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueberryFairy_icon_normal.png",
   "habitat": null
  },
@@ -131,7 +136,7 @@ const PALS = [
   "variant": false,
   "title": "Indomitable Racer",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather"
@@ -146,7 +151,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 480,
@@ -169,7 +173,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Friend of Earth",
+   "description": "While in party, increases the player's Defense by 50~65% while sprinting. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BrownRabbit_icon_normal.png",
   "habitat": null
  },
@@ -182,7 +189,7 @@ const PALS = [
   "variant": false,
   "title": "Guardian Beast of Twilight",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather"
@@ -194,7 +201,6 @@ const PALS = [
    "hp": 120,
    "attack": 110,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 270,
    "runSpeed": 840,
@@ -217,7 +223,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sandstorm's Blessing",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GoldenHorse_icon_normal.png",
   "habitat": null
  },
@@ -245,7 +254,6 @@ const PALS = [
    "hp": 75,
    "attack": 75,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 320,
@@ -268,7 +276,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Spikey Carrier",
+   "description": "While in party, reduces Ore weight by 80~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_TentacleTurtle_icon_normal.png",
   "habitat": null
  },
@@ -282,7 +293,7 @@ const PALS = [
   "title": "Golden Fortress",
   "elements": [
    "Water",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Aquatic Pal Fluids",
@@ -297,7 +308,6 @@ const PALS = [
    "hp": 85,
    "attack": 85,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 320,
@@ -320,7 +330,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Shiny Hauler",
+   "description": "While in party, reduces weight of Sulfur and Coal by 80~100%. Also improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground damage to enemy weak points by 80~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_TentacleTurtle_Ground_icon_normal.png",
   "habitat": null
  },
@@ -333,7 +346,7 @@ const PALS = [
   "variant": false,
   "title": "Guardian of the Dark Sun",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Bone",
@@ -355,7 +368,6 @@ const PALS = [
    "hp": 120,
    "attack": 130,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 800,
@@ -380,7 +392,10 @@ const PALS = [
   "guaranteedPassives": [
    "Earth Emperor"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Guardian of the Desert",
+   "description": "When activated, Anubis changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground and increases Attack by 30~50%. Occasionally evades attacks with a flash sidestep during battle."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Anubis_icon_normal.png",
   "habitat": null
  },
@@ -410,7 +425,6 @@ const PALS = [
    "hp": 95,
    "attack": 100,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 700,
@@ -433,7 +447,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Flameclaw Hunter",
+   "description": "When activated, attacks the targeted enemy with Hellfire Claw. When this Pal uses Hellfire Claw, it has a x1.1~2.5 damage multiplier."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Baphomet_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/040-day.png",
@@ -464,7 +481,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 700,
@@ -487,7 +503,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Darkclaw Hunter",
+   "description": "When activated, attacks the targeted enemy with Nightmare Claw. When this Pal uses Nightmare Claw, it has a x1.1~2.5 damage multiplier."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Baphomet_Dark_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/040B-day.png",
@@ -517,7 +536,6 @@ const PALS = [
    "hp": 70,
    "attack": 60,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 105,
    "runSpeed": 475,
@@ -540,7 +558,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Gold Digger",
+   "description": "Sometimes digs up Gold Coin when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Bastet_icon_normal.png",
   "habitat": null
  },
@@ -567,7 +588,6 @@ const PALS = [
    "hp": 70,
    "attack": 65,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 105,
    "runSpeed": 475,
@@ -590,7 +610,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Icy Whispers",
+   "description": "Sometimes drops Iceorgan when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Bastet_Ice_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/024B-day.png",
@@ -606,7 +629,7 @@ const PALS = [
   "variant": false,
   "title": "Woodland Ruffian",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Rushoar Pork",
@@ -620,7 +643,6 @@ const PALS = [
    "hp": 80,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 500,
@@ -643,7 +665,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hard Head",
+   "description": "Can be ridden. While mounted, increases efficiency of destroying Stone by 500~2000%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Boar_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/020-day.png",
@@ -659,7 +684,7 @@ const PALS = [
   "variant": false,
   "title": "Coward of the Steppe",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Wheat Seeds",
@@ -676,7 +701,6 @@ const PALS = [
    "hp": 75,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 40,
    "runSpeed": 400,
@@ -699,7 +723,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lifmunk Recoil",
+   "description": "When activated, leaps onto the player's head and uses a submachine gun to follows up player attacks."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Carbunclo_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/004-day.png",
@@ -715,7 +742,7 @@ const PALS = [
   "variant": false,
   "title": "Boom or Bust",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Gunpowder",
@@ -728,7 +755,6 @@ const PALS = [
    "hp": 60,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 300,
@@ -751,7 +777,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Eggbomb Launcher",
+   "description": "When activated, equips to the player and transforms into an egg launcher."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ColorfulBird_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/027-day.png",
@@ -767,7 +796,7 @@ const PALS = [
   "variant": false,
   "title": "Protector of the Herd",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Eikthyrdeer Venison",
@@ -787,7 +816,6 @@ const PALS = [
    "hp": 95,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 700,
@@ -810,7 +838,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Guardian of the Forest",
+   "description": "Can be ridden. Can perform a double jump while mounted and increases lumbering efficiency by 220~500%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Deer_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/037-day.png",
@@ -826,7 +857,7 @@ const PALS = [
   "variant": true,
   "title": "Golden Antlers",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Eikthyrdeer Venison",
@@ -846,7 +877,6 @@ const PALS = [
    "hp": 95,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 700,
@@ -869,7 +899,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Guardian of the Golden Forest",
+   "description": "Can be ridden. Can perform a double jump while mounted. While at a base, increases the Lumbering Work Suitability Level for all other Base Pals by +1 (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Deer_Ground_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/037B-day.png",
@@ -885,7 +918,7 @@ const PALS = [
   "variant": false,
   "title": "Drilling Machine",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ore",
@@ -898,7 +931,6 @@ const PALS = [
    "hp": 80,
    "attack": 95,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 300,
@@ -923,7 +955,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hard Skin"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Drill Crusher",
+   "description": "When activated, enters the Shell Spin state. Follows the player while spinning, increasing ore mining efficiency by 800~2000%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DrillGame_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/067-day.png",
@@ -939,7 +974,7 @@ const PALS = [
   "variant": false,
   "title": "Proud Courier",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Galeclaw Poultry",
@@ -952,7 +987,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 600,
@@ -975,7 +1009,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Galeclaw Glider",
+   "description": "While in party, modifies the performance of the equipped glider. Enables high-speed gliding and allows shooting with the right hand."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Eagle_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/047-day.png",
@@ -991,7 +1028,7 @@ const PALS = [
   "variant": false,
   "title": "Claws of Lightning",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -1014,7 +1051,6 @@ const PALS = [
    "hp": 120,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 180,
    "walkSpeed": 140,
    "runSpeed": 600,
@@ -1037,7 +1073,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Yellow Tank",
+   "description": "Can be ridden. Can rapidly fire a minigun while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecPanda_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/103-day.png",
@@ -1065,7 +1104,6 @@ const PALS = [
    "hp": 70,
    "attack": 60,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 300,
@@ -1088,7 +1126,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Soothing Shower",
+   "description": "While in party, restores 20~40% of the player's Health when Health falls below 30%. (Does not stack) (120-second cooldown after activation)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Ganesha_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/016-day.png",
@@ -1104,7 +1145,7 @@ const PALS = [
   "variant": false,
   "title": "Hunter of the Steppe",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -1118,7 +1159,6 @@ const PALS = [
    "hp": 80,
    "attack": 90,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 70,
    "walkSpeed": 180,
    "runSpeed": 800,
@@ -1141,7 +1181,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Direhowl Rider",
+   "description": "Can be ridden. Moves slightly faster than most mounts."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Garm_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/026-day.png",
@@ -1157,7 +1200,7 @@ const PALS = [
   "variant": false,
   "title": "Jungle Punk",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -1178,7 +1221,6 @@ const PALS = [
    "hp": 90,
    "attack": 95,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 550,
@@ -1203,7 +1245,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hooligan"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Full-Power Gorilla Mode",
+   "description": "When activated, unleashes a primal fury that increases Gorirat's Attack by 75~300% for a limited time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Gorilla_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/049-day.png",
@@ -1219,7 +1264,7 @@ const PALS = [
   "variant": true,
   "title": "Up for a Brawl",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ore",
@@ -1240,7 +1285,6 @@ const PALS = [
    "hp": 90,
    "attack": 100,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 550,
@@ -1265,7 +1309,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hooligan"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Full-Power Gorilla Pound",
+   "description": "While in party, increases the player's climbing speed by 50~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Gorilla_Ground_icon_normal.png",
   "habitat": null
  },
@@ -1278,7 +1325,7 @@ const PALS = [
   "variant": false,
   "title": "Don't Touch!",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ"
@@ -1290,7 +1337,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 400,
@@ -1313,7 +1359,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Jolt Bomb",
+   "description": "When activated, equips Jolthog to the player to be thrown at an enemy, causing an <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric explosion upon impact."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Hedgehog_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/012-day.png",
@@ -1341,7 +1390,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 400,
@@ -1364,7 +1412,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cold Bomb",
+   "description": "When activated, equips Jolthog Cryst to the player to be thrown at an enemy, causing an <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice explosion upon impact."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Hedgehog_Ice_icon_normal.png",
   "habitat": null
  },
@@ -1377,7 +1428,7 @@ const PALS = [
   "variant": false,
   "title": "Swift Deity",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Leather",
@@ -1398,7 +1449,6 @@ const PALS = [
    "hp": 80,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 720,
@@ -1421,7 +1471,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Swift Deity",
+   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric damage to weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kirin_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/056-day.png",
@@ -1459,7 +1512,6 @@ const PALS = [
    "hp": 80,
    "attack": 105,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 720,
@@ -1482,7 +1534,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Frigid Deity",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kirin_Ice_icon_normal.png",
   "habitat": null
  },
@@ -1508,7 +1563,6 @@ const PALS = [
    "hp": 65,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 400,
@@ -1531,7 +1585,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Huggy Fire",
+   "description": "When activated, equips to the player and transforms into a flamethrower."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kitsunebi_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/005-day.png",
@@ -1547,7 +1604,7 @@ const PALS = [
   "variant": false,
   "title": "Thorny Rose",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Tomato Seeds",
@@ -1564,7 +1621,6 @@ const PALS = [
    "hp": 80,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -1587,7 +1643,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Princess Gaze",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass  Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LittleBriarRose_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/030-day.png",
@@ -1603,7 +1662,7 @@ const PALS = [
   "variant": false,
   "title": "Extraterrestrial",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Paldium Fragment"
@@ -1617,7 +1676,6 @@ const PALS = [
    "hp": 90,
    "attack": 100,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 500,
@@ -1640,7 +1698,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Antigravity",
+   "description": "While in party, spheres home in on Pals, and carrying capacity increases by 300~600. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Mutant_icon_normal.png",
   "habitat": null
  },
@@ -1670,7 +1731,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 500,
@@ -1693,7 +1753,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Pengullet Launcher",
+   "description": "When activated, the player equips a Rocket Launcher to fire Pengullet as ammunition. Pengullet explodes on impact and is incapacitated."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Penguin_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/010-day.png",
@@ -1710,7 +1773,7 @@ const PALS = [
   "title": "Had One Too Many",
   "elements": [
    "Water",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -1726,7 +1789,6 @@ const PALS = [
    "hp": 70,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 500,
@@ -1749,7 +1811,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Pengullet Lux Launcher",
+   "description": "When activated, the player equips Pengullet Lux to fire Rocket Launcher as ammunition. Pengullet Lux explodes on impact and is incapacitated."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Penguin_Electric_icon_normal.png",
   "habitat": null
  },
@@ -1762,7 +1827,7 @@ const PALS = [
   "variant": false,
   "title": "Born of the Storm",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -1777,7 +1842,6 @@ const PALS = [
    "hp": 70,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 400,
@@ -1800,7 +1864,10 @@ const PALS = [
    "female": 0.8
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lady of Lightning",
+   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric bolts. These bolts will not reduce the target's Health below 1."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RaijinDaughter_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/062-day.png",
@@ -1830,7 +1897,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 400,
@@ -1853,7 +1919,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Angry Shark",
+   "description": "When activated, attacks targeted enemy with Aqua Gun. When this Pal uses Aqua Gun, it has a x1.1~2.5 damage multiplier. While in party, increases the player's Attack by 10~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SharkKid_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/031-day.png",
@@ -1883,7 +1952,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 400,
@@ -1906,7 +1974,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Angry Shark",
+   "description": "When activated, attacks targeted enemy with Spirit Fire. When this Pal uses Spirit Fire, it has a x1.1~2.5 damage multiplier. While in party, increases the player's Attack by 10~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SharkKid_Fire_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/031B-day.png",
@@ -1922,7 +1993,7 @@ const PALS = [
   "variant": false,
   "title": "Big Floof",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Wool",
@@ -1937,7 +2008,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 40,
    "runSpeed": 400,
@@ -1960,7 +2030,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fluffy Shield",
+   "description": "When activated, equips to the player and becomes a shield. Sometimes drops Wool when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SheepBall_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/001-day.png",
@@ -1995,7 +2068,6 @@ const PALS = [
    "hp": 130,
    "attack": 120,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 175,
    "runSpeed": 600,
@@ -2020,7 +2092,10 @@ const PALS = [
   "guaranteedPassives": [
    "Lord of the Sea"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Stormbringer Sea Dragon",
+   "description": "Can be ridden to travel on water. While in party, increases player's and Pals' damage to enemies afflicted with Soak by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Umihebi_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/101-day.png",
@@ -2056,7 +2131,6 @@ const PALS = [
    "hp": 130,
    "attack": 130,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 175,
    "runSpeed": 600,
@@ -2079,7 +2153,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Stormbringer Lava Dragon",
+   "description": "Can be ridden. While in party, nullifies lava damage and increases player's and Pals' damage to enemies afflicted with Burn by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Umihebi_Fire_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/101B-day.png",
@@ -2107,7 +2184,6 @@ const PALS = [
    "hp": 80,
    "attack": 100,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 175,
    "runSpeed": 600,
@@ -2130,7 +2206,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dark Gleam Strike",
+   "description": "When activated, attacks targeted enemy with Jumping Claw. When this Pal uses Jumping Claw, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon attack speed by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Werewolf_icon_normal.png",
   "habitat": {
    "day": null,
@@ -2146,7 +2225,7 @@ const PALS = [
   "variant": false,
   "title": "Bringer of Luck",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Fiber",
@@ -2161,7 +2240,6 @@ const PALS = [
    "hp": 80,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -2184,7 +2262,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Flying Trapeze",
+   "description": "Hurls sticky mud at an enemy."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WindChimes_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/032-day.png",
@@ -2216,7 +2297,6 @@ const PALS = [
    "hp": 80,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -2239,7 +2319,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Winter Trapeze",
+   "description": "Quickly fires a burst of highly pressurized air."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WindChimes_Ice_icon_normal.png",
   "habitat": {
    "day": null,
@@ -2273,7 +2356,6 @@ const PALS = [
    "hp": 120,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 350,
    "walkSpeed": 200,
    "runSpeed": 850,
@@ -2296,7 +2378,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wings of Flame",
+   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pal in your party. (Excluding Suzaku)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/102-day.png",
@@ -2330,7 +2415,6 @@ const PALS = [
    "hp": 125,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 350,
    "walkSpeed": 200,
    "runSpeed": 850,
@@ -2353,7 +2437,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wings of Water",
+   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Suzaku Aqua)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_Water_icon_normal.png",
   "habitat": null
  },
@@ -2386,7 +2473,6 @@ const PALS = [
    "hp": 100,
    "attack": 95,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 850,
@@ -2409,7 +2495,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Red Hare",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/058-day.png",
@@ -2446,7 +2535,6 @@ const PALS = [
    "hp": 100,
    "attack": 95,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 850,
@@ -2469,7 +2557,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Black Hare",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_Dark_icon_normal.png",
   "habitat": {
    "day": null,
@@ -2503,7 +2594,6 @@ const PALS = [
    "hp": 110,
    "attack": 80,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 83,
    "runSpeed": 630,
@@ -2526,7 +2616,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Amicable Holy Dragon",
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/080-day.png",
@@ -2562,7 +2655,6 @@ const PALS = [
    "hp": 115,
    "attack": 80,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 83,
    "runSpeed": 630,
@@ -2585,7 +2677,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Amicable Water Dragon",
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire damage and are immune to Burn. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_Water_icon_normal.png",
   "habitat": null
  },
@@ -2598,7 +2693,7 @@ const PALS = [
   "variant": false,
   "title": "Giant Cotton Candy",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Cotton Candy",
@@ -2611,7 +2706,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 300,
@@ -2634,7 +2728,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Candy Pop",
+   "description": "Sometimes drops Cotton Candy when assigned to Ranch. While at a base, reduces Hunger depletion rate of Base Pals by -20~-10%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SweetsSheep_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/034-day.png",
@@ -2650,7 +2747,7 @@ const PALS = [
   "variant": true,
   "title": "King-Sized Confection",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Caramel Cotton Candy",
@@ -2663,7 +2760,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 300,
@@ -2686,7 +2782,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Bitter Pop",
+   "description": "Sometimes drops Caramel Cotton Candy when assigned to Ranch. While at a base, reduces Hunger depletion rate of Base Pals by -25~-15%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SweetsSheep_Ground_icon_normal.png",
   "habitat": null
  },
@@ -2714,7 +2813,6 @@ const PALS = [
    "hp": 100,
    "attack": 100,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 280,
    "runSpeed": 720,
@@ -2737,7 +2835,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dragon Hunter",
+   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteTiger_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/083-day.png",
@@ -2753,7 +2854,7 @@ const PALS = [
   "variant": false,
   "title": "Pompous Shanks",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Wool",
@@ -2766,7 +2867,6 @@ const PALS = [
    "hp": 90,
    "attack": 75,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 62,
    "runSpeed": 500,
@@ -2789,7 +2889,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Pacapaca Wool",
+   "description": "Can be ridden. While in party, increases Kingpaca's Defense and Movement Speed. Sometimes drops Wool when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Alpaca_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/036-day.png",
@@ -2818,7 +2921,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -2841,7 +2943,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Swift Swimmer",
+   "description": "Can be ridden to travel on water. Sometimes drops Leather when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Serpent_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/065-day.png",
@@ -2857,7 +2962,7 @@ const PALS = [
   "variant": true,
   "title": "The Desert's Wrath",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Aquatic Pal Fluids",
@@ -2870,7 +2975,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -2893,7 +2997,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sand Swimmer",
+   "description": "Can be ridden. While in party, the player's attacks inflict Muddy 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Serpent_Ground_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/065B-day.png",
@@ -2924,7 +3031,6 @@ const PALS = [
    "hp": 75,
    "attack": 95,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 170,
    "runSpeed": 920,
@@ -2947,7 +3053,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Eerie Nightstreaker",
+   "description": "When activated, grants Night Vision to see in dark places. Activate again to turn off. Sometimes digs up Bone when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkCrow_icon_normal.png",
   "habitat": {
    "day": null,
@@ -2983,7 +3092,6 @@ const PALS = [
    "hp": 110,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 160,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -3006,7 +3114,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Waterwing Dance",
+   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/082-day.png",
@@ -3043,7 +3154,6 @@ const PALS = [
    "hp": 115,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 160,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -3066,7 +3176,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Icewing Dance",
+   "description": "Can be ridden to travel on water. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_Ice_icon_normal.png",
   "habitat": null
  },
@@ -3079,7 +3192,7 @@ const PALS = [
   "variant": false,
   "title": "The Cat's Pajamas",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Red Berries"
@@ -3094,7 +3207,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 400,
@@ -3119,7 +3231,10 @@ const PALS = [
   "guaranteedPassives": [
    "Coward"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cat Helper",
+   "description": "While in party, Cattiva helps carry supplies, increasing the player's max carrying capacity by 100~200. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkCat_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/002-day.png",
@@ -3150,7 +3265,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 20,
    "runSpeed": 300,
@@ -3173,7 +3287,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Caffeine Inoculation",
+   "description": "When activated, Depresso chugs an entire energy drink, increasing its Movement Speed and Work Speed by 100~900%. Sometimes drops Venom Gland when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NegativeKoala_icon_normal.png",
   "habitat": {
    "day": null,
@@ -3189,7 +3306,7 @@ const PALS = [
   "variant": false,
   "title": "Drifting Cloud",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -3208,7 +3325,6 @@ const PALS = [
    "hp": 110,
    "attack": 110,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 100,
    "runSpeed": 750,
@@ -3231,7 +3347,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wind and Clouds",
+   "description": "Can be ridden. Can double jump while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FengyunDeeper_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/093-day.png",
@@ -3248,7 +3367,7 @@ const PALS = [
   "title": "Lava-Devouring Juggernaut",
   "elements": [
    "Fire",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Flame Organ"
@@ -3261,7 +3380,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 80,
    "runSpeed": 550,
@@ -3286,7 +3404,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ore-Loving Beast",
+   "description": "Can be ridden. While in party, reduces weight of all types of ore by 30~60%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanicMonster_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/088-day.png",
@@ -3303,7 +3424,7 @@ const PALS = [
   "title": "Ice-Breaking Juggernaut",
   "elements": [
    "Ice",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ice Organ"
@@ -3316,7 +3437,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 130,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 80,
    "runSpeed": 550,
@@ -3341,7 +3461,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ice-Loving Beast",
+   "description": "Can be ridden. While in party, reduces weight of all types of ore by 35~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanicMonster_Ice_icon_normal.png",
   "habitat": null
  },
@@ -3369,7 +3492,6 @@ const PALS = [
    "hp": 75,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 160,
    "runSpeed": 700,
@@ -3392,7 +3514,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Messenger of Death",
+   "description": "Can be ridden. While in party, all Party Pals' Active Skill cooldowns are reduced by 30~60% whenever you defeat an enemy. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostBeast_icon_normal.png",
   "habitat": {
    "day": null,
@@ -3408,7 +3533,7 @@ const PALS = [
   "variant": false,
   "title": "Archer of the Forest",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Potato Seeds",
@@ -3426,7 +3551,6 @@ const PALS = [
    "hp": 90,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -3449,7 +3573,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grounded Archer",
+   "description": "While in party, increases the player's bow damage by 10~35%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RobinHood_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/048-day.png",
@@ -3465,8 +3592,8 @@ const PALS = [
   "variant": true,
   "title": "Archer of the Sands",
   "elements": [
-   "Leaf",
-   "Earth"
+   "Grass",
+   "Ground"
   ],
   "drops": [
    "Potato Seeds",
@@ -3483,7 +3610,6 @@ const PALS = [
    "hp": 90,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -3506,7 +3632,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Master Archer",
+   "description": "While in party, increases the player's bow charge speed by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RobinHood_Ground_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/048B-day.png",
@@ -3543,7 +3672,6 @@ const PALS = [
    "hp": 120,
    "attack": 115,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 60,
    "runSpeed": 650,
@@ -3568,7 +3696,10 @@ const PALS = [
   "guaranteedPassives": [
    "Glutton"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hungry Missile",
+   "description": "Can be ridden. Can rapidly fire a missile launcher while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LazyDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/085-day.png",
@@ -3585,7 +3716,7 @@ const PALS = [
   "title": "Gluttonous Thunder Dragon",
   "elements": [
    "Dragon",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "High Quality Pal Oil",
@@ -3606,7 +3737,6 @@ const PALS = [
    "hp": 120,
    "attack": 120,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 60,
    "runSpeed": 650,
@@ -3629,7 +3759,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Missile Party",
+   "description": "Can be ridden. Can rapidly fire a missile launcher while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LazyDragon_Electric_icon_normal.png",
   "habitat": null
  },
@@ -3655,7 +3788,6 @@ const PALS = [
    "hp": 100,
    "attack": 115,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 130,
    "runSpeed": 700,
@@ -3678,7 +3810,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wolf of the Sun",
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice damage and are immune to Freeze. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_icon_normal.png",
   "habitat": {
    "day": null,
@@ -3710,7 +3845,6 @@ const PALS = [
    "hp": 80,
    "attack": 80,
    "defense": 50,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 600,
@@ -3733,7 +3867,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Too Cool to be Seen",
+   "description": "When activated, Leezpunk and the player become invisible, making them undetectable to enemies for {ActiveSkillOverWriteEffectTime} seconds."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LizardMan_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/045-day.png",
@@ -3766,7 +3903,6 @@ const PALS = [
    "hp": 80,
    "attack": 80,
    "defense": 50,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 400,
@@ -3789,7 +3925,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Too Cool to be Seen",
+   "description": "When activated, Leezpunk Ignis and the player become invisible, making them undetectable to enemies for {ActiveSkillOverWriteEffectTime} seconds."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LizardMan_Fire_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/045B-day.png",
@@ -3820,7 +3959,6 @@ const PALS = [
    "hp": 60,
    "attack": 80,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 105,
    "runSpeed": 300,
@@ -3843,7 +3981,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Surfing Slam",
+   "description": "When activated, Fuack body surfs towards an enemy and slams into them."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BluePlatypus_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/006-day.png",
@@ -3877,7 +4018,6 @@ const PALS = [
    "hp": 60,
    "attack": 85,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 105,
    "runSpeed": 300,
@@ -3900,7 +4040,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fire Tackle",
+   "description": "When activated, Fuack Ignis fire surfs towards an enemy and slams into them."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BluePlatypus_Fire_icon_normal.png",
   "habitat": null
  },
@@ -3929,7 +4072,6 @@ const PALS = [
    "hp": 90,
    "attack": 115,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 350,
    "runSpeed": 700,
@@ -3952,7 +4094,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aerial Marauder",
+   "description": "Can be ridden as a flying mount. While in party, increases damage player deals to enemy weak points by 20~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BirdDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/071-day.png",
@@ -3984,7 +4129,6 @@ const PALS = [
    "hp": 90,
    "attack": 120,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 350,
    "runSpeed": 700,
@@ -4007,7 +4151,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aerial Marauder",
+   "description": "Can be ridden as a flying mount. While in party, increases damage player deals to enemy weak points by 30~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BirdDragon_Ice_icon_normal.png",
   "habitat": {
    "day": null,
@@ -4023,7 +4170,7 @@ const PALS = [
   "variant": false,
   "title": "Plump & Juicy",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Egg",
@@ -4037,7 +4184,6 @@ const PALS = [
    "hp": 60,
    "attack": 60,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 375,
@@ -4060,7 +4206,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Egg Layer",
+   "description": "Sometimes lays an Egg when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ChickenPal_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/003-day.png",
@@ -4076,7 +4225,7 @@ const PALS = [
   "variant": false,
   "title": "Guardian of Blossoming Gardens",
   "elements": [
-   "Leaf",
+   "Grass",
    "Dragon"
   ],
   "drops": [
@@ -4091,7 +4240,6 @@ const PALS = [
    "hp": 110,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 120,
    "runSpeed": 700,
@@ -4114,7 +4262,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fragrant Dragon",
+   "description": "Can be ridden. While in party, increase Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/064-day.png",
@@ -4130,7 +4281,7 @@ const PALS = [
   "variant": true,
   "title": "Guardian of Lightning",
   "elements": [
-   "Electricity",
+   "Electric",
    "Dragon"
   ],
   "drops": [
@@ -4145,7 +4296,6 @@ const PALS = [
    "hp": 110,
    "attack": 90,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 120,
    "runSpeed": 700,
@@ -4168,7 +4318,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Thunder Dragon",
+   "description": "Can be ridden. While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals by 15~30%.  (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_Electric_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/064B-day.png",
@@ -4184,7 +4337,7 @@ const PALS = [
   "variant": false,
   "title": "Livewire Tabby",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ"
@@ -4199,7 +4352,6 @@ const PALS = [
    "hp": 60,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 350,
@@ -4222,7 +4374,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Static Electricity",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals by 15~30%. (Does not stack) Sometimes drops Electric Organ when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecCat_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/007-day.png",
@@ -4251,7 +4406,6 @@ const PALS = [
    "hp": 140,
    "attack": 140,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 120,
    "runSpeed": 1200,
@@ -4277,7 +4431,10 @@ const PALS = [
    "Legend",
    "Ice Emperor"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Icy Steed",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice, inflict Freeze 2~6, increases Attack by 10~40%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/110-day.png",
@@ -4306,7 +4463,6 @@ const PALS = [
    "hp": 140,
    "attack": 140,
    "defense": 135,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 120,
    "runSpeed": 1200,
@@ -4332,7 +4488,10 @@ const PALS = [
    "Legend",
    "Lord of the Underworld"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Black Steed",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark, inflict Blind 2~6, increases Attack by 10~40%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_Dark_icon_normal.png",
   "habitat": null
  },
@@ -4345,8 +4504,8 @@ const PALS = [
   "variant": false,
   "title": "King of the Forest",
   "elements": [
-   "Leaf",
-   "Earth"
+   "Grass",
+   "Ground"
   ],
   "drops": [
    "High Quality Pal Oil",
@@ -4368,7 +4527,6 @@ const PALS = [
    "hp": 150,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 180,
    "walkSpeed": 135,
    "runSpeed": 600,
@@ -4393,7 +4551,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Gaia Crusher",
+   "description": "Can be ridden. While mounted, increases logging efficiency by 220~500% and mining efficiency by 500~2000%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassMammoth_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/090-day.png",
@@ -4410,7 +4571,7 @@ const PALS = [
   "title": "King of the Tundra",
   "elements": [
    "Ice",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "High Quality Pal Oil",
@@ -4432,7 +4593,6 @@ const PALS = [
    "hp": 150,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 180,
    "walkSpeed": 135,
    "runSpeed": 600,
@@ -4457,7 +4617,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ice Crusher",
+   "description": "Can be ridden. While mounted, increases logging efficiency by 220~500% and mining efficiency by 500~2000%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassMammoth_Ice_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/090B-day.png",
@@ -4486,7 +4649,6 @@ const PALS = [
    "hp": 100,
    "attack": 105,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 550,
@@ -4509,7 +4671,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Life Steal",
+   "description": "While fighting together, grants the player and Felbat a life steal effect that restores 5~9% of damage dealt as Health."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CatVampire_icon_normal.png",
   "habitat": null
  },
@@ -4522,7 +4687,7 @@ const PALS = [
   "variant": false,
   "title": "Winds of Spring",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Broncherry Meat",
@@ -4541,7 +4706,6 @@ const PALS = [
    "hp": 120,
    "attack": 90,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 75,
    "runSpeed": 550,
@@ -4566,7 +4730,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Love's First Blossom",
+   "description": "Can be ridden. While in party, Pal Eggs you pick up have a 35~45% chance of becoming an Alpha Pal Egg. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SakuraSaurus_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/086-day.png",
@@ -4582,7 +4749,7 @@ const PALS = [
   "variant": true,
   "title": "Waves of Summer",
   "elements": [
-   "Leaf",
+   "Grass",
    "Water"
   ],
   "drops": [
@@ -4602,7 +4769,6 @@ const PALS = [
    "hp": 120,
    "attack": 95,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 75,
    "runSpeed": 550,
@@ -4627,7 +4793,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Purity's Full Bloom",
+   "description": "Can be ridden. While in party, Pal Eggs you pick up have a 45~55% chance of becoming an Alpha Pal Egg. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SakuraSaurus_Water_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/086B-day.png",
@@ -4664,7 +4833,6 @@ const PALS = [
    "hp": 105,
    "attack": 110,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 230,
    "walkSpeed": 200,
    "runSpeed": 1000,
@@ -4687,7 +4855,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Scorching Predator",
+   "description": "Can be ridden as a flying mount. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Horus_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/105-day.png",
@@ -4723,7 +4894,6 @@ const PALS = [
    "hp": 100,
    "attack": 125,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 190,
    "walkSpeed": 400,
    "runSpeed": 800,
@@ -4748,7 +4918,10 @@ const PALS = [
   "guaranteedPassives": [
    "Flame Emperor"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Magma Kaiser",
+   "description": "Can be ridden. While in party, increases the Attack and Defense of the Pal fighting alongside you by 5~10% whenever you defeat an enemy. This effect lasts 20 seconds and stacks up to five times."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingBahamut_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/096-day.png",
@@ -4785,7 +4958,6 @@ const PALS = [
    "hp": 105,
    "attack": 130,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 190,
    "walkSpeed": 400,
    "runSpeed": 800,
@@ -4810,7 +4982,10 @@ const PALS = [
   "guaranteedPassives": [
    "Eternal Flame"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dragon Kaiser",
+   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon damage to enemy weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingBahamut_Dragon_icon_normal.png",
   "habitat": null
  },
@@ -4823,7 +4998,7 @@ const PALS = [
   "variant": false,
   "title": "Walking Farm",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Caprity Meat",
@@ -4838,7 +5013,6 @@ const PALS = [
    "hp": 100,
    "attack": 70,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 400,
@@ -4861,7 +5035,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Berry Picker",
+   "description": "Sometimes drops Red Berries from its back when assigned to Ranch. While in party, restores 100~200 Pal’s Hunger to the Pal with the lowest Hunger every 5 minutes. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BerryGoat_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/035-day.png",
@@ -4899,7 +5076,6 @@ const PALS = [
    "hp": 100,
    "attack": 85,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 70,
    "runSpeed": 700,
@@ -4922,7 +5098,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cool Body",
+   "description": "Can be ridden. While in party, the player gains Heat Resistance +2. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceDeer_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/059-day.png",
@@ -4959,7 +5138,6 @@ const PALS = [
    "hp": 120,
    "attack": 120,
    "defense": 140,
-   "craftSpeed": 0,
    "stamina": 250,
    "walkSpeed": 80,
    "runSpeed": 850,
@@ -4982,7 +5160,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Modified DNA",
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. Enhances <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark attacks by 15~30% while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackGriffon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/107-day.png",
@@ -5013,7 +5194,6 @@ const PALS = [
    "hp": 110,
    "attack": 90,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -5036,7 +5216,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Silk Shroud",
+   "description": "When activated, attacks targeted enemy with Blizzard Spike. When this Pal uses Blizzard Spike, it has a x1.1~2.5 damage multiplier. Sometimes makes High Quality Cloth when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteMoth_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/079-day.png",
@@ -5052,7 +5235,7 @@ const PALS = [
   "variant": true,
   "title": "Gilded Lady",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "High Quality Cloth",
@@ -5073,7 +5256,6 @@ const PALS = [
    "hp": 115,
    "attack": 90,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -5096,7 +5278,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Gilded Shroud",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) Sometimes makes High Quality Cloth when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteMoth_Neutral_icon_normal.png",
   "habitat": null
  },
@@ -5109,7 +5294,7 @@ const PALS = [
   "variant": false,
   "title": "Star of the Steppe",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -5123,7 +5308,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 350,
@@ -5146,7 +5330,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dig Here!",
+   "description": "Sometimes digs up items from the ground when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CuteFox_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/014-day.png",
@@ -5177,7 +5364,6 @@ const PALS = [
    "hp": 90,
    "attack": 110,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 145,
    "runSpeed": 440,
@@ -5200,7 +5386,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lord Fox",
+   "description": "When activated, Wixen changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FoxMage_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/076-day.png",
@@ -5232,7 +5421,6 @@ const PALS = [
    "hp": 90,
    "attack": 110,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 145,
    "runSpeed": 440,
@@ -5255,7 +5443,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Black Fox Lord",
+   "description": "When activated, Wixen Noct changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FoxMage_Dark_icon_normal.png",
   "habitat": null
  },
@@ -5287,7 +5478,6 @@ const PALS = [
    "hp": 120,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 170,
    "runSpeed": 750,
@@ -5312,7 +5502,10 @@ const PALS = [
   "guaranteedPassives": [
    "Abnormal"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Heart Drain",
+   "description": "While fighting together, grants the player and Lovander a life steal effect that restores 5~9% of damage dealt as Health."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkLizard_icon_normal.png",
   "habitat": {
    "day": null,
@@ -5341,7 +5534,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 380,
@@ -5364,7 +5556,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dark Knowledge",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WizardOwl_icon_normal.png",
   "habitat": {
    "day": null,
@@ -5394,7 +5589,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 700,
@@ -5417,7 +5611,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aqua Spout",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals by 15~30%. (Does not stack) Sometimes drops Aquatic Pal Fluids when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kelpie_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/081-day.png",
@@ -5447,7 +5644,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 700,
@@ -5470,7 +5666,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lava Spout",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kelpie_Fire_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/081B-day.png",
@@ -5503,7 +5702,6 @@ const PALS = [
    "hp": 60,
    "attack": 60,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 400,
@@ -5526,7 +5724,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fried Squid",
+   "description": "While in party, modifies the performance of the equipped glider. Enables gentle floating while gliding for an extended time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NegativeOctopus_icon_normal.png",
   "habitat": null
  },
@@ -5539,7 +5740,7 @@ const PALS = [
   "variant": true,
   "title": "Devoid of Emotion",
   "elements": [
-   "Normal",
+   "Neutral",
    "Water"
   ],
   "drops": [
@@ -5555,7 +5756,6 @@ const PALS = [
    "hp": 70,
    "attack": 60,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 400,
@@ -5578,7 +5778,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fried Killamari",
+   "description": "While in party, modifies the performance of the equipped glider. Enables gentle floating while gliding for an extended time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NegativeOctopus_Neutral_icon_normal.png",
   "habitat": null
  },
@@ -5591,7 +5794,7 @@ const PALS = [
   "variant": false,
   "title": "Prime Beef",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Mozzarina Meat",
@@ -5604,7 +5807,6 @@ const PALS = [
    "hp": 90,
    "attack": 50,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 55,
    "runSpeed": 580,
@@ -5627,7 +5829,10 @@ const PALS = [
    "female": 0.8
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Milk Maker",
+   "description": "Sometimes drops Milk when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CowPal_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/029-day.png",
@@ -5665,7 +5870,6 @@ const PALS = [
    "hp": 140,
    "attack": 80,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 240,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -5690,7 +5894,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Guardian of the Snowy Mountain",
+   "description": "Can be ridden. While at a base, increases the Transporting Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Yeti_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/091-day.png",
@@ -5706,7 +5913,7 @@ const PALS = [
   "variant": true,
   "title": "Guardian of the Grassy Fields",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Hardwood",
@@ -5729,7 +5936,6 @@ const PALS = [
    "hp": 140,
    "attack": 80,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 240,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -5754,7 +5960,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Guardian of the South",
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground damage and are immune to Muddy status. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Yeti_Grass_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/091B-day.png",
@@ -5770,7 +5979,7 @@ const PALS = [
   "variant": false,
   "title": "Voice of the Violets",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Low Grade Medical Supplies",
@@ -5789,7 +5998,6 @@ const PALS = [
    "hp": 100,
    "attack": 100,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 400,
@@ -5812,7 +6020,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Purification of Gaia",
+   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals drop 40~80% more items when defeated. (Does not stack) Sometimes drops various seeds when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VioletFairy_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/078-day.png",
@@ -5828,7 +6039,7 @@ const PALS = [
   "variant": false,
   "title": "Wings of the Firmament",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather"
@@ -5840,7 +6051,6 @@ const PALS = [
    "hp": 100,
    "attack": 95,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -5863,7 +6073,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Travel Companion",
+   "description": "Can be ridden as a flying mount."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HawkBird_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/038-day.png",
@@ -5879,7 +6092,7 @@ const PALS = [
   "variant": false,
   "title": "Star of the Flower Beds",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Low Grade Medical Supplies",
@@ -5896,7 +6109,6 @@ const PALS = [
    "hp": 75,
    "attack": 65,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -5919,7 +6131,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Helper Bunny",
+   "description": "While in party, appears near the player. Automatically picks up nearby items."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerRabbit_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/028-day.png",
@@ -5935,7 +6150,7 @@ const PALS = [
   "variant": false,
   "title": "Empress of Lilies",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "High Quality Recovery Meds",
@@ -5960,7 +6175,6 @@ const PALS = [
    "hp": 120,
    "attack": 120,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 450,
@@ -5985,7 +6199,10 @@ const PALS = [
   "guaranteedPassives": [
    "Spirit Emperor"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Harvest Goddess",
+   "description": "When activated, the queen's soothing graces restore the Health of the player and Party Pals by 80~90%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LilyQueen_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/104-day.png",
@@ -6025,7 +6242,6 @@ const PALS = [
    "hp": 115,
    "attack": 120,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 450,
@@ -6048,7 +6264,10 @@ const PALS = [
    "female": 0.7
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Goddess of the Tranquil Light",
+   "description": "When activated, the queen's soothing graces restore the Health of the player and Party Pals by 85~95%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LilyQueen_Dark_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/104B-day.png",
@@ -6064,7 +6283,7 @@ const PALS = [
   "variant": false,
   "title": "Empress of the Hive",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Honey",
@@ -6081,7 +6300,6 @@ const PALS = [
    "hp": 90,
    "attack": 105,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 250,
    "runSpeed": 450,
@@ -6104,7 +6322,10 @@ const PALS = [
    "female": 0.9
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Queen Bee Command",
+   "description": "This Pal's Attack increases by 12~24% for each Beegarde in party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_QueenBee_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/051-day.png",
@@ -6120,7 +6341,7 @@ const PALS = [
   "variant": false,
   "title": "Captain of the Guard",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Honey"
@@ -6138,7 +6359,6 @@ const PALS = [
    "hp": 80,
    "attack": 90,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 250,
    "runSpeed": 450,
@@ -6161,7 +6381,10 @@ const PALS = [
    "female": 0.9
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Worker Bee",
+   "description": "While in party, increases Elizabee's Attack. Sometimes drops Honey when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SoldierBee_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/050-day.png",
@@ -6192,7 +6415,6 @@ const PALS = [
    "hp": 95,
    "attack": 95,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 400,
@@ -6215,7 +6437,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ultrasonic Sensor",
+   "description": "When activated, uses ultrasonic waves to detect nearby dungeons, treasure chests, and scrap."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CatBat_icon_normal.png",
   "habitat": {
    "day": null,
@@ -6231,7 +6456,7 @@ const PALS = [
   "variant": false,
   "title": "Wanderer of the Forest",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Hardwood",
@@ -6254,7 +6479,6 @@ const PALS = [
    "hp": 100,
    "attack": 90,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -6277,7 +6501,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grenadier Panda",
+   "description": "Can be ridden. Can rapidly fire a grenade launcher while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassPanda_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/033-day.png",
@@ -6293,7 +6520,7 @@ const PALS = [
   "variant": true,
   "title": "Inheritor of the Storm",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Hardwood",
@@ -6317,7 +6544,6 @@ const PALS = [
    "hp": 100,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -6340,7 +6566,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grenadier Panda",
+   "description": "Can be ridden. Can rapidly fire a grenade launcher while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassPanda_Electric_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/033B-day.png",
@@ -6370,7 +6599,6 @@ const PALS = [
    "hp": 85,
    "attack": 95,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 120,
    "walkSpeed": 87,
    "runSpeed": 700,
@@ -6393,7 +6621,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Warm Body",
+   "description": "Can be ridden. While in party, the player gains Cold Resistance +2. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlameBuffalo_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/042-day.png",
@@ -6409,7 +6640,7 @@ const PALS = [
   "variant": false,
   "title": "Electro-Charged Zoomies",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ"
@@ -6421,7 +6652,6 @@ const PALS = [
    "hp": 90,
    "attack": 100,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 210,
    "runSpeed": 700,
@@ -6444,7 +6674,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lightning Shepherd",
+   "description": "Can be ridden. Can perform a double jump while mounted. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pal in your party. (Excluding Rayhound)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderDog_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/060-day.png",
@@ -6479,7 +6712,6 @@ const PALS = [
    "hp": 90,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 210,
    "runSpeed": 700,
@@ -6502,7 +6734,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Snow Shepherd",
+   "description": "Can be ridden. Can perform a double jump while mounted. While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals by 15~30%.  (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderDog_Ice_icon_normal.png",
   "habitat": null
  },
@@ -6515,7 +6750,7 @@ const PALS = [
   "variant": false,
   "title": "Underground Explorer",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather"
@@ -6529,7 +6764,6 @@ const PALS = [
    "hp": 65,
    "attack": 80,
    "defense": 50,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 300,
@@ -6552,7 +6786,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mining Assistance",
+   "description": "While in party, improves player mining efficiency by 30~60% and reduces Stone weight by 80~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CuteMole_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/022-day.png",
@@ -6589,7 +6826,6 @@ const PALS = [
    "hp": 100,
    "attack": 125,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 150,
    "runSpeed": 700,
@@ -6614,7 +6850,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hard Skin"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Black Ankylosaur",
+   "description": "Can be ridden as a flying mount. Increases the damage dealt to ores by 1100~3300%, and you can obtain 150~300% more Ore while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackMetalDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/098-day.png",
@@ -6630,7 +6869,7 @@ const PALS = [
   "variant": false,
   "title": "Gale of the Forest",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Leather",
@@ -6647,7 +6886,6 @@ const PALS = [
    "hp": 90,
    "attack": 115,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 195,
    "runSpeed": 500,
@@ -6670,7 +6908,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grassland Gymnast",
+   "description": "While in party, grants 1 additional jump and 1 additional mid-air dash. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassRabbitMan_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/077-day.png",
@@ -6700,7 +6941,6 @@ const PALS = [
    "hp": 90,
    "attack": 95,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 600,
@@ -6723,7 +6963,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aurora Guide",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals by 15~30%. (Does not stack) Sometimes drops Ice Organ when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceFox_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/057-day.png",
@@ -6754,7 +6997,6 @@ const PALS = [
    "hp": 115,
    "attack": 140,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 110,
    "walkSpeed": 800,
    "runSpeed": 1700,
@@ -6780,7 +7022,10 @@ const PALS = [
    "Legend",
    "Divine Dragon"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aerial Missile",
+   "description": "Can be ridden as a flying mount. Can rapidly fire a missile launcher while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_JetDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/111-day.png",
@@ -6811,7 +7056,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 300,
@@ -6834,7 +7078,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dream Chaser",
+   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark magic bullets. These bullets will not reduce the target's Health below 1."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DreamDemon_icon_normal.png",
   "habitat": {
    "day": null,
@@ -6850,7 +7097,7 @@ const PALS = [
   "variant": false,
   "title": "Dexterous Primate",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Mushroom"
@@ -6866,7 +7113,6 @@ const PALS = [
    "hp": 80,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 48,
    "runSpeed": 300,
@@ -6889,7 +7135,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cheery Rifle",
+   "description": "When activated, Tanzee will mercilessly fire an assault rifle at nearby enemies for a limited time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Monkey_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/008-day.png",
@@ -6921,7 +7170,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 48,
    "runSpeed": 300,
@@ -6944,7 +7192,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Chipper Chimp Gunfire",
+   "description": "When activated, Tanzee Ignis will mercilessly fire a <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire assault rifle at nearby enemies for a limited time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Monkey_Fire_icon_normal.png",
   "habitat": null
  },
@@ -6976,7 +7227,6 @@ const PALS = [
    "hp": 105,
    "attack": 110,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 180,
    "runSpeed": 800,
@@ -6999,7 +7249,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hellflame Lion",
+   "description": "Can be ridden. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Manticore_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/084-day.png",
@@ -7035,7 +7288,6 @@ const PALS = [
    "hp": 105,
    "attack": 115,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 90,
    "runSpeed": 800,
@@ -7058,7 +7310,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Darkflame Lion",
+   "description": "Can be ridden. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Manticore_Dark_icon_normal.png",
   "habitat": {
    "day": null,
@@ -7074,7 +7329,7 @@ const PALS = [
   "variant": false,
   "title": "Supreme Fluff Commander",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Wool",
@@ -7092,7 +7347,6 @@ const PALS = [
    "hp": 120,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 170,
    "walkSpeed": 80,
    "runSpeed": 700,
@@ -7117,7 +7371,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "King of Muscles",
+   "description": "Can be ridden. This Pal's Defense and Movement Speed increase by 5~14% for each Melpaca in party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingAlpaca_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/089-day.png",
@@ -7147,7 +7404,6 @@ const PALS = [
    "hp": 120,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 170,
    "walkSpeed": 80,
    "runSpeed": 700,
@@ -7172,7 +7428,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Coldhearted King",
+   "description": "Can be ridden. This Pal's Defense and Movement Speed increase by 5~14% for each Melpaca in party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingAlpaca_Ice_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/089B-day.png",
@@ -7188,8 +7447,8 @@ const PALS = [
   "variant": false,
   "title": "Suddenly Transformed",
   "elements": [
-   "Leaf",
-   "Earth"
+   "Grass",
+   "Ground"
   ],
   "drops": [
    "Berry Seeds",
@@ -7202,7 +7461,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -7225,7 +7483,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Logging Assistance",
+   "description": "While in party, improves logging efficiency by 30~50% and reduces weight of all types of wood by 40~60%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PlantSlime_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/013-day.png",
@@ -7241,8 +7502,8 @@ const PALS = [
   "variant": true,
   "title": "Suddenly Transformed",
   "elements": [
-   "Leaf",
-   "Earth"
+   "Grass",
+   "Ground"
   ],
   "drops": [
    "Berry Seeds",
@@ -7255,7 +7516,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -7278,7 +7538,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Logging Assistance",
+   "description": "While in party, improves logging efficiency by 30~50% and reduces weight of all types of wood by 40~60%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PlantSlime_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/013-day.png",
@@ -7308,7 +7571,6 @@ const PALS = [
    "hp": 60,
    "attack": 60,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 250,
@@ -7331,7 +7593,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fluffy",
+   "description": "While in party, increases Attack and Defense of Sweepa."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MopBaby_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/053-day.png",
@@ -7360,7 +7625,6 @@ const PALS = [
    "hp": 100,
    "attack": 90,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 120,
    "walkSpeed": 120,
    "runSpeed": 650,
@@ -7383,7 +7647,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "King of Fluff",
+   "description": "Can be ridden. This Pal's Attack and Defense increase by 12~24% for each Swee in party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MopKing_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/054-day.png",
@@ -7415,7 +7682,6 @@ const PALS = [
    "hp": 90,
    "attack": 105,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 145,
    "runSpeed": 440,
@@ -7438,7 +7704,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mystical Black Magic",
+   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals drop 40~80% more items when defeated. Also has a 10~50% chance to prevent Pal Sphere consumption when thrown. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CatMage_icon_normal.png",
   "habitat": {
    "day": null,
@@ -7472,7 +7741,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 145,
    "runSpeed": 440,
@@ -7495,7 +7763,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blazing Black Magic",
+   "description": "While at a base, increases the Kindling Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CatMage_Fire_icon_normal.png",
   "habitat": null
  },
@@ -7508,7 +7779,7 @@ const PALS = [
   "variant": false,
   "title": "Heart-Melting Smile",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -7525,7 +7796,6 @@ const PALS = [
    "hp": 75,
    "attack": 65,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 245,
@@ -7548,7 +7818,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Happy-Go-Lucky Bunny",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) While at a base, increases the Handiwork Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkRabbit_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/039-day.png",
@@ -7564,7 +7837,7 @@ const PALS = [
   "variant": false,
   "title": "Wings of Thunderbolt",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -7584,7 +7857,6 @@ const PALS = [
    "hp": 105,
    "attack": 115,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 160,
    "walkSpeed": 200,
    "runSpeed": 750,
@@ -7607,7 +7879,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Thunderous",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pal in your party. (Excluding Beakon)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/073-day.png",
@@ -7644,7 +7919,6 @@ const PALS = [
    "hp": 105,
    "attack": 115,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 160,
    "walkSpeed": 200,
    "runSpeed": 750,
@@ -7667,7 +7941,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Coldsnap",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pal in your party. (Excluding Beakon Cryst)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_Ice_icon_normal.png",
   "habitat": null
  },
@@ -7680,8 +7957,8 @@ const PALS = [
   "variant": false,
   "title": "Unyielding Colossus",
   "elements": [
-   "Earth",
-   "Leaf"
+   "Ground",
+   "Grass"
   ],
   "drops": [
    "Honey",
@@ -7702,7 +7979,6 @@ const PALS = [
    "hp": 120,
    "attack": 100,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 500,
@@ -7727,7 +8003,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hard Skin"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cast-Iron Shell",
+   "description": "While in your party, generates a barrier around the player after 5 melee hits are landed within 5~9 seconds. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HerculesBeetle_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/092-day.png",
@@ -7743,7 +8022,7 @@ const PALS = [
   "variant": true,
   "title": "Gold-Armored Warrior",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Honey"
@@ -7757,7 +8036,6 @@ const PALS = [
    "hp": 120,
    "attack": 105,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 500,
@@ -7782,7 +8060,10 @@ const PALS = [
   "guaranteedPassives": [
    "Hard Skin"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fullmetal Shell",
+   "description": "While in your party, generates a barrier around the player after 5 melee hits are landed within 5~9 seconds. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HerculesBeetle_Ground_icon_normal.png",
   "habitat": null
  },
@@ -7795,7 +8076,7 @@ const PALS = [
   "variant": false,
   "title": "Holy Knight of Legend",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hexolite",
@@ -7810,7 +8091,6 @@ const PALS = [
    "hp": 130,
    "attack": 120,
    "defense": 145,
-   "craftSpeed": 0,
    "stamina": 400,
    "walkSpeed": 100,
    "runSpeed": 800,
@@ -7836,7 +8116,10 @@ const PALS = [
    "Legend",
    "Celestial Emperor"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Holy Knight of the Firmament",
+   "description": "Can be ridden. Can triple jump while mounted. Activate Spear Thrust to have Necromus stay by your side and attack enemies in tandem."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SaintCentaur_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/108-day.png",
@@ -7865,7 +8148,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 60,
    "runSpeed": 300,
@@ -7888,7 +8170,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Kuudere",
+   "description": "When activated, detects the location of nearby Pal Effigies."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NightFox_icon_normal.png",
   "habitat": {
    "day": null,
@@ -7922,7 +8207,6 @@ const PALS = [
    "hp": 95,
    "attack": 95,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 450,
@@ -7945,7 +8229,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Brave Sailor",
+   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CaptainPenguin_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/011-day.png",
@@ -7962,7 +8249,7 @@ const PALS = [
   "title": "Pioneer of the Black",
   "elements": [
    "Water",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -7979,7 +8266,6 @@ const PALS = [
    "hp": 100,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 450,
@@ -8002,7 +8288,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Unyielding Storm Commander",
+   "description": "While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water damage to enemy weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CaptainPenguin_Black_icon_normal.png",
   "habitat": null
  },
@@ -8036,7 +8325,6 @@ const PALS = [
    "hp": 90,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 180,
    "runSpeed": 750,
@@ -8059,7 +8347,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wriggling Weasel",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/055-day.png",
@@ -8096,7 +8387,6 @@ const PALS = [
    "hp": 90,
    "attack": 85,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 180,
    "runSpeed": 750,
@@ -8119,7 +8409,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sparkling Weasel",
+   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_Fire_icon_normal.png",
   "habitat": null
  },
@@ -8153,7 +8446,6 @@ const PALS = [
    "hp": 105,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 240,
    "runSpeed": 800,
@@ -8176,7 +8468,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sky Dragon Affection",
+   "description": "Can be ridden as a flying mount. While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/095-day.png",
@@ -8193,7 +8488,7 @@ const PALS = [
   "title": "Evergreen Flyer",
   "elements": [
    "Dragon",
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "High Quality Pal Oil",
@@ -8217,7 +8512,6 @@ const PALS = [
    "hp": 105,
    "attack": 105,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 240,
    "runSpeed": 800,
@@ -8240,7 +8534,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grass Dragon Affection",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_Grass_icon_normal.png",
   "habitat": null
  },
@@ -8272,7 +8569,6 @@ const PALS = [
    "hp": 100,
    "attack": 125,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 170,
    "walkSpeed": 100,
    "runSpeed": 700,
@@ -8295,7 +8591,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wings of Death",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_icon_normal.png",
   "habitat": {
    "day": null,
@@ -8312,7 +8611,7 @@ const PALS = [
   "title": "Wings of Netherstorm",
   "elements": [
    "Dark",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -8332,7 +8631,6 @@ const PALS = [
    "hp": 105,
    "attack": 125,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 170,
    "walkSpeed": 100,
    "runSpeed": 700,
@@ -8355,7 +8653,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Wings of Thunder",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_Electric_icon_normal.png",
   "habitat": null
  },
@@ -8387,7 +8688,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 150,
    "walkSpeed": 200,
    "runSpeed": 800,
@@ -8410,7 +8710,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Flame Wing",
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RedArmorBird_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/074-day.png",
@@ -8443,7 +8746,6 @@ const PALS = [
    "hp": 80,
    "attack": 125,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 600,
@@ -8466,7 +8768,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Brandish Blade",
+   "description": "When activated, attacks targeted enemy with Iaigiri. When this Pal uses Iaigiri, it has a x1.1~2.5 damage multiplier."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Ronin_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/072-day.png",
@@ -8501,7 +8806,6 @@ const PALS = [
    "hp": 80,
    "attack": 130,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 600,
@@ -8524,7 +8828,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Void Blade",
+   "description": "When activated, attacks targeted enemy with Iaigiri. When this Pal uses Iaigiri, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon damage by 30~65% but only when not in combat. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Ronin_Dark_icon_normal.png",
   "habitat": null
  },
@@ -8550,7 +8857,6 @@ const PALS = [
    "hp": 80,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -8573,7 +8879,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Zephyr Glider",
+   "description": "While in party, modifies the performance of the equipped glider. Prevents fall damage and extends the duration of high-speed gliding."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlyingManta_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/025-day.png",
@@ -8590,7 +8899,7 @@ const PALS = [
   "title": "Sky-Swimming Fish",
   "elements": [
    "Water",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Aquatic Pal Fluids"
@@ -8604,7 +8913,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -8627,7 +8935,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Jolt Glider",
+   "description": "While in party, modifies the performance of the equipped glider. Prevents fall damage and extends the duration of high-speed gliding."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlyingManta_Thunder_icon_normal.png",
   "habitat": null
  },
@@ -8655,7 +8966,6 @@ const PALS = [
    "hp": 130,
    "attack": 145,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 350,
    "walkSpeed": 350,
    "runSpeed": 1300,
@@ -8681,7 +8991,10 @@ const PALS = [
    "Legend",
    "Lord of the Underworld"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dark Knight of the Abyss",
+   "description": "Can be ridden. Can double jump while mounted. When Twin Spears skill is activated, a Paladius in your party will appear and attack alongside you."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackCentaur_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/109-day.png",
@@ -8697,7 +9010,7 @@ const PALS = [
   "variant": false,
   "title": "Lady of the Flower Garden",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Beautiful Flower",
@@ -8714,7 +9027,6 @@ const PALS = [
    "hp": 100,
    "attack": 95,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -8737,7 +9049,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blessing of the Flower Spirit",
+   "description": "When activated, soothing blossoms restore the player's Health by 75~85%. While at a base, increases the Planting Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDoll_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/087-day.png",
@@ -8753,7 +9068,7 @@ const PALS = [
   "variant": true,
   "title": "Lady of the Ashen Wastes",
   "elements": [
-   "Leaf",
+   "Grass",
    "Fire"
   ],
   "drops": [
@@ -8777,7 +9092,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -8800,7 +9114,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Passion of the Flower Spirit",
+   "description": "When activated, soothing blossoms restore the player's Health by 80~90%. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass damage, and are immune to Ivy-Covered. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDoll_Fire_icon_normal.png",
   "habitat": null
  },
@@ -8813,7 +9130,7 @@ const PALS = [
   "variant": false,
   "title": "Marshmallow Body",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "High Quality Pal Oil"
@@ -8825,7 +9142,6 @@ const PALS = [
    "hp": 110,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 64,
    "runSpeed": 650,
@@ -8848,7 +9164,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Glaring Cat's Eye",
+   "description": "Can be ridden. While in party, picking up a Pal Egg has a 50~75% chance of receiving one extra. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NaughtyCat_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/052-day.png",
@@ -8864,7 +9183,7 @@ const PALS = [
   "variant": false,
   "title": "Butterfly Promenade",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Honey",
@@ -8880,7 +9199,6 @@ const PALS = [
    "hp": 70,
    "attack": 80,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 550,
@@ -8903,7 +9221,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mysterious Scales",
+   "description": "When activated, attacks the targeted enemy with Poison Fog. While at a base, increases the Farming Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CuteButterfly_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/041-day.png",
@@ -8920,7 +9241,7 @@ const PALS = [
   "title": "Unstoppable Stinger",
   "elements": [
    "Dark",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Medium Pal Soul",
@@ -8934,7 +9255,6 @@ const PALS = [
    "hp": 100,
    "attack": 100,
    "defense": 130,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 1000,
@@ -8957,7 +9277,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Steel Scorpion",
+   "description": "While in party, player's Defense increases by 5~10%, and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkScorpion_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/099-day.png",
@@ -8973,7 +9296,7 @@ const PALS = [
   "variant": true,
   "title": "Gold-Piercing Spear",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Medium Pal Soul",
@@ -8987,7 +9310,6 @@ const PALS = [
    "hp": 100,
    "attack": 105,
    "defense": 130,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 1000,
@@ -9010,7 +9332,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Golden Scorpion",
+   "description": "While in party, player's Defense increases by 5~10%, and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkScorpion_Ground_icon_normal.png",
   "habitat": null
  },
@@ -9024,7 +9349,7 @@ const PALS = [
   "title": "Roaring Thunder",
   "elements": [
    "Dragon",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -9046,7 +9371,6 @@ const PALS = [
    "hp": 120,
    "attack": 130,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 185,
    "runSpeed": 900,
@@ -9071,7 +9395,10 @@ const PALS = [
   "guaranteedPassives": [
    "Lord of Lightning"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ferocious Thunder Dragon",
+   "description": "While in party, hitting an enemy with a bullet increases the Attack and Defense of the Pal fighting alongside you by 1~5% for 5 seconds. This effect stacks up to 30 times. (Does not stack.)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderDragonMan_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/106-day.png",
@@ -9087,7 +9414,7 @@ const PALS = [
   "variant": false,
   "title": "Darling Furball",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Wool"
@@ -9100,7 +9427,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 40,
    "runSpeed": 300,
@@ -9123,7 +9449,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fluffy Wool",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) Sometimes drops Wool when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WoolFox_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/018-day.png",
@@ -9139,7 +9468,7 @@ const PALS = [
   "variant": false,
   "title": "Perpetual Procrastinator",
   "elements": [
-   "Earth",
+   "Ground",
    "Water"
   ],
   "drops": [
@@ -9156,7 +9485,6 @@ const PALS = [
    "hp": 100,
    "attack": 70,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 450,
@@ -9179,7 +9507,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Soil Improver",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals by 15~30%. (Does not stack) Sometimes drops High Quality Pal Oil when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LazyCatfish_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/043-day.png",
@@ -9195,7 +9526,7 @@ const PALS = [
   "variant": true,
   "title": "Piece of Cake",
   "elements": [
-   "Earth",
+   "Ground",
    "Water"
   ],
   "drops": [
@@ -9213,7 +9544,6 @@ const PALS = [
    "hp": 105,
    "attack": 75,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 450,
@@ -9236,7 +9566,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Golden Harvest",
+   "description": "While in party, increases amount of Gold Coin dropped by enemies by +100~200%. Sometimes drops High Quality Pal Oil when assigned to Ranch, with a small chance to drop Gold Coin. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LazyCatfish_Gold_icon_normal.png",
   "habitat": null
  },
@@ -9265,7 +9598,6 @@ const PALS = [
    "hp": 60,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 98,
    "runSpeed": 250,
@@ -9288,7 +9620,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Magma Tears",
+   "description": "While in party, recovers Health of the player and Party Pals by 0.1~0.5% per second outside of combat. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LavaGirl_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/070-day.png",
@@ -9318,7 +9653,6 @@ const PALS = [
    "hp": 75,
    "attack": 70,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -9341,7 +9675,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Tiny Spark",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlameBambi_icon_normal.png",
   "habitat": {
    "day": "https://raw.githubusercontent.com/mlg404/palworld-paldex-api/main/public/images/maps/009-day.png",
@@ -9371,7 +9708,6 @@ const PALS = [
    "hp": 120,
    "attack": 150,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -9394,7 +9730,10 @@ const PALS = [
    "female": 0.9
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Nightmare Iris",
+   "description": "When activated, attacks targeted enemy with Nightmare Ray. When this Pal uses Nightmare Ray, it has a x1.1~2.5 damage multiplier."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NightLady_icon_normal.png",
   "habitat": null
  },
@@ -9422,7 +9761,6 @@ const PALS = [
    "hp": 120,
    "attack": 150,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -9447,7 +9785,10 @@ const PALS = [
   "guaranteedPassives": [
    "Siren of the Void"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Nightmare Stare",
+   "description": "When activated, attacks targeted enemy with Nightmare Bloom. When this Pal uses Nightmare Bloom, it has a x1.1~2.5 damage multiplier."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NightLady_Dark_icon_normal.png",
   "habitat": null
  },
@@ -9461,7 +9802,7 @@ const PALS = [
   "title": "Crescent of the Darkest Night",
   "elements": [
    "Dark",
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "High Quality Cloth",
@@ -9484,7 +9825,6 @@ const PALS = [
    "hp": 130,
    "attack": 115,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 150,
    "runSpeed": 1000,
@@ -9507,7 +9847,10 @@ const PALS = [
    "female": 0.8
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Celestial Darkness",
+   "description": "Can be ridden as a flying mount. While mounted, enhances <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark attacks by 15~30%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MoonQueen_icon_normal.png",
   "habitat": null
  },
@@ -9536,7 +9879,6 @@ const PALS = [
    "hp": 80,
    "attack": 100,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 66,
    "runSpeed": 300,
@@ -9559,7 +9901,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Leap Stance",
+   "description": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While airborne before landing, the player's Attack is increased by 50~86%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KendoFrog_icon_normal.png",
   "habitat": null
  },
@@ -9590,7 +9935,6 @@ const PALS = [
    "hp": 85,
    "attack": 110,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 66,
    "runSpeed": 300,
@@ -9613,7 +9957,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Shadow Stance",
+   "description": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark damage to enemy weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KendoFrog_Dark_icon_normal.png",
   "habitat": null
  },
@@ -9626,7 +9973,7 @@ const PALS = [
   "variant": false,
   "title": "Primal Source of Hay Fever",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Beautiful Flower",
@@ -9642,7 +9989,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -9665,7 +10011,10 @@ const PALS = [
    "female": 0.7
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Floral Boost",
+   "description": "While at a base, Lullu fills farms with good spirits, increasing the growth rate of the crops by 50~70%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LeafPrincess_icon_normal.png",
   "habitat": null
  },
@@ -9678,7 +10027,7 @@ const PALS = [
   "variant": false,
   "title": "Creeping Mushroom",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Mushroom",
@@ -9702,7 +10051,6 @@ const PALS = [
    "hp": 110,
    "attack": 80,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 80,
    "runSpeed": 740,
@@ -9725,7 +10073,10 @@ const PALS = [
    "female": 0.45
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Rampant Spores",
+   "description": "Can be ridden. Sometimes drops Mushroom or Cavern Mushroom when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MushroomDragon_icon_normal.png",
   "habitat": null
  },
@@ -9738,7 +10089,7 @@ const PALS = [
   "variant": true,
   "title": "Dangerous Mushroom",
   "elements": [
-   "Leaf",
+   "Grass",
    "Dark"
   ],
   "drops": [
@@ -9755,7 +10106,6 @@ const PALS = [
    "hp": 110,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 80,
    "runSpeed": 740,
@@ -9778,7 +10128,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Roiling Spores",
+   "description": "Can be ridden. While at a base, its mysterious spores slow the rate at which the SAN value of allies at the base decreases by 10~15%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MushroomDragon_Dark_icon_normal.png",
   "habitat": null
  },
@@ -9791,7 +10144,7 @@ const PALS = [
   "variant": false,
   "title": "Armored to the Teeth",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather",
@@ -9805,7 +10158,6 @@ const PALS = [
    "hp": 75,
    "attack": 70,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 800,
@@ -9828,7 +10180,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sandball Soccer",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SmallArmadillo_icon_normal.png",
   "habitat": null
  },
@@ -9860,7 +10215,6 @@ const PALS = [
    "hp": 105,
    "attack": 125,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 250,
    "runSpeed": 800,
@@ -9883,7 +10237,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grave Robber",
+   "description": "While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral damage. (Does not stack) Sometimes digs up Bone when assigned to Ranch."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CandleGhost_icon_normal.png",
   "habitat": null
  },
@@ -9897,7 +10254,7 @@ const PALS = [
   "title": "Bad Boy",
   "elements": [
    "Dark",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Venom Gland"
@@ -9911,7 +10268,6 @@ const PALS = [
    "hp": 90,
    "attack": 110,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 180,
    "runSpeed": 720,
@@ -9934,7 +10290,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Phantom Venom",
+   "description": "While in party, increases player's and Pals' damage to enemies afflicted with Poison by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ScorpionMan_icon_normal.png",
   "habitat": null
  },
@@ -9947,8 +10306,8 @@ const PALS = [
   "variant": true,
   "title": "Thunderboy",
   "elements": [
-   "Electricity",
-   "Earth"
+   "Electric",
+   "Ground"
   ],
   "drops": [
    "Electric Organ"
@@ -9963,7 +10322,6 @@ const PALS = [
    "hp": 90,
    "attack": 115,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 180,
    "runSpeed": 720,
@@ -9986,7 +10344,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Scorpion Longwave",
+   "description": "When activated, Prixter Lux changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ScorpionMan_Electric_icon_normal.png",
   "habitat": null
  },
@@ -9999,7 +10360,7 @@ const PALS = [
   "variant": false,
   "title": "Suit of Armor",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ore",
@@ -10021,7 +10382,6 @@ const PALS = [
    "hp": 105,
    "attack": 110,
    "defense": 135,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 190,
    "runSpeed": 550,
@@ -10046,7 +10406,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Steel Guardian Mode",
+   "description": "When activated, a steel resolve increases Knocklem's Attack by 50~200% and Defense by 50~200% for a limited time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WingGolem_icon_normal.png",
   "habitat": null
  },
@@ -10081,7 +10444,6 @@ const PALS = [
    "hp": 105,
    "attack": 115,
    "defense": 135,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 190,
    "runSpeed": 550,
@@ -10106,7 +10468,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Iron Guardian Mode",
+   "description": "When activated, a steel resolve increases Knocklem Ignis's Attack by 60~210% and Defense by 60~210% for a limited time."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WingGolem_Fire_icon_normal.png",
   "habitat": null
  },
@@ -10119,7 +10484,7 @@ const PALS = [
   "variant": false,
   "title": "Unwavering Loyalty",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather"
@@ -10131,7 +10496,6 @@ const PALS = [
    "hp": 85,
    "attack": 85,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 110,
    "runSpeed": 750,
@@ -10154,7 +10518,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Birds of a Feather",
+   "description": "Can be ridden. While fighting together, 15~30% increased chance of encountering pals with the same Passive Skill as this Pal. (Excludes certain Passive Skills)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GuardianDog_icon_normal.png",
   "habitat": null
  },
@@ -10167,7 +10534,7 @@ const PALS = [
   "variant": false,
   "title": "State of Enlightenment",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Bone"
@@ -10183,7 +10550,6 @@ const PALS = [
    "hp": 90,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 75,
    "runSpeed": 300,
@@ -10206,7 +10572,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Homeward Prayer",
+   "description": "When activated, teleports to the nearest base. Cannot be used inside dungeons or similar areas."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SifuDog_icon_normal.png",
   "habitat": null
  },
@@ -10219,7 +10588,7 @@ const PALS = [
   "variant": false,
   "title": "Brilliant Steps",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Bone"
@@ -10231,7 +10600,6 @@ const PALS = [
    "hp": 95,
    "attack": 90,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 900,
@@ -10254,7 +10622,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sand Sprint",
+   "description": "Can be ridden. Movement Speed is increased by 50~100% while mounted on sand."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FeatherOstrich_icon_normal.png",
   "habitat": null
  },
@@ -10267,7 +10638,7 @@ const PALS = [
   "variant": false,
   "title": "Treasure Trove",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Gold Coin",
@@ -10282,7 +10653,6 @@ const PALS = [
    "hp": 60,
    "attack": 60,
    "defense": 130,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 2000,
@@ -10305,7 +10675,10 @@ const PALS = [
    "female": 0.19999999
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Master of Unlocking",
+   "description": "While fighting together, Mimog can open treasure chests without using a key."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MimicDog_icon_normal.png",
   "habitat": null
  },
@@ -10331,7 +10704,6 @@ const PALS = [
    "hp": 90,
    "attack": 125,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 245,
    "runSpeed": 550,
@@ -10356,7 +10728,10 @@ const PALS = [
   "guaranteedPassives": [
    "Otherworldly Cells"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Unknown Invader",
+   "description": "While in party, increases the damage of the last bullet fired from a full-auto weapon by 100~160%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkAlien_icon_normal.png",
   "habitat": null
  },
@@ -10382,7 +10757,6 @@ const PALS = [
    "hp": 110,
    "attack": 120,
    "defense": 130,
-   "craftSpeed": 0,
    "stamina": 250,
    "walkSpeed": 230,
    "runSpeed": 790,
@@ -10407,7 +10781,10 @@ const PALS = [
   "guaranteedPassives": [
    "Otherworldly Cells"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Unknown Intruder",
+   "description": "Can be ridden. While in party, increases the player's energy weapon damage by 10~35%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteAlienDragon_icon_normal.png",
   "habitat": null
  },
@@ -10421,7 +10798,7 @@ const PALS = [
   "title": "Scorched Wanderer",
   "elements": [
    "Fire",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Flame Organ",
@@ -10441,7 +10818,6 @@ const PALS = [
    "hp": 110,
    "attack": 125,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 270,
    "walkSpeed": 220,
    "runSpeed": 650,
@@ -10464,7 +10840,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Magma Overload",
+   "description": "Can be ridden as a mount. This Pal's Attack increases by 4~8% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pal in your party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_icon_normal.png",
   "habitat": null
  },
@@ -10478,7 +10857,7 @@ const PALS = [
   "title": "Frigid Voyager",
   "elements": [
    "Ice",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ice Organ",
@@ -10492,7 +10871,6 @@ const PALS = [
    "hp": 110,
    "attack": 125,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 270,
    "walkSpeed": 220,
    "runSpeed": 650,
@@ -10515,7 +10893,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ice Overload",
+   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice damage to enemy weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_Ice_icon_normal.png",
   "habitat": null
  },
@@ -10541,7 +10922,6 @@ const PALS = [
    "hp": 130,
    "attack": 120,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 200,
    "runSpeed": 550,
@@ -10567,7 +10947,10 @@ const PALS = [
    "Invader",
    "Otherworldly Cells"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Meteor Wings",
+   "description": "Can be ridden as a flying mount. While in party, damage done by Partner Skills of weapon-wielding Pals increases by 20~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkMechaDragon_icon_normal.png",
   "habitat": null
  },
@@ -10593,7 +10976,6 @@ const PALS = [
    "hp": 105,
    "attack": 95,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 380,
@@ -10616,7 +10998,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Soul Collector",
+   "description": "While fighting together, Pals drop +100~200% more Pal Souls when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostRabbit_icon_normal.png",
   "habitat": null
  },
@@ -10629,7 +11014,7 @@ const PALS = [
   "variant": true,
   "title": "Soul of the Green Rabbit",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Medium Pal Soul",
@@ -10650,7 +11035,6 @@ const PALS = [
    "hp": 110,
    "attack": 95,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 380,
@@ -10673,7 +11057,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Soul Binder",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostRabbit_Grass_icon_normal.png",
   "habitat": null
  },
@@ -10705,7 +11092,6 @@ const PALS = [
    "hp": 110,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 230,
    "walkSpeed": 150,
    "runSpeed": 900,
@@ -10728,7 +11114,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Night Dancer",
+   "description": "Can be ridden. Boosts jumping ability while mounted. This Pal's movement speed increases by +50~100% at night."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NightBlueHorse_icon_normal.png",
   "habitat": null
  },
@@ -10741,7 +11130,7 @@ const PALS = [
   "variant": true,
   "title": "Silvermane",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -10761,7 +11150,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 230,
    "walkSpeed": 150,
    "runSpeed": 900,
@@ -10784,7 +11172,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Light Dancer",
+   "description": "Can be ridden. Boosts Jump Power while mounted. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pal in your party. (Excluding Starryon Primo)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_NightBlueHorse_Neutral_icon_normal.png",
   "habitat": null
  },
@@ -10815,7 +11206,6 @@ const PALS = [
    "hp": 120,
    "attack": 110,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 280,
    "walkSpeed": 150,
    "runSpeed": 700,
@@ -10840,7 +11230,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Aegis Shield",
+   "description": "Can be ridden. While in party, reduces shield regeneration delay by 30~60% and reduces damage taken by your shield by 65~80%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteShieldDragon_icon_normal.png",
   "habitat": null
  },
@@ -10865,7 +11258,6 @@ const PALS = [
    "hp": 85,
    "attack": 90,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 550,
@@ -10888,7 +11280,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dig, Smokie! Dig!",
+   "description": "When activated, uses its sharp sense of smell to detect nearby Chromite. While fighting together, Chromite acquisition increases by +100~200%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackPuppy_icon_normal.png",
   "habitat": null
  },
@@ -10923,7 +11318,6 @@ const PALS = [
    "hp": 85,
    "attack": 90,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 550,
@@ -10946,7 +11340,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cryo Instincts",
+   "description": "While at a base, increases the Cooling Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackPuppy_Ice_icon_normal.png",
   "habitat": null
  },
@@ -10959,7 +11356,7 @@ const PALS = [
   "variant": false,
   "title": "Beast of Salvation",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -10980,7 +11377,6 @@ const PALS = [
    "hp": 120,
    "attack": 110,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 260,
    "walkSpeed": 140,
    "runSpeed": 800,
@@ -11003,7 +11399,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blessing of Purification",
+   "description": "Can be ridden. This Pal's Attack and Movement Speed increases by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pal in your party. When in party, recovers Health of the player and Party Pals by 0.15~0.75% per second. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteDeer_icon_normal.png",
   "habitat": null
  },
@@ -11038,7 +11437,6 @@ const PALS = [
    "hp": 120,
    "attack": 115,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 260,
    "walkSpeed": 140,
    "runSpeed": 800,
@@ -11061,7 +11459,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blessing of Chaos",
+   "description": "Can be ridden. While in party, the Pal fighting alongside you gradually loses Health in exchange for 40~80% Attack increase. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteDeer_Dark_icon_normal.png",
   "habitat": null
  },
@@ -11085,7 +11486,6 @@ const PALS = [
    "hp": 180,
    "attack": 120,
    "defense": 200,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 3000,
    "runSpeed": 3000,
@@ -11108,7 +11508,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Resonant Guardian",
+   "description": "Can be ridden as a flying mount. Only 1 can be summoned to a base. While at a base, it constantly patrols the skies and bombards intruders from high above."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingWhale_icon_normal.png",
   "habitat": null
  },
@@ -11133,7 +11536,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 400,
@@ -11156,7 +11558,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Masquerade Dance",
+   "description": "While in party, increases Party Pals' EXP gained by 40~80%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MysteryMask_icon_normal.png",
   "habitat": null
  },
@@ -11183,7 +11588,6 @@ const PALS = [
    "hp": 70,
    "attack": 85,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 400,
@@ -11206,7 +11610,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Void-Dweller",
+   "description": "While in party, increases the player's damage dealt to enemies that are not in combat by 50~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_HoodGhost_icon_normal.png",
   "habitat": null
  },
@@ -11219,7 +11626,7 @@ const PALS = [
   "variant": false,
   "title": "Cutthroat Sun Snuffer",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather",
@@ -11240,7 +11647,6 @@ const PALS = [
    "hp": 110,
    "attack": 115,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 600,
@@ -11263,7 +11669,10 @@ const PALS = [
    "female": 0.7
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Desert Empress",
+   "description": "While at base, boosts Anubis's work speed by 20~40%. Increases efficiency by 30~60% if Sekhmet is also working at a Workbench, Workshop, or other related facilities. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Sekhmet_icon_normal.png",
   "habitat": null
  },
@@ -11276,7 +11685,7 @@ const PALS = [
   "variant": false,
   "title": "Shockingly Laid-Back",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Aquatic Pal Fluids",
@@ -11289,7 +11698,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 300,
@@ -11312,7 +11720,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Chillswitch",
+   "description": "While in party, when the player attacks an enemy afflicted with Electrify, the enemy discharges electricity, dealing damage equal to 40~60% of the player's attack damage to nearby enemies. (Does not stack.)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecLizard_icon_normal.png",
   "habitat": null
  },
@@ -11346,7 +11757,6 @@ const PALS = [
    "hp": 95,
    "attack": 115,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 550,
@@ -11371,7 +11781,10 @@ const PALS = [
   "guaranteedPassives": [
    "Sadist"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blade of Uncontrolled Passion",
+   "description": "While in party, the amount of items obtained from using the Meat Cleaver increases by 100~200%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrimGirl_icon_normal.png",
   "habitat": null
  },
@@ -11400,7 +11813,6 @@ const PALS = [
    "hp": 110,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 640,
@@ -11423,7 +11835,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Tarantriss’ Web",
+   "description": "Can be ridden. Can double jump while mounted. Additionally, can shoot spider web to grapple and move at high speed."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PurpleSpider_icon_normal.png",
   "habitat": null
  },
@@ -11436,7 +11851,7 @@ const PALS = [
   "variant": false,
   "title": "Blue Lightning Steed",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -11454,7 +11869,6 @@ const PALS = [
    "hp": 130,
    "attack": 120,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 180,
    "runSpeed": 900,
@@ -11477,7 +11891,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Plasma Dash",
+   "description": "Can be ridden. Grants Air Dash, to move at even higher speeds."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueThunderHorse_icon_normal.png",
   "habitat": null
  },
@@ -11490,7 +11907,7 @@ const PALS = [
   "variant": false,
   "title": "Shambling Vein",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ore",
@@ -11504,7 +11921,6 @@ const PALS = [
    "hp": 100,
    "attack": 105,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 350,
@@ -11529,7 +11945,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Power Stone",
+   "description": "While in party, increases player's and Pals' damage to enemies afflicted with Muddy by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RockBeast_icon_normal.png",
   "habitat": null
  },
@@ -11564,7 +11983,6 @@ const PALS = [
    "hp": 100,
    "attack": 110,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 140,
    "runSpeed": 350,
@@ -11589,7 +12007,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Power Crystal",
+   "description": "While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon damage. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RockBeast_Ice_icon_normal.png",
   "habitat": null
  },
@@ -11618,7 +12039,6 @@ const PALS = [
    "hp": 70,
    "attack": 85,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 300,
@@ -11641,7 +12061,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sticky Princess",
+   "description": "While in party, the capture gauge decreases 12~35% more slowly while the bars are not overlapping during the fishing minigame. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_OctopusGirl_icon_normal.png",
   "habitat": null
  },
@@ -11655,7 +12078,7 @@ const PALS = [
   "title": "Everyday Trickster",
   "elements": [
    "Water",
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Aquatic Pal Fluids",
@@ -11670,7 +12093,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 300,
@@ -11693,7 +12115,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cephalo-Princess",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_OctopusGirl_Neutral_icon_normal.png",
   "habitat": null
  },
@@ -11729,7 +12154,6 @@ const PALS = [
    "hp": 105,
    "attack": 115,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 250,
    "runSpeed": 600,
@@ -11752,7 +12176,10 @@ const PALS = [
    "female": 0.42000002
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Chilled Whale Cruiser",
+   "description": "Can be ridden. While in party, fishing minigames start with the capture gauge increased by 5~14%. Additionally, while the bars overlap, capture progress increases by 5~14%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceNarwhal_icon_normal.png",
   "habitat": null
  },
@@ -11790,7 +12217,6 @@ const PALS = [
    "hp": 105,
    "attack": 120,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 250,
    "runSpeed": 600,
@@ -11813,7 +12239,10 @@ const PALS = [
    "female": 0.58000004
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Cozy Whale Cruiser",
+   "description": "Can be ridden. While in party, fishing minigame begins with the capture gauge 7~17% higher than usual, and capture progress increases by 7~17% while the bars overlap. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceNarwhal_Fire_icon_normal.png",
   "habitat": null
  },
@@ -11841,7 +12270,6 @@ const PALS = [
    "hp": 75,
    "attack": 90,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 240,
@@ -11864,7 +12292,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Jelliette Drop",
+   "description": "While in party, increases items obtained from fishing by 55~95%. While Jelliette and Jellroy are in your base, Jelliette's watering speed increases by 50~120%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_JellyfishFairy_icon_normal.png",
   "habitat": null
  },
@@ -11890,7 +12321,6 @@ const PALS = [
    "hp": 65,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 80,
    "runSpeed": 400,
@@ -11913,7 +12343,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Huggy Frost",
+   "description": "When activated, equips to the player and attacks using frigid air."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Kitsunebi_Ice_icon_normal.png",
   "habitat": null
  },
@@ -11942,7 +12375,6 @@ const PALS = [
    "hp": 100,
    "attack": 75,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 400,
@@ -11965,7 +12397,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Venom Picker",
+   "description": "Sometimes drops Venom Gland from its back when assigned to Ranch. While in party, restores 100~200 Pal’s Hunger to the Pal with the lowest Hunger every 5 minutes. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BerryGoat_Dark_icon_normal.png",
   "habitat": null
  },
@@ -11978,7 +12413,7 @@ const PALS = [
   "variant": true,
   "title": "Sparkling Smile",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Leather",
@@ -11996,7 +12431,6 @@ const PALS = [
    "hp": 80,
    "attack": 65,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 245,
@@ -12019,7 +12453,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ground 'n' Pound",
+   "description": "While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass damage to enemy weak points by 25~40%. (Does not stack) Increases efficiency by 200~400% when working at a Weapon Workbench, Weapon Assembly Line, or other related facilities."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkRabbit_Grass_icon_normal.png",
   "habitat": null
  },
@@ -12045,7 +12482,6 @@ const PALS = [
    "hp": 80,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 175,
    "runSpeed": 600,
@@ -12068,7 +12504,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Frozen Gleam Strike",
+   "description": "When activated, attacks targeted enemy with Snow Claw. When this Pal uses Snow Claw, it has a x1.1~2.5 damage multiplier. While in party, increases the player's melee weapon attack speed by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Werewolf_Ice_icon_normal.png",
   "habitat": null
  },
@@ -12095,7 +12534,6 @@ const PALS = [
    "hp": 100,
    "attack": 115,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 130,
    "runSpeed": 700,
@@ -12118,7 +12556,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Gloomhowl",
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark damage and are immune to Blind. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_Dark_icon_normal.png",
   "habitat": null
  },
@@ -12132,7 +12573,7 @@ const PALS = [
   "title": "Born of the Thunderclouds",
   "elements": [
    "Dark",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -12149,7 +12590,6 @@ const PALS = [
    "hp": 70,
    "attack": 80,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 400,
@@ -12172,7 +12612,10 @@ const PALS = [
    "female": 0.8
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lady of Dark Lightning",
+   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark bolts. These bolts will not reduce the target's Health below 1."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RaijinDaughter_Water_icon_normal.png",
   "habitat": null
  },
@@ -12185,7 +12628,7 @@ const PALS = [
   "variant": true,
   "title": "Predator of the Earth",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ore"
@@ -12200,7 +12643,6 @@ const PALS = [
    "hp": 100,
    "attack": 105,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 280,
    "runSpeed": 720,
@@ -12223,7 +12665,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Explosive Strength",
+   "description": "While in party, when attacking enemy weak point, increases the power of the next weak point attack by 30~60%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteTiger_Ground_icon_normal.png",
   "habitat": null
  },
@@ -12236,7 +12681,7 @@ const PALS = [
   "variant": true,
   "title": "Drifting Thundercloud",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Leather",
@@ -12257,7 +12702,6 @@ const PALS = [
    "hp": 110,
    "attack": 115,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 100,
    "runSpeed": 750,
@@ -12280,7 +12724,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Stormcloud",
+   "description": "Can be ridden. Can double jump while mounted. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FengyunDeeper_Electric_icon_normal.png",
   "habitat": null
  },
@@ -12314,7 +12761,6 @@ const PALS = [
    "hp": 110,
    "attack": 110,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 230,
    "walkSpeed": 200,
    "runSpeed": 1000,
@@ -12337,7 +12783,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Tidal Predator",
+   "description": "Can be ridden as a flying mount. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Horus_Water_icon_normal.png",
   "habitat": null
  },
@@ -12372,7 +12821,6 @@ const PALS = [
    "hp": 140,
    "attack": 130,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 270,
    "walkSpeed": 225,
    "runSpeed": 750,
@@ -12395,7 +12843,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Blizzard Crash",
+   "description": "Can be ridden. While mounted, delivers crushing blows with a hammer forged from <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SnowTigerBeastman_icon_normal.png",
   "habitat": null
  },
@@ -12431,7 +12882,6 @@ const PALS = [
    "hp": 80,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 450,
@@ -12454,7 +12904,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Snake's Sagacity",
+   "description": "While in party, the player's attacks inflict Blind 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SnakeGirl_icon_normal.png",
   "habitat": null
  },
@@ -12482,7 +12935,6 @@ const PALS = [
    "hp": 90,
    "attack": 125,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 320,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -12505,7 +12957,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Master of Darkness",
+   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Ghangler)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_icon_normal.png",
   "habitat": null
  },
@@ -12534,7 +12989,6 @@ const PALS = [
    "hp": 90,
    "attack": 130,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 320,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -12557,7 +13011,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Abyssal Celebrity Chef",
+   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Ghangler Ignis)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_Fire_icon_normal.png",
   "habitat": null
  },
@@ -12585,7 +13042,6 @@ const PALS = [
    "hp": 95,
    "attack": 115,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 400,
@@ -12608,7 +13064,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Witch's Icy Veil",
+   "description": "When activated, Icelyn changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceWitch_icon_normal.png",
   "habitat": null
  },
@@ -12644,7 +13103,6 @@ const PALS = [
    "hp": 100,
    "attack": 110,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 500,
@@ -12667,7 +13125,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Trick-Loving Fluffle",
+   "description": "While in party, when the player's Health falls below 50%, Dupin generates an explosion around the player (<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire / Power: 100~200 / Burn buildup: 777). Additionally, while the player's Health is below 50%, the player's Attack is increased by 30~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ClownRabbit_icon_normal.png",
   "habitat": null
  },
@@ -12680,7 +13141,7 @@ const PALS = [
   "variant": false,
   "title": "King of Salvation",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Horn",
@@ -12695,7 +13156,6 @@ const PALS = [
    "hp": 135,
    "attack": 130,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 400,
    "walkSpeed": 150,
    "runSpeed": 900,
@@ -12720,7 +13180,10 @@ const PALS = [
   "guaranteedPassives": [
    "Savior"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sacred Barrier",
+   "description": "Can be ridden. While mounted, it generates a barrier that blocks all attacks. Can triple jump while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LegendDeer_icon_normal.png",
   "habitat": null
  },
@@ -12733,8 +13196,8 @@ const PALS = [
   "variant": false,
   "title": "Percussive Maintenance",
   "elements": [
-   "Leaf",
-   "Normal"
+   "Grass",
+   "Neutral"
   ],
   "drops": [
    "Leather",
@@ -12749,7 +13212,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 30,
    "runSpeed": 350,
@@ -12772,7 +13234,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Herbil Pulse",
+   "description": "While in party, Herbil uses its healing powers to restore 30~60% of the player's Max Health when incapacitated."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LeafMomonga_icon_normal.png",
   "habitat": null
  },
@@ -12808,7 +13273,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 85,
    "runSpeed": 400,
@@ -12831,7 +13295,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Invisible Eye",
+   "description": "While in party, reduces the chance of being detected by enemies. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SmallYeti_icon_normal.png",
   "habitat": null
  },
@@ -12861,7 +13328,6 @@ const PALS = [
    "hp": 75,
    "attack": 80,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 40,
    "runSpeed": 300,
@@ -12884,7 +13350,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Icy Maw",
+   "description": "While in party, reduces the weight of ingredient and food by 30~60%. When paired with another <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pal, their Rot Speed also reduces by -80~-30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceCrocodile_icon_normal.png",
   "habitat": null
  },
@@ -12897,7 +13366,7 @@ const PALS = [
   "variant": false,
   "title": "Prickly Welcome",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Fiber"
@@ -12911,7 +13380,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 525,
@@ -12934,7 +13402,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hug Me Please",
+   "description": "While in party, increases player's and Pals' damage to enemies afflicted with Ivy-Covered by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CactusDoll_icon_normal.png",
   "habitat": null
  },
@@ -12948,7 +13419,7 @@ const PALS = [
   "title": "Binding Spines",
   "elements": [
    "Dark",
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Fiber",
@@ -12963,7 +13434,6 @@ const PALS = [
    "hp": 75,
    "attack": 90,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 525,
@@ -12986,7 +13456,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hug You So Much",
+   "description": "While in party, the player's attacks inflict Ivy-Covered 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CactusDoll_Dark_icon_normal.png",
   "habitat": null
  },
@@ -12999,7 +13472,7 @@ const PALS = [
   "variant": false,
   "title": "Cute as a Button",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Mushroom",
@@ -13022,7 +13495,6 @@ const PALS = [
    "hp": 105,
    "attack": 95,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -13045,7 +13517,10 @@ const PALS = [
    "female": 0.7
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Charming Spore",
+   "description": "While at a base, increases the Medicine Production Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MushroomLady_icon_normal.png",
   "habitat": null
  },
@@ -13073,7 +13548,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 250,
@@ -13096,7 +13570,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Water Gun",
+   "description": "When activated, Finsider changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water and increases Attack by  30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_StuffedShark_icon_normal.png",
   "habitat": null
  },
@@ -13126,7 +13603,6 @@ const PALS = [
    "hp": 75,
    "attack": 90,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 250,
@@ -13149,7 +13625,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Ember Chamber",
+   "description": "While in party, Finsider Ignis helps carry supplies, reducing the weight of weapons in your inventory by 60~100%. Also improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire damage to enemy weak points by 25~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_StuffedShark_Fire_icon_normal.png",
   "habitat": null
  },
@@ -13184,7 +13663,6 @@ const PALS = [
    "hp": 110,
    "attack": 125,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 500,
@@ -13207,7 +13685,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Burning Future",
+   "description": "While in party, when the player attacks an enemy afflicted with Burn, the enemy explodes, dealing damage equal to 40~60% of the player's attack damage to nearby enemies. (Does not stack.)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FoxExorcist_icon_normal.png",
   "habitat": null
  },
@@ -13234,7 +13715,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 120,
    "walkSpeed": 45,
    "runSpeed": 250,
@@ -13257,7 +13737,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Rider of the Snowy Mountain",
+   "description": "Can be ridden. Movement Speed is increased by 80~160% while mounted on snow. Can also slide quickly down slopes."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceSeal_icon_normal.png",
   "habitat": null
  },
@@ -13271,7 +13754,7 @@ const PALS = [
   "title": "Star of the Dunes",
   "elements": [
    "Ice",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Leather",
@@ -13292,7 +13775,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 120,
    "walkSpeed": 45,
    "runSpeed": 250,
@@ -13315,7 +13797,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Snowy Mountain Slider",
+   "description": "Can be ridden. Movement Speed is increased by 80~160% while mounted on snow. Can also slide quickly down slopes. While it starts out slow, the top speed it can hit while sliding is no joke."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_IceSeal_Ground_icon_normal.png",
   "habitat": null
  },
@@ -13328,8 +13813,8 @@ const PALS = [
   "variant": false,
   "title": "Dubiously Lucky",
   "elements": [
-   "Leaf",
-   "Normal"
+   "Grass",
+   "Neutral"
   ],
   "drops": [
    "Berry Seeds"
@@ -13342,7 +13827,6 @@ const PALS = [
    "hp": 80,
    "attack": 65,
    "defense": 65,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 400,
@@ -13365,7 +13849,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Happy Clover",
+   "description": "While at a base, increases the Gathering Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CloverFairy_icon_normal.png",
   "habitat": null
  },
@@ -13378,7 +13865,7 @@ const PALS = [
   "variant": false,
   "title": "Sulky Static",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ"
@@ -13391,7 +13878,6 @@ const PALS = [
    "hp": 75,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 200,
@@ -13414,7 +13900,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Crackle Booster",
+   "description": "While at a base, increases the Generating Electricity Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecPomeranian_icon_normal.png",
   "habitat": null
  },
@@ -13450,7 +13939,6 @@ const PALS = [
    "hp": 85,
    "attack": 95,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 360,
@@ -13473,7 +13961,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Death-Cheating Feline",
+   "description": "While in party, increases the capture rate when awarded a back bonus. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostBlackCat_icon_normal.png",
   "habitat": null
  },
@@ -13507,7 +13998,6 @@ const PALS = [
    "hp": 110,
    "attack": 115,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 170,
    "runSpeed": 950,
@@ -13530,7 +14020,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Dark-Nester",
+   "description": "Can be ridden as a flying mount. While in party, increases player's and Pals' damage to enemies afflicted with Blind by 50~65%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThiefBird_icon_normal.png",
   "habitat": null
  },
@@ -13559,7 +14052,6 @@ const PALS = [
    "hp": 70,
    "attack": 85,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 400,
@@ -13582,7 +14074,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Grinning Death",
+   "description": "While in party, attacking enemies afflicted with Poison reduces their Attack by 40~80%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_OniGhostGirl_icon_normal.png",
   "habitat": null
  },
@@ -13595,8 +14090,8 @@ const PALS = [
   "variant": false,
   "title": "Ancient Bloombringer",
   "elements": [
-   "Leaf",
-   "Earth"
+   "Grass",
+   "Ground"
   ],
   "drops": [
    "Leather",
@@ -13619,7 +14114,6 @@ const PALS = [
    "hp": 130,
    "attack": 95,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 270,
    "walkSpeed": 95,
    "runSpeed": 600,
@@ -13644,7 +14138,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Balmy Weather",
+   "description": "Can be ridden. While in your base, increases the egg production speed of Pals assigned to Breeding Farm by 20~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Plesiosaur_icon_normal.png",
   "habitat": null
  },
@@ -13657,7 +14154,7 @@ const PALS = [
   "variant": false,
   "title": "No Dance, No Life",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Hardwood",
@@ -13673,7 +14170,6 @@ const PALS = [
    "hp": 105,
    "attack": 110,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 180,
    "walkSpeed": 180,
    "runSpeed": 550,
@@ -13696,7 +14192,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Samba Step",
+   "description": "Can be ridden. Movement Speed is increased by 155~240% while mounted on grass."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_TropicalOstrich_icon_normal.png",
   "habitat": null
  },
@@ -13709,8 +14208,8 @@ const PALS = [
   "variant": false,
   "title": "Twinhearted Azure Construct",
   "elements": [
-   "Earth",
-   "Leaf"
+   "Ground",
+   "Grass"
   ],
   "drops": [
    "Beautiful Flower",
@@ -13734,7 +14233,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 210,
    "walkSpeed": 200,
    "runSpeed": 600,
@@ -13759,7 +14257,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Forest Laser",
+   "description": "Can be ridden. When activated, Dualith fires a powerful <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass laser from its right hand."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_icon_normal.png",
   "habitat": null
  },
@@ -13772,7 +14273,7 @@ const PALS = [
   "variant": true,
   "title": "Twinhearted Violet Construct",
   "elements": [
-   "Earth",
+   "Ground",
    "Dark"
   ],
   "drops": [
@@ -13797,7 +14298,6 @@ const PALS = [
    "hp": 110,
    "attack": 110,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 210,
    "walkSpeed": 200,
    "runSpeed": 600,
@@ -13822,7 +14322,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Corruption Laser",
+   "description": "Can be ridden. When activated, Dualith Noct fires a powerful <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark laser from its right hand."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_Dark_icon_normal.png",
   "habitat": null
  },
@@ -13848,7 +14351,6 @@ const PALS = [
    "hp": 110,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 500,
@@ -13871,7 +14373,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Peacock Pounce",
+   "description": "While in party, Frostplume's icy aura sharpens focus, increasing the player's reload speeds by 20~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SnowPeafowl_icon_normal.png",
   "habitat": null
  },
@@ -13884,7 +14389,7 @@ const PALS = [
   "variant": false,
   "title": "Sandsea Monolith",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Ruby",
@@ -13903,7 +14408,6 @@ const PALS = [
    "hp": 95,
    "attack": 100,
    "defense": 135,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 80,
    "runSpeed": 360,
@@ -13926,7 +14430,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Masonry Archelon",
+   "description": "Can be ridden While at a base, increases the Mining Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CubeTurtle_icon_normal.png",
   "habitat": null
  },
@@ -13939,7 +14446,7 @@ const PALS = [
   "variant": true,
   "title": "Sandsea Wardenstone",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Emerald",
@@ -13959,7 +14466,6 @@ const PALS = [
    "hp": 95,
    "attack": 100,
    "defense": 140,
-   "craftSpeed": 0,
    "stamina": 200,
    "walkSpeed": 80,
    "runSpeed": 360,
@@ -13982,7 +14488,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Stone-Chaser Archelon",
+   "description": "Can be ridden. While in party, increases the durability of all weapons and armor by 80~100%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_CubeTurtle_Neutral_icon_normal.png",
   "habitat": null
  },
@@ -13995,7 +14504,7 @@ const PALS = [
   "variant": false,
   "title": "Plays Both Sides",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather"
@@ -14007,7 +14516,6 @@ const PALS = [
    "hp": 75,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 70,
    "runSpeed": 700,
@@ -14030,7 +14538,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Big Stretch",
+   "description": "While in party, reduces the effects of gravity on the player, making them more floaty while jumping and falling. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LongCat_icon_normal.png",
   "habitat": null
  },
@@ -14060,7 +14571,6 @@ const PALS = [
    "hp": 90,
    "attack": 75,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 400,
@@ -14083,7 +14593,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Jellroy Drop",
+   "description": "While in party, increases items obtained from salvaging by 55~95%. While Jelliette and Jellroy are in your base, Jellroy's watering speed increases by 50~120%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_JellyfishGhost_icon_normal.png",
   "habitat": null
  },
@@ -14096,7 +14609,7 @@ const PALS = [
   "variant": false,
   "title": "Buzzy Bundle",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ"
@@ -14110,7 +14623,6 @@ const PALS = [
    "hp": 75,
    "attack": 85,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 140,
    "walkSpeed": 150,
    "runSpeed": 700,
@@ -14133,7 +14645,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Electro-Massage Incubation",
+   "description": "Can be ridden as a flying mount. While at a base, shortens the time it takes to incubate eggs by 20~40%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderFluffyBird_icon_normal.png",
   "habitat": null
  },
@@ -14168,7 +14683,6 @@ const PALS = [
    "hp": 80,
    "attack": 90,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 130,
    "runSpeed": 450,
@@ -14191,7 +14705,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Hidden Dark Energy",
+   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MoonChild_icon_normal.png",
   "habitat": null
  },
@@ -14204,7 +14721,7 @@ const PALS = [
   "variant": false,
   "title": "Zealous Alpha",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Bone"
@@ -14218,7 +14735,6 @@ const PALS = [
    "hp": 70,
    "attack": 80,
    "defense": 70,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 45,
    "runSpeed": 400,
@@ -14241,7 +14757,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Best Boy",
+   "description": "While in party, increases the player's melee weapon damage by 10~35%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SamuraiDog_icon_normal.png",
   "habitat": null
  },
@@ -14269,7 +14788,6 @@ const PALS = [
    "hp": 105,
    "attack": 145,
    "defense": 125,
-   "craftSpeed": 0,
    "stamina": 410,
    "walkSpeed": 300,
    "runSpeed": 750,
@@ -14295,7 +14813,10 @@ const PALS = [
    "Legend",
    "Lunker"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Sentinel of the Great Sea",
+   "description": "While in party, it follows up the player's attacks with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water spear strikes. Can be ridden to travel on water. While mounted, it can leap high into the air over water."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PoseidonOrca_icon_normal.png",
   "habitat": null
  },
@@ -14323,7 +14844,6 @@ const PALS = [
    "hp": 70,
    "attack": 100,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -14346,7 +14866,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fish Fillet",
+   "description": "When activated, Skutlass becomes the player's katana (Attack: 2600~3900). If it does not revert to its normal form quickly, Skutlass will become incapacitated. It will also become incapacitated if Iaigiri is used."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SwordCutlassfish_icon_normal.png",
   "habitat": null
  },
@@ -14383,7 +14906,6 @@ const PALS = [
    "hp": 70,
    "attack": 105,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 500,
@@ -14406,7 +14928,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Seared Fish Fillet",
+   "description": "When activated, Skutlass Ignis becomes the player's katana (Attack: 2900~4200). If it does not revert to its normal form quickly, Skutlass Ignis will become incapacitated. It will also become incapacitated if Iaigiri is used."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SwordCutlassfish_Fire_icon_normal.png",
   "habitat": null
  },
@@ -14419,7 +14944,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14431,7 +14956,6 @@ const PALS = [
    "hp": 65,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14454,7 +14978,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_icon_normal.png",
   "habitat": null
  },
@@ -14479,7 +15006,6 @@ const PALS = [
    "hp": 70,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14502,7 +15028,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_Blue_icon_normal.png",
   "habitat": null
  },
@@ -14527,7 +15056,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14550,7 +15078,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_Red_icon_normal.png",
   "habitat": null
  },
@@ -14575,7 +15106,6 @@ const PALS = [
    "hp": 75,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14598,7 +15128,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_Purple_icon_normal.png",
   "habitat": null
  },
@@ -14611,7 +15144,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14623,7 +15156,6 @@ const PALS = [
    "hp": 80,
    "attack": 75,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14646,7 +15178,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_Pink_icon_normal.png",
   "habitat": null
  },
@@ -14659,7 +15194,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14671,7 +15206,6 @@ const PALS = [
    "hp": 105,
    "attack": 95,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -14694,7 +15228,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Slime Body",
+   "description": "Can be ridden. Can jump high into the air while mounted."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster001_Rainbow_icon_normal.png",
   "habitat": null
  },
@@ -14707,7 +15244,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14719,7 +15256,6 @@ const PALS = [
    "hp": 95,
    "attack": 105,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 300,
    "runSpeed": 600,
@@ -14742,7 +15278,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Enchant",
+   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals drop 40~80% more items when defeated. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster002_icon_normal.png",
   "habitat": null
  },
@@ -14755,7 +15294,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14767,7 +15306,6 @@ const PALS = [
    "hp": 65,
    "attack": 75,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 300,
@@ -14790,7 +15328,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Bat Backup",
+   "description": "While in party, appears near the player. Automatically picks up nearby items."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster003_icon_normal.png",
   "habitat": null
  },
@@ -14803,7 +15344,7 @@ const PALS = [
   "variant": false,
   "title": null,
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Hallowed Bar"
@@ -14815,7 +15356,6 @@ const PALS = [
    "hp": 80,
    "attack": 80,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 300,
@@ -14838,7 +15378,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Bat Backup",
+   "description": "While in party, appears near the player. Automatically picks up nearby items."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster003_Purple_icon_normal.png",
   "habitat": null
  },
@@ -14863,7 +15406,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 450,
    "runSpeed": 900,
@@ -14886,7 +15428,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mad Eye Lunge",
+   "description": "When activated, Eye of Cthulhu charges and attacks targeted enemy."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaBoss001_icon_normal.png",
   "habitat": null
  },
@@ -14911,7 +15456,6 @@ const PALS = [
    "hp": 105,
    "attack": 110,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 300,
@@ -14934,7 +15478,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Demonic Sight",
+   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaBoss001_Small_icon_normal.png",
   "habitat": null
  },
@@ -14948,7 +15495,7 @@ const PALS = [
   "title": "Golden Blade of Duat",
   "elements": [
    "Dark",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Cloth",
@@ -14963,7 +15510,6 @@ const PALS = [
    "hp": 105,
    "attack": 120,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 480,
@@ -14986,7 +15532,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Resurrection",
+   "description": "While fighting together, when Gildra is incapacitated, it revives with its Hunger reduced to 0."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MummyPal_icon_normal.png",
   "habitat": null
  },
@@ -15012,7 +15561,6 @@ const PALS = [
    "hp": 90,
    "attack": 90,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 50,
    "runSpeed": 500,
@@ -15035,7 +15583,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Charming Fish",
+   "description": "Can be ridden to travel on water. While in party, makes it easier to fish up talented Pals. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingSunfish_icon_normal.png",
   "habitat": null
  },
@@ -15049,7 +15600,7 @@ const PALS = [
   "title": "Buoyant Brigadier",
   "elements": [
    "Water",
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "High Quality Pal Oil",
@@ -15070,7 +15621,6 @@ const PALS = [
    "hp": 90,
    "attack": 95,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 220,
    "walkSpeed": 50,
    "runSpeed": 500,
@@ -15093,7 +15643,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Shocking Fish",
+   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%. While in party, makes it easier to fish up talented Pals. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KingSunfish_Thunder_icon_normal.png",
   "habitat": null
  },
@@ -15107,7 +15660,7 @@ const PALS = [
   "title": "Veiled Dancer of Dusk",
   "elements": [
    "Dark",
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Dark Fragment",
@@ -15129,7 +15682,6 @@ const PALS = [
    "hp": 110,
    "attack": 115,
    "defense": 115,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 450,
@@ -15152,7 +15704,10 @@ const PALS = [
    "female": 0.7
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Untainted Maiden",
+   "description": "While in party, increases the player's Attack by 30~80% if all Pals in party are different species. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_MonochromeQueen_icon_normal.png",
   "habitat": null
  },
@@ -15165,7 +15720,7 @@ const PALS = [
   "variant": false,
   "title": "Sluggish Blue Bolt",
   "elements": [
-   "Electricity"
+   "Electric"
   ],
   "drops": [
    "Electric Organ",
@@ -15178,7 +15733,6 @@ const PALS = [
    "hp": 65,
    "attack": 70,
    "defense": 75,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 360,
@@ -15201,7 +15755,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Charging Shell",
+   "description": "While in party, the player's attacks inflict Electrify 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecSnail_icon_normal.png",
   "habitat": null
  },
@@ -15222,7 +15779,6 @@ const PALS = [
    "hp": 65,
    "attack": 70,
    "defense": 80,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 360,
@@ -15282,7 +15838,6 @@ const PALS = [
    "hp": 90,
    "attack": 100,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 50,
    "runSpeed": 300,
@@ -15305,7 +15860,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Lantern Enchantment",
+   "description": "While in party, the player's arrows explode on contact, dealing additional damage equal to 15~30% of the player's attack damage. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LanternButler_icon_normal.png",
   "habitat": null
  },
@@ -15318,7 +15876,7 @@ const PALS = [
   "variant": false,
   "title": "Bangin' Yokozuna",
   "elements": [
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Bone",
@@ -15332,7 +15890,6 @@ const PALS = [
    "hp": 115,
    "attack": 95,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 110,
    "walkSpeed": 120,
    "runSpeed": 600,
@@ -15355,7 +15912,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Yokozuna's Presence",
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric damage and are immune to Electrify. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SumoDog_icon_normal.png",
   "habitat": null
  },
@@ -15368,7 +15928,7 @@ const PALS = [
   "variant": false,
   "title": "Open-Minded Glutton",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Venom Gland",
@@ -15391,7 +15951,6 @@ const PALS = [
    "hp": 85,
    "attack": 90,
    "defense": 85,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 600,
@@ -15414,7 +15973,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Entangling Tongue",
+   "description": "While in party, when the player performs a dodge roll or dodge step, Carnibora creates a whirlwind that deals damage to enemies it touches (<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass / Power: 40~80). (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_VenusFlytrap_icon_normal.png",
   "habitat": null
  },
@@ -15440,7 +16002,6 @@ const PALS = [
    "hp": 60,
    "attack": 80,
    "defense": 55,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 110,
    "runSpeed": 300,
@@ -15463,7 +16024,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fluffy Flutterer",
+   "description": "While in party, increases the capture rate of Pals afflicted with Freeze. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FluffyBird_icon_normal.png",
   "habitat": null
  },
@@ -15476,7 +16040,7 @@ const PALS = [
   "variant": false,
   "title": "Windborne Seedling",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Wheat Seeds"
@@ -15489,7 +16053,6 @@ const PALS = [
    "hp": 70,
    "attack": 75,
    "defense": 60,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 300,
@@ -15512,7 +16075,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Fuzzy Fairy",
+   "description": "While in party, increases the capture rate of Pals afflicted with Ivy-Covered. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DandelionGirl_icon_normal.png",
   "habitat": null
  },
@@ -15539,7 +16105,6 @@ const PALS = [
    "hp": 65,
    "attack": 70,
    "defense": 65,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 100,
    "runSpeed": 450,
@@ -15562,7 +16127,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Magical Twin Powers",
+   "description": "While at a base, increases the Watering Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_ClioneTwins_icon_normal.png",
   "habitat": null
  },
@@ -15599,7 +16167,6 @@ const PALS = [
    "hp": 110,
    "attack": 115,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 500,
@@ -15622,7 +16189,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Phantasmal Arcana",
+   "description": "While in party, when the player attacks an enemy afflicted with Burn, the enemy creates flames around itself, dealing continuous damage equal to 15~30% of the player's attack damage to enemies that come into contact with them. (Does not stack.)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkFlameFox_icon_normal.png",
   "habitat": null
  },
@@ -15635,7 +16205,7 @@ const PALS = [
   "variant": false,
   "title": "Blooming Crooner",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Beautiful Flower",
@@ -15649,7 +16219,6 @@ const PALS = [
    "hp": 85,
    "attack": 85,
    "defense": 90,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 600,
@@ -15672,7 +16241,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Flower Dance",
+   "description": "While in party, extends the invincibility period during dodge rolls and dodge steps by 15~30%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_RedFlowerBird_icon_normal.png",
   "habitat": null
  },
@@ -15685,7 +16257,7 @@ const PALS = [
   "variant": false,
   "title": "Pristine Fisticuffs",
   "elements": [
-   "Normal"
+   "Neutral"
   ],
   "drops": [
    "Leather"
@@ -15698,7 +16270,6 @@ const PALS = [
    "hp": 105,
    "attack": 100,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 40,
    "runSpeed": 600,
@@ -15721,7 +16292,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Long-Sleeved Hurray",
+   "description": "While in party, reduces the Partner Skill cooldowns for other party Pals by 10~50%. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_SleeveRabbit_icon_normal.png",
   "habitat": null
  },
@@ -15734,7 +16308,7 @@ const PALS = [
   "variant": false,
   "title": "Pure Bloom Dragon",
   "elements": [
-   "Leaf",
+   "Grass",
    "Water"
   ],
   "drops": [
@@ -15755,7 +16329,6 @@ const PALS = [
    "hp": 130,
    "attack": 115,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 175,
    "runSpeed": 700,
@@ -15778,7 +16351,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Glorious Mist",
+   "description": "Can be ridden. While in party, the player's attacks inflict Soak 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_LotusDragon_icon_normal.png",
   "habitat": null
  },
@@ -15814,7 +16390,6 @@ const PALS = [
    "hp": 140,
    "attack": 135,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 300,
    "runSpeed": 1400,
@@ -15837,7 +16412,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Azure Sovereign",
+   "description": "Can be ridden as a flying mount. This Pal's Attack increases by 4~8% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pal in your party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueSkyDragon_icon_normal.png",
   "habitat": null
  },
@@ -15850,7 +16428,7 @@ const PALS = [
   "variant": false,
   "title": "Hardcore Heartbreaker",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Leather"
@@ -15865,7 +16443,6 @@ const PALS = [
    "hp": 100,
    "attack": 115,
    "defense": 95,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 600,
@@ -15888,7 +16465,10 @@ const PALS = [
    "female": 0.6
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Selfless Discipline",
+   "description": "This Pal's Attack and Defense increase by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pal in your party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_PandaGirl_icon_normal.png",
   "habitat": null
  },
@@ -15901,7 +16481,7 @@ const PALS = [
   "variant": false,
   "title": "Verdant Minotaur",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Horn",
@@ -15925,7 +16505,6 @@ const PALS = [
    "hp": 110,
    "attack": 105,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 700,
@@ -15948,7 +16527,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mother Nature's Menace",
+   "description": "When activated, Elgrove changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass and increases Attack by 30~50%."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassMinotaur_icon_normal.png",
   "habitat": null
  },
@@ -15985,7 +16567,6 @@ const PALS = [
    "hp": 120,
    "attack": 100,
    "defense": 105,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 150,
    "runSpeed": 700,
@@ -16008,7 +16589,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Father Winter's Threat",
+   "description": "While in party, grants the player the ability to Freeze enemies afflicted with Soak in one strike."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassMinotaur_Ice_icon_normal.png",
   "habitat": null
  },
@@ -16021,7 +16605,7 @@ const PALS = [
   "variant": false,
   "title": "Immortal Shade",
   "elements": [
-   "Leaf"
+   "Grass"
   ],
   "drops": [
    "Giant Pal Soul",
@@ -16045,7 +16629,6 @@ const PALS = [
    "hp": 140,
    "attack": 120,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 120,
    "runSpeed": 500,
@@ -16068,7 +16651,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Spore Stalwart",
+   "description": "While in party, when the player attacks an enemy afflicted with Ivy-Covered, the enemy explodes, dealing additional damage equal to 40~60% of the player's attack damage. (Does not stack) Also grants immunity to the World Tree's Explosive Spores to both the player and their Pals."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_Mothman_icon_normal.png",
   "habitat": null
  },
@@ -16101,7 +16687,6 @@ const PALS = [
    "hp": 115,
    "attack": 125,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 200,
    "runSpeed": 1400,
@@ -16124,7 +16709,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Liberated Pterosaur",
+   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragonor <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pal in your party."
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_icon_normal.png",
   "habitat": null
  },
@@ -16160,7 +16748,6 @@ const PALS = [
    "hp": 115,
    "attack": 130,
    "defense": 120,
-   "craftSpeed": 0,
    "stamina": 130,
    "walkSpeed": 200,
    "runSpeed": 1400,
@@ -16183,7 +16770,10 @@ const PALS = [
    "female": 0.5
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Resentful Pterosaur",
+   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% or each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pal in your party. (Excluding Eidrolon Ignis)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_Fire_icon_normal.png",
   "habitat": null
  },
@@ -16196,7 +16786,7 @@ const PALS = [
   "variant": false,
   "title": "Bewitching Lurker",
   "elements": [
-   "Leaf",
+   "Grass",
    "Dark"
   ],
   "drops": [
@@ -16222,7 +16812,6 @@ const PALS = [
    "hp": 125,
    "attack": 135,
    "defense": 110,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 160,
    "runSpeed": 1000,
@@ -16245,7 +16834,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Mist Stalwart",
+   "description": "When activated, the player's attacks inflict Poison 2~6. While in party, grants the player and party Pals immunity to Poison, and nullifies the effects of toxic gas in the World Tree area. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerPrince_icon_normal.png",
   "habitat": null
  },
@@ -16281,7 +16873,6 @@ const PALS = [
    "hp": 105,
    "attack": 120,
    "defense": 100,
-   "craftSpeed": 0,
    "stamina": 100,
    "walkSpeed": 200,
    "runSpeed": 400,
@@ -16304,7 +16895,10 @@ const PALS = [
    "female": 0.39999998
   },
   "guaranteedPassives": [],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Stage Combat",
+   "description": "While in party, the player's attacks inflict Burn 2~6. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_KabukiMan_icon_normal.png",
   "habitat": null
  },
@@ -16318,7 +16912,7 @@ const PALS = [
   "title": "Guardian of Luminous Trails",
   "elements": [
    "Dragon",
-   "Earth"
+   "Ground"
   ],
   "drops": [
    "Thermal Core",
@@ -16338,7 +16932,6 @@ const PALS = [
    "hp": 105,
    "attack": 125,
    "defense": 140,
-   "craftSpeed": 0,
    "stamina": 300,
    "walkSpeed": 230,
    "runSpeed": 850,
@@ -16363,7 +16956,10 @@ const PALS = [
   "guaranteedPassives": [
    "Heavyweight"
   ],
-  "partnerSkill": null,
+  "partnerSkill": {
+   "name": "Indestructible Fortress",
+   "description": "Can be ridden. While in party, player and party Pals take 60~80% less damage from explosive attacks, and are immune to Stun. (Does not stack)"
+  },
   "icon": "https://palworld.gg/images/full_palicon/T_DomeArmorDragon_icon_normal.png",
   "habitat": null
  }

@@ -117,7 +117,7 @@ const decodeEntities = s =>
  * eigenen Divs - kein JavaScript noetig.
  */
 function parsePalPage(html) {
-  const out = { elements: [], drops: [], dex: null, title: null }
+  const out = { elements: [], drops: [], dex: null, title: null, partnerSkill: null }
 
   // <div class="dex">No.143</div>
   const dex = html.match(/<div class="dex">No\.(\d+)<\/div>/)
@@ -139,6 +139,19 @@ function parsePalPage(html) {
     if (!seen.has(name)) {
       seen.add(name)
       out.drops.push(name)
+    }
+  }
+
+  // <h2>Partner Skill</h2>...<div class="name">Spikey Carrier</div>...<p>Effekt</p>
+  // PalCalcs PartnerSkill-Feld ist im Export durchgaengig null, deshalb kommt
+  // der Partner-Skill ausschliesslich von hier.
+  const psBlock = section(html, '<h2>Partner Skill</h2>', 1500)
+  const psName = psBlock.match(/<div class="name">([^<]*)<\/div>/)
+  const psText = psBlock.match(/<div class="content"><p>([\s\S]*?)<\/p>/)
+  if (psName) {
+    out.partnerSkill = {
+      name: decodeEntities(psName[1]),
+      description: psText ? decodeEntities(psText[1].replace(/\s*\n\s*/g, ' ')) : null,
     }
   }
 
@@ -247,8 +260,16 @@ async function main() {
   const passiveNameById = new Map(db.PassiveSkills.map(p => [p.InternalName, p.Name]))
   const index = new Map(db.Pals.map((p, i) => [p.InternalName, i]))
 
+  // palworld.gg benennt Elemente im alt-Text intern (Normal, Leaf, Electricity,
+  // Earth), PalCalc benutzt die Anzeigenamen (Neutral, Grass, Electric, Ground).
+  // Ohne diese Umschluesselung greift der Elementfilter fuer vier von neun
+  // Elementen ins Leere.
+  const elementByInternal = new Map(db.Elements.map(e => [e.InternalName, e.Name]))
+  const normalizeElement = e => elementByInternal.get(e) || e
+
   const PALS = db.Pals.map((p, i) => {
-    const extra = enrichment.get(p.InternalName) || { elements: [], drops: [], dex: null, title: null }
+    const extra = enrichment.get(p.InternalName)
+      || { elements: [], drops: [], dex: null, title: null, partnerSkill: null }
     const work = {}
     for (const [k, v] of Object.entries(p.WorkSuitability || {})) if (v > 0) work[k] = v
     const gender = db.BreedingGenderProbability[p.InternalName] || { MALE: 0.5, FEMALE: 0.5 }
@@ -261,14 +282,13 @@ async function main() {
       dex: extra.dex ?? p.Id.PalDexNo,
       variant: !!p.Id.IsVariant,
       title: extra.title,
-      elements: extra.elements,
+      elements: extra.elements.map(normalizeElement),
       drops: extra.drops,
       work,
       stats: {
         hp: p.Hp,
         attack: p.Attack,
         defense: p.Defense,
-        craftSpeed: p.CraftSpeed,
         stamina: p.Stamina,
         walkSpeed: p.WalkSpeed,
         runSpeed: p.RunSpeed,
@@ -287,7 +307,8 @@ async function main() {
       guaranteedPassives: (p.GuaranteedPassivesInternalIds || []).map(
         id => passiveNameById.get(id) || id
       ),
-      partnerSkill: p.PartnerSkill,
+      // PalCalcs p.PartnerSkill ist im Export durchgaengig null - daher von palworld.gg.
+      partnerSkill: extra.partnerSkill,
       icon: iconMap[p.InternalName] ? SRC.icon(iconMap[p.InternalName]) : null,
       habitat: habitatByName.get(p.Name) || null,
     }
@@ -338,6 +359,7 @@ async function main() {
     palsWithElements: PALS.filter(p => p.elements.length).length,
     palsWithHabitat: PALS.filter(p => p.habitat).length,
     palsWithIcon: PALS.filter(p => p.icon).length,
+    palsWithPartnerSkill: PALS.filter(p => p.partnerSkill).length,
   }
 
   const js = `// AUTO-GENERIERT von tools/generate-paldex.mjs - nicht von Hand bearbeiten.
