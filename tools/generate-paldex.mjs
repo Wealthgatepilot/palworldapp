@@ -53,6 +53,7 @@ const SRC = {
   paldexPals: `${RAW}/mlg404/palworld-paldex-api/main/src/pals.json`,
   sitemap: 'https://palworld.gg/__sitemap__/en.xml',
   palPage: slug => `https://palworld.gg/pal/${slug}`,
+  tierList: path => `https://palworld.gg/tier-list${path}`,
   icon: internal => `https://palworld.gg/images/full_palicon/T_${internal}_icon_normal.png`,
   habitat: (key, when) =>
     `${RAW}/mlg404/palworld-paldex-api/main/public/images/maps/${key}-${when}.png`,
@@ -117,7 +118,22 @@ const decodeEntities = s =>
  * eigenen Divs - kein JavaScript noetig.
  */
 function parsePalPage(html) {
-  const out = { elements: [], drops: [], dex: null, title: null, partnerSkill: null }
+  const out = { elements: [], drops: [], dex: null, title: null, partnerSkill: null,
+                internalName: null, ggName: null }
+
+  const h1 = html.indexOf('<h1 class="name">')
+
+  // Der interne Name ist der verlaessliche Schluessel zwischen den Quellen -
+  // Anzeigenamen weichen ab (palworld.gg nennt "Snock Terra" z. B. "Snock Lux").
+  // Auf der Seite stehen viele Pal-Icons; das eigene ist das letzte VOR der
+  // Ueberschrift.
+  if (h1 > 0) {
+    const before = html.slice(Math.max(0, h1 - 1500), h1)
+    const icons = [...before.matchAll(/full_palicon\/T_([A-Za-z0-9_]+)_icon_normal/g)]
+    if (icons.length) out.internalName = icons[icons.length - 1][1]
+  }
+  const nm = html.match(/<h1 class="name">([^<]*)<\/h1>/)
+  if (nm) out.ggName = decodeEntities(nm[1])
 
   // <div class="dex">No.143</div>
   const dex = html.match(/<div class="dex">No\.(\d+)<\/div>/)
@@ -156,6 +172,43 @@ function parsePalPage(html) {
   }
 
   return out
+}
+
+/* palworld.gg fuehrt fuenf getrennte Tier Lists. Die sind redaktionelle
+   Meinung, keine Spieldaten - deshalb werden sie in der App auch
+   ueberschreibbar gehalten. */
+const TIER_PAGES = [
+  { id: 'overall', label: 'Gesamt', path: '' },
+  { id: 'work', label: 'Arbeit', path: '/base-work' },
+  { id: 'combat', label: 'Kampf', path: '/combat' },
+  { id: 'flying', label: 'Flugreittiere', path: '/flying-mounts' },
+  { id: 'ground', label: 'Bodenreittiere', path: '/ground-mounts' },
+]
+
+/**
+ * Zieht die Tier-Zuordnung aus einer Tier-List-Seite.
+ * Aufbau: <div class="tier S"><div class="t-name">S</div><div class="content">
+ *         ... <a href="/pal/shaolong" class="link">
+ * Gelesen wird der Slug aus dem Link, nicht der alt-Text - der Slug ist der
+ * Schluessel, ueber den auch der Rest der Daten haengt.
+ */
+function parseTierList(html) {
+  // Bewusst per split statt per Lookahead-Regex: eine Ende-Markierung wie
+  // </div></div></div> kommt schon innerhalb des ersten Blocks vor und
+  // schneidet ihn ab (kostete erst 75 von 299 Pals und die komplette
+  // D-Stufe). Aufteilen an den Tier-Markern ist eindeutig.
+  const names = [...html.matchAll(/<div class="tier ([A-Z]+)">/g)].map(m => m[1])
+  const parts = html.split(/<div class="tier [A-Z]+">/).slice(1)
+
+  const tiers = {}
+  parts.forEach((body, i) => {
+    // Jeder Block endet, wo der naechste beginnt bzw. am Dokumentende.
+    const end = body.indexOf('<div class="tier ')
+    const seg = end >= 0 ? body.slice(0, end) : body
+    const slugs = [...new Set([...seg.matchAll(/href="\/pal\/([^"]+)"/g)].map(m => m[1]))]
+    if (slugs.length) tiers[names[i]] = slugs
+  })
+  return tiers
 }
 
 // --------------------------------------------------------------------- Main
@@ -200,23 +253,47 @@ async function main() {
   const toSlug = name => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
   log(`[5/5] ${db.Pals.length} Detailseiten von palworld.gg (${THROTTLE_MS} ms Pause) ...`)
 
-  const enrichment = new Map()
-  const noPage = []
+  // Der Durchlauf folgt der Sitemap, nicht den PalCalc-Namen, und verknuepft
+  // ueber den internen Namen. Ueber den Anzeigenamen zu gehen war fehleranfaellig:
+  // palworld.gg nennt "Snock Terra" -> "Snock Lux", was den Pal komplett aus
+  // den Zusatzdaten UND aus der Tier List geworfen hat.
+  const palcalcInternal = new Set(db.Pals.map(p => p.InternalName))
+  const enrichment = new Map()      // InternalName -> Zusatzdaten
+  const slugToInternal = new Map()
+  const nurAufGg = []
+  const fehlgeschlagen = []
   let done = 0
-  for (const pal of db.Pals) {
-    const slug = toSlug(pal.Name)
-    if (!slugs.has(slug)) {
-      noPage.push(pal.Name)
-    } else {
-      try {
-        enrichment.set(pal.InternalName, parsePalPage(await fetchText(SRC.palPage(slug))))
-      } catch (err) {
-        noPage.push(`${pal.Name} (${err.message})`)
+
+  for (const slug of slugs) {
+    try {
+      const data = parsePalPage(await fetchText(SRC.palPage(slug)))
+      if (!data.internalName) {
+        fehlgeschlagen.push(`${slug} (kein Icon gefunden)`)
+      } else {
+        slugToInternal.set(slug, data.internalName)
+        if (palcalcInternal.has(data.internalName)) enrichment.set(data.internalName, data)
+        else nurAufGg.push(`${data.ggName || slug} (${data.internalName})`)
       }
+    } catch (err) {
+      fehlgeschlagen.push(`${slug} (${err.message})`)
     }
-    if (++done % 50 === 0) log(`      ${done}/${db.Pals.length}`)
+    if (++done % 50 === 0) log(`      ${done}/${slugs.size}`)
   }
-  log(`      fertig. Ohne Detailseite: ${noPage.length}${noPage.length ? ' -> ' + noPage.join(', ') : ''}`)
+
+  // Sonderformen ohne eigene Seite (z. B. Gumoss' Bluetenvariante
+  // PlantSlime_Flower) erben die Zusatzdaten der Grundform - Typ und Drops
+  // sind dort identisch.
+  for (const p of db.Pals) {
+    if (enrichment.has(p.InternalName) || !p.InternalName.includes('_')) continue
+    const base = enrichment.get(p.InternalName.split('_')[0])
+    if (base) enrichment.set(p.InternalName, base)
+  }
+
+  const ohneZusatz = db.Pals.filter(p => !enrichment.has(p.InternalName)).map(p => p.Name)
+  log(`      fertig. Ohne Zusatzdaten: ${ohneZusatz.length}` +
+      (ohneZusatz.length ? ' -> ' + ohneZusatz.join(', ') : ''))
+  if (nurAufGg.length) log(`      nur auf palworld.gg, fehlt in PalCalc: ${nurAufGg.join(', ')}`)
+  if (fehlgeschlagen.length) log(`      nicht lesbar: ${fehlgeschlagen.join(', ')}`)
 
   // --- Zusammenfuehren ---------------------------------------------------
   // --- Icons pruefen -----------------------------------------------------
@@ -255,6 +332,42 @@ async function main() {
     const missing = db.Pals.filter(p => !iconMap[p.InternalName])
     log(`      Rueckfall auf Grundform: ${fallbacks.length}${fallbacks.length ? ' -> ' + fallbacks.map(p => p.Name).join(', ') : ''}`)
     log(`      ohne Icon: ${missing.length}${missing.length ? ' -> ' + missing.map(p => p.Name).join(', ') : ''}`)
+  }
+
+  // --- Tier Lists -------------------------------------------------------
+  log('\n[7/7] Tier Lists von palworld.gg ...')
+  // Tier-Zuordnung ebenfalls ueber den internen Namen statt ueber den Slug.
+  const internalToIndex = new Map(db.Pals.map((p, i) => [p.InternalName, i]))
+  const slugToIndex = new Map(
+    [...slugToInternal].map(([slug, internal]) => [slug, internalToIndex.get(internal)])
+      .filter(([, i]) => i !== undefined))
+
+  // palworld.gg ist mit sich selbst uneins: die Sitemap fuehrt den Pal als
+  // "snock-lux", die Tier List verlinkt ihn als "snock-terra". Fuer solche
+  // Faelle zusaetzlich ueber den PalCalc-Namen aufloesen.
+  db.Pals.forEach((p, i) => {
+    const s = toSlug(p.Name)
+    if (!slugToIndex.has(s)) slugToIndex.set(s, i)
+  })
+  const TIERLISTS = {}
+  for (const t of TIER_PAGES) {
+    const raw = parseTierList(await fetchText(SRC.tierList(t.path)))
+    const tiers = {}
+    let hits = 0
+    const missed = []
+    for (const [tier, tslugs] of Object.entries(raw)) {
+      const idx = []
+      for (const s of tslugs) {
+        const i = slugToIndex.get(s)
+        if (i === undefined) missed.push(s)
+        else idx.push(i)
+      }
+      hits += idx.length
+      if (idx.length) tiers[tier] = idx
+    }
+    TIERLISTS[t.id] = { label: t.label, tiers }
+    log(`      ${t.label.padEnd(16)} ${hits} Pals in ${Object.keys(tiers).length} Stufen` +
+        (missed.length ? ` (ohne Zuordnung: ${missed.join(', ')})` : ''))
   }
 
   const passiveNameById = new Map(db.PassiveSkills.map(p => [p.InternalName, p.Name]))
@@ -360,6 +473,7 @@ async function main() {
     palsWithHabitat: PALS.filter(p => p.habitat).length,
     palsWithIcon: PALS.filter(p => p.icon).length,
     palsWithPartnerSkill: PALS.filter(p => p.partnerSkill).length,
+    tierLists: Object.keys(TIERLISTS).length,
   }
 
   const js = `// AUTO-GENERIERT von tools/generate-paldex.mjs - nicht von Hand bearbeiten.
@@ -384,6 +498,10 @@ const BREEDING_MECHANICS = ${JSON.stringify(db.BreedingMechanics, null, 1)};
 
 const ELEMENTS = ${JSON.stringify(ELEMENTS)};
 const WORK_TYPES = ${JSON.stringify(WORK_TYPES)};
+
+// Tier Lists von palworld.gg - redaktionelle Einschaetzung, keine Spieldaten.
+// Werte sind PALS-Indizes. In der App ueberschreibbar.
+const TIERLISTS = ${JSON.stringify(TIERLISTS, null, 1)};
 `
 
   await writeFile(OUT_FILE, js, 'utf8')

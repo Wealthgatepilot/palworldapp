@@ -131,6 +131,82 @@ input, select { font-family: inherit; font-size: 16px; }
 .elem.Dark     { background: #6b4a91; }
 .elem.Dragon   { background: #6f5bd4; }
 
+/* ============ Untertabs ============ */
+.subtab-bar {
+  display: flex; gap: 6px; overflow-x: auto; margin-bottom: 10px;
+  padding-bottom: 2px; scrollbar-width: none;
+}
+.subtab-bar::-webkit-scrollbar { display: none; }
+.subtab {
+  background: var(--bg-card-2); border: 1px solid var(--border);
+  border-radius: 9px; padding: 8px 13px; font-size: .82rem;
+  color: var(--text-dim); white-space: nowrap;
+}
+.subtab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ============ Tier List ============ */
+.ov-note {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  background: rgba(43,127,192,.12); border-left: 3px solid var(--accent);
+  border-radius: 9px; padding: 8px 11px; margin-bottom: 10px; font-size: .82rem;
+}
+.tier-row {
+  display: flex; gap: 10px; align-items: stretch; margin-bottom: 8px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 8px;
+}
+.tier-badge {
+  min-width: 44px; border-radius: 9px; font-weight: 800; font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center; color: #10131a;
+}
+.tier-badge.t-S { background: #ff7b72; }
+.tier-badge.t-A { background: #ffa657; }
+.tier-badge.t-B { background: #e3c94b; }
+.tier-badge.t-C { background: #7ee081; }
+.tier-badge.t-D { background: #79c0ff; }
+.tier-pals { flex: 1; display: flex; flex-wrap: wrap; gap: 5px; align-items: flex-start; }
+.tier-pal {
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  background: var(--bg-card-2); border: 1px solid transparent;
+  border-radius: 8px; padding: 4px 5px; width: 62px;
+}
+.tier-pal img { width: 34px; height: 34px; object-fit: contain; }
+.tier-pal span {
+  font-size: .58rem; color: var(--text-dim); line-height: 1.15;
+  max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.tier-pal.custom { border-color: var(--accent); }
+.tier-picker { display: flex; gap: 8px; }
+.tier-picker .tier-badge { flex: 1; height: 48px; opacity: .45; }
+.tier-picker .tier-badge.on { opacity: 1; box-shadow: 0 0 0 2px var(--text) inset; }
+.tool-btn.wide { width: 100%; margin-top: 8px; padding: 12px; }
+
+/* ============ Guide ============ */
+.g-section { margin-bottom: 26px; }
+.g-title { font-size: 1.05rem; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.g-ico { font-size: 1.25rem; }
+.g-p { font-size: .9rem; margin-bottom: 10px; color: #d3dbe6; }
+.g-p b, .g-ul b, .g-steps b { color: var(--text); }
+.g-ul, .g-steps { margin: 0 0 12px 20px; font-size: .88rem; color: #d3dbe6; }
+.g-ul li, .g-steps li { margin-bottom: 6px; }
+.g-note {
+  background: rgba(43,127,192,.12); border-left: 3px solid var(--accent);
+  border-radius: 9px; padding: 10px 12px; margin-bottom: 12px; font-size: .86rem;
+}
+.g-note.warn { background: rgba(241,196,15,.09); border-left-color: var(--yellow); }
+.g-formula {
+  background: var(--bg-card-2); border-radius: 9px; padding: 11px 13px;
+  margin-bottom: 12px; font-size: .84rem; overflow-x: auto;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace; color: var(--accent-2);
+}
+.g-table-wrap { overflow-x: auto; margin-bottom: 12px; }
+.g-table { border-collapse: collapse; width: 100%; font-size: .85rem; }
+.g-table th, .g-table td { padding: 7px 9px; text-align: left; border-bottom: 1px solid var(--border); }
+.g-table th { color: var(--text-dim); font-size: .74rem; text-transform: uppercase; letter-spacing: .4px; }
+.g-passives { margin-bottom: 12px; }
+.g-plabel { font-size: .76rem; color: var(--text-dim); margin-bottom: 5px; }
+code { background: var(--bg-card-2); border-radius: 5px; padding: 1px 5px; font-size: .85em; }
+
 /* ============ Zucht ============ */
 .target-results { list-style: none; margin-bottom: 12px; }
 .target-results li {

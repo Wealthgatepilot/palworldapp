@@ -108,10 +108,27 @@
       </div>
     </section>
 
+    <!-- ---- Tier List ---- -->
     <section id="tab-tier" class="tab-panel">
       <h2 class="panel-title">Tier List</h2>
-      <p class="hint">Kommt als Nächstes: editierbare Tier-Zuordnung, verknüpft mit den Pal-Einträgen.</p>
-      <div class="stub">🏆<span>Noch keine Tiers hinterlegt.</span></div>
+      <p class="hint">Einschätzung von palworld.gg — Meinung, keine Spieldaten, und mit
+        jedem Patch veraltet. Tippe auf eine Stufe eines Pals, um sie selbst zu ändern.</p>
+
+      <div id="tierTabs" class="subtab-bar"></div>
+      <div class="sticky-bar">
+        <input id="tierSearch" class="search-box" type="search"
+               placeholder="🔍 Im Ranking suchen…" autocomplete="off">
+      </div>
+      <div id="tierOverrideNote"></div>
+      <div id="tierRows"></div>
+    </section>
+
+    <!-- ---- Guide ---- -->
+    <section id="tab-guide" class="tab-panel">
+      <h2 class="panel-title">Guide</h2>
+      <p class="hint">Selbst zusammengestellt. Alle Zahlen stammen aus den Spieldaten
+        und sind in <code>paldex.js</code> nachprüfbar.</p>
+      <div id="guideBody"></div>
     </section>
 
   </main>
@@ -121,7 +138,8 @@
     <button class="nav-btn active" data-nav="pals"><span class="nav-ico">📖</span><span>Pals</span></button>
     <button class="nav-btn" data-nav="breeding"><span class="nav-ico">🥚</span><span>Zucht</span></button>
     <button class="nav-btn" data-nav="roster"><span class="nav-ico">📋</span><span>Meine Pals</span></button>
-    <button class="nav-btn" data-nav="tier"><span class="nav-ico">🏆</span><span>Tier List</span></button>
+    <button class="nav-btn" data-nav="tier"><span class="nav-ico">🏆</span><span>Tier</span></button>
+    <button class="nav-btn" data-nav="guide"><span class="nav-ico">📚</span><span>Guide</span></button>
   </nav>
 
   <!-- ============ MODAL (Pal-Detail) ============ -->
@@ -133,6 +151,7 @@
   </div>
 
   <script src="paldex.js"></script>
+  <script src="guide.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

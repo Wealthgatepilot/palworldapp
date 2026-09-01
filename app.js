@@ -552,6 +552,155 @@ function renderSuggest(listEl, query, action) {
 }
 
 /* ============================================================
+   Tier List
+   ============================================================ */
+
+const TIER_ORDER = ['S', 'A', 'B', 'C', 'D'];
+const OVERRIDE_KEY = 'palworldapp-tier-overrides-v1';
+
+/** Eigene Einstufungen: { [listId]: { [palKey]: 'S'|'A'|... } } */
+let tierOverrides = {};
+try { tierOverrides = JSON.parse(localStorage.getItem(OVERRIDE_KEY)) || {}; } catch { tierOverrides = {}; }
+const saveOverrides = () => {
+  try { localStorage.setItem(OVERRIDE_KEY, JSON.stringify(tierOverrides)); } catch { /* egal */ }
+};
+
+let tierList = 'overall';
+let tierQuery = '';
+
+/** Effektive Stufe eines Pals: eigene Einstufung schlägt die von palworld.gg. */
+function effectiveTiers(listId) {
+  const base = TIERLISTS[listId].tiers;
+  const ov = tierOverrides[listId] || {};
+  const out = {};
+  for (const t of TIER_ORDER) out[t] = [];
+
+  const placed = new Set();
+  for (const [tier, idxs] of Object.entries(base)) {
+    for (const i of idxs) {
+      const key = PALS[i].key;
+      const t = ov[key] || tier;
+      if (out[t]) { out[t].push(i); placed.add(key); }
+    }
+  }
+  // Pals, die in dieser Liste gar nicht vorkamen, aber eigenhändig einsortiert wurden
+  for (const [key, t] of Object.entries(ov)) {
+    if (placed.has(key) || !out[t]) continue;
+    const p = PALS.find(x => x.key === key);
+    if (p) out[t].push(p.i);
+  }
+  return out;
+}
+
+function renderTierList() {
+  $('#tierTabs').innerHTML = Object.entries(TIERLISTS).map(([id, l]) =>
+    `<button class="subtab${id === tierList ? ' active' : ''}"
+      data-action="tier-list" data-list="${esc(id)}">${esc(l.label)}</button>`).join('');
+
+  const ovCount = Object.keys(tierOverrides[tierList] || {}).length;
+  $('#tierOverrideNote').innerHTML = ovCount
+    ? `<div class="ov-note">${ovCount} eigene ${ovCount === 1 ? 'Einstufung' : 'Einstufungen'}
+       in dieser Liste <button class="tool-btn" data-action="tier-reset">zurücksetzen</button></div>`
+    : '';
+
+  const tiers = effectiveTiers(tierList);
+  const q = tierQuery.trim().toLowerCase();
+  const ov = tierOverrides[tierList] || {};
+
+  $('#tierRows').innerHTML = TIER_ORDER.map(t => {
+    const pals = tiers[t]
+      .map(i => PALS[i])
+      .filter(p => !q || p.name.toLowerCase().includes(q))
+      .sort((a, b) => a.dex - b.dex);
+    if (q && !pals.length) return '';
+
+    return `<div class="tier-row">
+      <div class="tier-badge t-${t}">${t}</div>
+      <div class="tier-pals">
+        ${pals.length ? pals.map(p => `<button class="tier-pal${ov[p.key] ? ' custom' : ''}"
+            data-action="tier-pal" data-key="${esc(p.key)}" title="${esc(p.name)}">
+            ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
+            <span>${esc(p.name)}</span>
+          </button>`).join('')
+          : '<span class="no-data">—</span>'}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/** Kleines Auswahlfenster: Stufe ändern oder zum Pal springen. */
+function openTierPicker(key) {
+  const p = PALS.find(x => x.key === key);
+  const ov = tierOverrides[tierList] || {};
+  const current = ov[key] || TIER_ORDER.find(t =>
+    (TIERLISTS[tierList].tiers[t] || []).includes(p.i));
+
+  $('#modalContent').innerHTML = `
+    <div class="dex-head">
+      ${p.icon ? `<img src="${esc(p.icon)}" alt="">` : ''}
+      <div class="h-main">
+        <h2>${esc(p.name)}</h2>
+        <div class="h-title">${esc(TIERLISTS[tierList].label)} · aktuell
+          ${current ? 'Stufe ' + current : 'nicht eingestuft'}</div>
+      </div>
+    </div>
+    <div class="dex-section-title">Stufe ändern</div>
+    <div class="tier-picker">
+      ${TIER_ORDER.map(t => `<button class="tier-badge t-${t}${t === current ? ' on' : ''}"
+        data-action="tier-set" data-key="${esc(key)}" data-tier="${t}">${t}</button>`).join('')}
+    </div>
+    ${ov[key] ? `<button class="tool-btn wide" data-action="tier-clear"
+      data-key="${esc(key)}">Eigene Einstufung entfernen</button>` : ''}
+    <div class="dex-section-title">Pal</div>
+    <button class="tool-btn wide" data-action="open-pal" data-key="${esc(key)}">
+      Alle Daten zu ${esc(p.name)} ansehen</button>`;
+  $('#modalOverlay').hidden = false;
+}
+
+/* ============================================================
+   Guide
+   ============================================================ */
+
+function renderGuide() {
+  const block = b => {
+    switch (b.t) {
+      case 'p':
+        return `<p class="g-p">${b.text}</p>`;
+      case 'ul':
+        return `<ul class="g-ul">${b.items.map(x => `<li>${x}</li>`).join('')}</ul>`;
+      case 'steps':
+        return `<ol class="g-steps">${b.items.map(x => `<li>${x}</li>`).join('')}</ol>`;
+      case 'note':
+        return `<div class="g-note${b.kind === 'warn' ? ' warn' : ''}">${b.text}</div>`;
+      case 'formula':
+        return `<pre class="g-formula">${esc(b.text)}</pre>`;
+      case 'table':
+        return `<div class="g-table-wrap"><table class="g-table">
+          <tr>${b.head.map(h => `<th>${esc(h)}</th>`).join('')}</tr>
+          ${b.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}
+        </table></div>`;
+      case 'passives': {
+        // Direkt aus den Spieldaten, damit die Liste nie veraltet
+        const list = PASSIVES.filter(p => p.rank === b.rank);
+        return `<div class="g-passives">
+          <div class="g-plabel">${esc(b.label)}</div>
+          <div class="chip-row">${list.map(p =>
+            `<span class="chip pass" title="${esc(p.description || '')}">${esc(p.name)}</span>`
+          ).join('')}</div></div>`;
+      }
+      default:
+        return '';
+    }
+  };
+
+  $('#guideBody').innerHTML = GUIDE.map(s => `
+    <section class="g-section">
+      <h3 class="g-title"><span class="g-ico">${s.icon}</span>${esc(s.title)}</h3>
+      ${s.blocks.map(block).join('')}
+    </section>`).join('');
+}
+
+/* ============================================================
    Verdrahtung
    ============================================================ */
 
@@ -577,6 +726,8 @@ function init() {
   initFilters();
   renderBreeding();
   renderRoster();
+  renderTierList();
+  renderGuide();
 
   // Header-Hoehe an die echte Hoehe angleichen (Notch/Safe-Area)
   const syncHeader = () => document.documentElement.style
@@ -594,6 +745,11 @@ function init() {
 
   $('#rosterInput').addEventListener('input', e =>
     renderSuggest($('#rosterSuggest'), e.target.value, 'roster-add'));
+
+  $('#tierSearch').addEventListener('input', e => {
+    tierQuery = e.target.value;
+    renderTierList();
+  });
 
   $('#rosterFile').addEventListener('change', async e => {
     const file = e.target.files[0];
@@ -710,6 +866,36 @@ function init() {
       }
       case 'roster-import':
         $('#rosterFile').click();
+        break;
+
+      /* ---- Tier List ---- */
+      case 'tier-list':
+        tierList = act.dataset.list;
+        renderTierList();
+        break;
+      case 'tier-pal':
+        openTierPicker(act.dataset.key);
+        break;
+      case 'tier-set': {
+        (tierOverrides[tierList] ||= {})[act.dataset.key] = act.dataset.tier;
+        saveOverrides();
+        renderTierList();
+        $('#modalOverlay').hidden = true;
+        break;
+      }
+      case 'tier-clear':
+        if (tierOverrides[tierList]) delete tierOverrides[tierList][act.dataset.key];
+        saveOverrides();
+        renderTierList();
+        $('#modalOverlay').hidden = true;
+        break;
+      case 'tier-reset':
+        delete tierOverrides[tierList];
+        saveOverrides();
+        renderTierList();
+        break;
+      case 'open-pal':
+        openPal(act.dataset.key);
         break;
     }
   });

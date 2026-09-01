@@ -20,6 +20,7 @@ const ASSETS = [
   './style.css',
   './app.js',
   './paldex.js',
+  './guide.js',
   './icon.svg',
   './manifest.json'
 ];

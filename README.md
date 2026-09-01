@@ -13,8 +13,8 @@ Pal-Bestand wird von Hand gepflegt und liegt im `localStorage` (Import/Export al
 | **Pal-Datenbank** | ✅ | Suche über Name/Titel/Drops, Filter nach Element, Arbeitstyp mit Mindestlevel, nachtaktiv und Varianten. Detailansicht mit Werten, Arbeitseignung, Drops, Partner-Skill und Habitat-Karte (Tag/Nacht). |
 | **Zucht / Pathfinder** | ✅ | Ziel-Pal wählen → kürzester Zuchtplan aus dem eigenen Bestand, plus alle direkten Elternpaare. |
 | **Meine Pals** | ✅ | Manuell gepflegter Bestand mit Geschlecht, im `localStorage`, Import/Export als JSON. |
-| **Tier List** | offen | Eigene, editierbare Zuordnung — mit den Pal-Einträgen verknüpft, Tiers überschreibbar. |
-| **Guide** | offen | Zuchtgrundlagen, Passive-Prioritäten, Basis-Setups, gängige Zuchtketten. |
+| **Tier List** | ✅ | Fünf Ranglisten von palworld.gg (Gesamt, Arbeit, Kampf, Flug-/Bodenreittiere), S–D, mit Namen an jedem Pal. Jede Einstufung selbst überschreibbar, Overrides im `localStorage`. |
+| **Guide** | ✅ | Zuchtgrundlagen, Passive-Vererbung mit den echten Wahrscheinlichkeiten aus den Spieldaten, Arbeitseignung, Vorgehen — und was das Tool *nicht* kann. |
 | **Karte** | ✅ | Link auf palworld.gg (keine eigenen Kacheln/Marker). „Wo finde ich Pal X" löst stattdessen die Habitat-Karte im Detail-Modal. |
 
 ### Wie der Pathfinder rechnet
@@ -46,7 +46,16 @@ Quellen (beide MIT-lizenziert):
   `BreedingMechanics`, Vererbungswahrscheinlichkeiten
 
 Zuchtformel: `Kind-Rank = floor((RankA + RankB + 1) / 2)`, dann die Spezies mit dem
-nächstliegenden Rank — plus Override-Tabelle für die Unique-Combos.
+nächstliegenden Rank — plus Override-Tabelle für die Unique-Combos. PalCalc liefert
+die Tabelle fertig ausgerechnet, sie muss nicht nachgebaut werden.
+
+**Verknüpft wird über den internen Namen** (`InternalName`), nicht über Anzeigenamen
+oder Slugs. Die weichen zwischen den Quellen ab: palworld.gg nennt PalCalcs
+„Snock Terra" an einer Stelle „Snock Lux" und an anderer wieder „snock-terra".
+Über den Namen zu verknüpfen hat den Pal aus Typdaten *und* Tier List geworfen.
+
+Bekannte Lücke: **Astralym** (`WorldTreeDragon`) steht auf palworld.gg, fehlt aber in
+PalCalc v27 — ohne Zuchtdaten taucht er in der App nicht auf.
 
 ## Deployment
 
