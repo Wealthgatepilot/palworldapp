@@ -59,14 +59,18 @@ PalCalc v27 — ohne Zuchtdaten taucht er in der App nicht auf.
 
 ## Deployment
 
-Push auf `main` → Actions-Workflow `.github/workflows/deploy-pages.yml` veröffentlicht das
-Repo-Root auf GitHub Pages. `.nojekyll` verhindert die Jekyll-Verarbeitung.
+**Pages läuft direkt aus dem Branch, nicht über GitHub Actions.**
+Einstellung: `Settings → Pages → Source: Deploy from a branch`, Branch `main`,
+Ordner `/ (root)`. Danach genügt ein `git push` — es gibt keinen Build-Schritt,
+die Dateien liegen fertig im Repo-Root. `.nojekyll` verhindert die
+Jekyll-Verarbeitung.
 
-Zwei bekannte Stolpersteine (aus dem Nuzlocke-Projekt):
+Ein Actions-Workflow lag hier ursprünglich (`.github/workflows/deploy-pages.yml`,
+in der Git-Historie noch vorhanden), wurde aber entfernt: `actions/configure-pages`
+brach reproduzierbar nach ~10 Sekunden ab, weil der Workflow-Token die Pages-Site
+nicht anlegen durfte — auch mit `enablement: true` nicht. Branch-Deploy braucht
+diese Berechtigung gar nicht erst.
 
-- Der Deploy-Job kann mit „Timeout reached" **rot fehlschlagen, obwohl korrekt
-  veröffentlicht wurde** ([actions/deploy-pages#406](https://github.com/actions/deploy-pages/issues/406)).
-  Erst live prüfen, nicht blind neu deployen — und die Pages-Source **nicht** auf None
-  zurücksetzen.
-- Bei Updates `CACHE_NAME` in `sw.js` hochzählen, sonst liefert der cache-first Service
-  Worker die alte Version aus.
+Stolperstein bei Updates: **`CACHE_NAME` in `sw.js` hochzählen**, sonst liefert der
+cache-first Service Worker die alte Version aus. Der Service Worker registriert sich
+auf `localhost` bewusst nicht, damit lokale Änderungen sofort sichtbar sind.
