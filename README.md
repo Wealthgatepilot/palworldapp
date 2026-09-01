@@ -1,4 +1,4 @@
-# palworld-tool
+# palworldapp
 
 Persönliches Palworld-Begleittool: Zucht-Pathfinder, Pal-Datenbank, Tier List und Guide.
 Mobile-first PWA, reines HTML/CSS/JS, **kein Build-Schritt**, läuft über GitHub Pages.
