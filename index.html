@@ -73,20 +73,39 @@
       <button id="loadMore" class="add-btn" data-action="load-more" hidden>Weitere anzeigen</button>
     </section>
 
-    <!-- ---- Platzhalter für die nächsten Ausbaustufen ---- -->
+    <!-- ---- Zucht ---- -->
     <section id="tab-breeding" class="tab-panel">
       <h2 class="panel-title">Zucht</h2>
-      <p class="hint">Kommt als Nächstes: Reverse-Lookup (welche Eltern ergeben Pal X)
-        und der Pathfinder mit deinem eigenen Bestand.</p>
-      <div class="stub">🥚<span>Die Datenbasis steht bereits: <b id="stubPairs">–</b> Zuchtpaare
-        sind geladen, inklusive der Unique-Combos.</span></div>
+      <div class="sticky-bar">
+        <input id="targetSearch" class="search-box" type="search"
+               placeholder="🎯 Ziel-Pal wählen…" autocomplete="off">
+      </div>
+      <ul id="targetResults" class="target-results"></ul>
+      <div id="breedResult"></div>
     </section>
 
+    <!-- ---- Meine Pals ---- -->
     <section id="tab-roster" class="tab-panel">
       <h2 class="panel-title">Meine Pals</h2>
-      <p class="hint">Kommt als Nächstes: dein eigener Bestand als Basis für den Pathfinder.
-        Wird von Hand gepflegt — PlayStation-Saves lassen sich nicht auslesen.</p>
-      <div class="stub">📋<span>Noch nichts eingetragen.</span></div>
+      <p class="hint">Dein Bestand ist die Grundlage für den Pathfinder. Auf PlayStation
+        lassen sich die Spielstände nicht auslesen — daher von Hand gepflegt.
+        Es reichen die Pals, mit denen du wirklich züchtest.</p>
+
+      <div class="roster-add">
+        <input id="rosterInput" class="search-box" type="search"
+               placeholder="➕ Pal hinzufügen…" autocomplete="off">
+        <ul id="rosterSuggest" class="target-results"></ul>
+      </div>
+
+      <div id="rosterCount" class="result-count"></div>
+      <ul id="rosterList" class="card-list"></ul>
+
+      <div class="section-divider">Daten &amp; Backup</div>
+      <div class="data-tools">
+        <button class="tool-btn" data-action="roster-export">⬇️ Export (JSON)</button>
+        <button class="tool-btn" data-action="roster-import">⬆️ Import (JSON)</button>
+        <input type="file" id="rosterFile" accept="application/json" hidden>
+      </div>
     </section>
 
     <section id="tab-tier" class="tab-panel">

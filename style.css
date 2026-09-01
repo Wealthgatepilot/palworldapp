@@ -131,6 +131,82 @@ input, select { font-family: inherit; font-size: 16px; }
 .elem.Dark     { background: #6b4a91; }
 .elem.Dragon   { background: #6f5bd4; }
 
+/* ============ Zucht ============ */
+.target-results { list-style: none; margin-bottom: 12px; }
+.target-results li {
+  display: flex; align-items: center; gap: 9px; cursor: pointer;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px 10px; margin-bottom: 6px;
+}
+.target-results li:active { border-color: var(--accent); }
+.target-results img { width: 30px; height: 30px; object-fit: contain; }
+.target-results .s-elems { margin-left: auto; font-size: .72rem; color: var(--text-dim); }
+
+.ok-note { font-size: .9rem; margin-bottom: 10px; }
+.ok-note b { color: var(--accent-2); font-size: 1.15rem; }
+
+/* Zuchtplan als nummerierte Schrittliste */
+.step-list { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-top: 4px; }
+.step-row {
+  display: flex; gap: 9px; align-items: flex-start;
+  background: var(--bg-card-2); border-radius: 10px; padding: 8px 10px;
+}
+.step-no {
+  min-width: 24px; height: 24px; border-radius: 7px; background: var(--accent);
+  color: #fff; font-size: .78rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.step-main { flex: 1; min-width: 0; }
+.step-eq { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: .88rem; }
+.step-eq .x, .step-eq .arrow { color: var(--text-dim); }
+.step-eq .arrow { font-weight: 700; }
+.pp.bred { color: var(--accent-2); }
+.tn-tag {
+  margin-left: auto; font-size: .68rem; color: var(--text-dim);
+  background: var(--bg-elev); border-radius: 6px; padding: 2px 7px; white-space: nowrap;
+}
+.tn-warn {
+  font-size: .78rem; color: var(--yellow);
+  background: rgba(241,196,15,.09); border-radius: 8px;
+  padding: 6px 9px; margin: 4px 0 0 14px;
+}
+
+.pair-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.pair-row {
+  display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 7px 10px; font-size: .88rem;
+}
+.pair-row.both { border-color: var(--green); }
+.pair-row .x { color: var(--text-dim); }
+.pp { display: flex; align-items: center; gap: 5px; }
+.pp img { width: 26px; height: 26px; object-fit: contain; }
+.pp.mine { color: var(--green); font-weight: 600; }
+
+/* ============ Bestand ============ */
+.roster-add { margin-bottom: 6px; }
+.roster-card { display: flex; align-items: center; gap: 10px; }
+.roster-card img { width: 40px; height: 40px; object-fit: contain; }
+.r-main { flex: 1; min-width: 0; }
+.r-name { font-weight: 700; }
+.r-sub { font-size: .78rem; color: var(--text-dim); }
+.gender-btn {
+  width: 40px; height: 40px; border-radius: 9px; font-size: 1.15rem; font-weight: 700;
+  background: var(--bg-elev); color: var(--text-dim);
+}
+.gender-btn.g-M { background: #1d4e77; color: #9fd2ff; }
+.gender-btn.g-F { background: #6b2f52; color: #ffb9dd; }
+.mini-btn {
+  background: var(--bg-elev); border-radius: 8px; width: 40px; height: 40px; font-size: 1rem;
+}
+.section-divider {
+  margin: 22px 0 10px; font-size: .75rem; text-transform: uppercase;
+  letter-spacing: .6px; color: var(--text-dim);
+  border-bottom: 1px solid var(--border); padding-bottom: 4px;
+}
+.data-tools { display: flex; gap: 8px; }
+.data-tools .tool-btn { flex: 1; }
+
 /* ============ Platzhalter-Kacheln ============ */
 .stub {
   background: var(--bg-card); border: 1px dashed var(--border);

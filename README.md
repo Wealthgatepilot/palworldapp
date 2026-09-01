@@ -6,16 +6,34 @@ Mobile-first PWA, reines HTML/CSS/JS, **kein Build-Schritt**, läuft über GitHu
 Gespielt wird auf PlayStation — es gibt daher **keine Savefile-Anbindung**. Der eigene
 Pal-Bestand wird von Hand gepflegt und liegt im `localStorage` (Import/Export als JSON).
 
-## Geplante Bereiche
+## Bereiche
 
-| Bereich | Inhalt |
-| --- | --- |
-| **Zucht / Pathfinder** | Ziel-Pal wählen → Zuchtbaum. Zwei Modi: „von Grund auf" und „mit meinen Pals" (Standard). Pro Knoten Work Suitability und Passive-Wahrscheinlichkeiten. |
-| **Meine Pals** | Manuell gepflegtes Roster (Spezies, Geschlecht, Passives) als Basis für den Pathfinder. |
-| **Pal-Datenbank** | Suche nach Name, Filter nach Typ, Work-Level, Drops, Größe. |
-| **Tier List** | Eigene, editierbare Datei — mit den Pal-Einträgen verknüpft, Tiers überschreibbar. |
-| **Guide** | Zuchtgrundlagen, Passive-Prioritäten, Basis-Setups, gängige Zuchtketten. |
-| **Karte** | Link auf eine externe Interaktivkarte (keine eigenen Kacheln/Marker). |
+| Bereich | Stand | Inhalt |
+| --- | --- | --- |
+| **Pal-Datenbank** | ✅ | Suche über Name/Titel/Drops, Filter nach Element, Arbeitstyp mit Mindestlevel, nachtaktiv und Varianten. Detailansicht mit Werten, Arbeitseignung, Drops, Partner-Skill und Habitat-Karte (Tag/Nacht). |
+| **Zucht / Pathfinder** | ✅ | Ziel-Pal wählen → kürzester Zuchtplan aus dem eigenen Bestand, plus alle direkten Elternpaare. |
+| **Meine Pals** | ✅ | Manuell gepflegter Bestand mit Geschlecht, im `localStorage`, Import/Export als JSON. |
+| **Tier List** | offen | Eigene, editierbare Zuordnung — mit den Pal-Einträgen verknüpft, Tiers überschreibbar. |
+| **Guide** | offen | Zuchtgrundlagen, Passive-Prioritäten, Basis-Setups, gängige Zuchtketten. |
+| **Karte** | ✅ | Link auf palworld.gg (keine eigenen Kacheln/Marker). „Wo finde ich Pal X" löst stattdessen die Habitat-Karte im Detail-Modal. |
+
+### Wie der Pathfinder rechnet
+
+Ein Pal entsteht aus **zwei** Eltern, die beide erst gezüchtet sein wollen — das
+ist kein normaler Graph, sondern eine Hyperkante. Gemessen wird in Generationen:
+
+```
+Kosten(Kind) = max(Kosten(ElternA), Kosten(ElternB)) + 1
+```
+
+Das `max` ist entscheidend. Mit einer Summe würde jeder gemeinsam genutzte
+Zwischenschritt doppelt gezählt, und die Wege explodierten (Anubis kam so auf
+2970 statt 21 Schritte), obwohl man einen einmal gezüchteten Pal ja weiter
+benutzt. Weil die Kosten nie sinken, löst ein Dijkstra das Problem.
+
+Ausgegeben wird kein Baum, sondern eine **deduplizierte, topologisch sortierte
+Schrittliste** — derselbe Zwischen-Pal taucht in einem Baum vielfach auf,
+gezüchtet wird er aber nur einmal.
 
 ## Daten
 
