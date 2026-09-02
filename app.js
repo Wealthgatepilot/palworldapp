@@ -116,7 +116,91 @@ function renderList() {
    Detail-Modal
    ============================================================ */
 
-function openPal(key) {
+/** Wechselt den Tab. Wird auch aus Modalen heraus aufgerufen. */
+function showTab(name) {
+  document.querySelectorAll('.nav-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.nav === name));
+  document.querySelectorAll('.tab-panel').forEach(s =>
+    s.classList.toggle('active', s.id === 'tab-' + name));
+  window.scrollTo(0, 0);
+}
+
+/**
+ * Zuchtabschnitt fürs Detailfenster: der kürzeste Weg aus dem eigenen
+ * Bestand UND die allgemeinen Elternpaare. Bewusst gekürzt — der volle
+ * Umfang steht im Zucht-Tab, hierher gehört die schnelle Antwort.
+ */
+function breedingSection(p) {
+  buildBreedIndexes();
+  const pairs = childToPairs[p.i];
+  const ownedKeys = new Set(roster.map(r => r.key));
+  const ownedIdx = PALS.filter(x => ownedKeys.has(x.key)).map(x => x.i);
+
+  /* --- Weg aus dem eigenen Bestand --- */
+  let mine;
+  if (ownedKeys.has(p.key)) {
+    mine = '<p class="ok-note">✅ Diesen Pal hast du bereits.</p>';
+  } else if (!ownedIdx.length) {
+    mine = `<p class="no-data">Noch kein eigener Bestand hinterlegt — trage unter
+      „Meine Pals“ ein, was du besitzt, dann steht hier dein kürzester Weg.</p>`;
+  } else {
+    const { cost, via } = solvePath(ownedIdx);
+    if (!isFinite(cost[p.i])) {
+      mine = `<p class="no-data">Aus deinem Bestand nicht erreichbar. Fang einen der
+        unten gelisteten Eltern-Pals, dann geht es.</p>`;
+    } else {
+      const steps = planSteps(p.i, via, ownedIdx);
+      const gens = cost[p.i];
+      const gezeigt = steps.slice(0, 6);
+      mine = `<p class="ok-note"><b>${steps.length}</b>
+        ${steps.length === 1 ? 'Zuchtschritt' : 'Zuchtschritte'} über <b>${gens}</b>
+        ${gens === 1 ? 'Generation' : 'Generationen'}</p>
+        <ol class="step-list">${renderSteps(gezeigt, ownedIdx)}</ol>
+        ${steps.length > gezeigt.length
+          ? `<p class="no-data">… und ${steps.length - gezeigt.length} weitere Schritte.</p>`
+          : ''}`;
+    }
+  }
+
+  /* --- Allgemeine Möglichkeiten --- */
+  let allgemein;
+  if (!pairs.length) {
+    allgemein = `<p class="no-data">${esc(p.name)} lässt sich nicht erzüchten —
+      es gibt kein Elternpaar, das ihn ergibt.</p>`;
+  } else {
+    const sortiert = pairs.map(([a, b, g]) => ({
+      a, b, g,
+      own: (ownedKeys.has(PALS[a].key) ? 1 : 0) + (ownedKeys.has(PALS[b].key) ? 1 : 0),
+    })).sort((x, y) => y.own - x.own || PALS[x.a].name.localeCompare(PALS[y.a].name));
+
+    const cell = i => `<span class="pp ${ownedKeys.has(PALS[i].key) ? 'mine' : ''}">
+      ${PALS[i].icon ? `<img src="${esc(PALS[i].icon)}" alt="" loading="lazy">` : ''}
+      ${esc(PALS[i].name)}</span>`;
+
+    const top = sortiert.slice(0, 10);
+    allgemein = `<ul class="pair-list">${top.map(({ a, b, g, own }) =>
+      `<li class="pair-row${own === 2 ? ' both' : ''}">${cell(a)}<span class="x">×</span>${cell(b)}
+        ${g ? `<span class="tn-tag">nur ${g === 'MALE' ? '♂ links' : '♀ links'}</span>` : ''}</li>`
+      ).join('')}</ul>
+      ${pairs.length > top.length
+        ? `<p class="no-data">… ${pairs.length - top.length} weitere Paare.
+           Paare mit deinen Pals stehen oben.</p>` : ''}`;
+  }
+
+  return `
+    <div class="dex-section-title">Zucht — dein Weg</div>
+    ${mine}
+    <div class="dex-section-title">Zucht — alle Elternpaare (${pairs.length})</div>
+    ${allgemein}
+    <button class="tool-btn wide" data-action="goto-breeding" data-key="${esc(p.key)}">
+      🥚 Im Zucht-Tab öffnen</button>`;
+}
+
+/**
+ * @param {string} key      InternalName des Pals
+ * @param {string} [tierCtx] Wenn gesetzt: zusätzlich die Tier-Auswahl für diese Liste
+ */
+function openPal(key, tierCtx) {
   const p = PALS.find(x => x.key === key);
   if (!p) return;
 
@@ -186,6 +270,22 @@ function openPal(key) {
     : `<div class="dex-section-title">Wo zu finden</div>
        <p class="no-data">Für diesen Pal liegt keine Habitat-Karte vor.</p>`;
 
+  // Aus der Tier List heraus: Stufe direkt hier ändern können
+  let tierBlock = '';
+  if (tierCtx && TIERLISTS[tierCtx]) {
+    const ov = tierOverrides[tierCtx] || {};
+    const current = ov[key] || TIER_ORDER.find(t =>
+      (TIERLISTS[tierCtx].tiers[t] || []).includes(p.i));
+    tierBlock = `
+      <div class="dex-section-title">Stufe · ${esc(TIERLISTS[tierCtx].label)}</div>
+      <div class="tier-picker">
+        ${TIER_ORDER.map(t => `<button class="tier-badge t-${t}${t === current ? ' on' : ''}"
+          data-action="tier-set" data-key="${esc(key)}" data-tier="${t}">${t}</button>`).join('')}
+      </div>
+      ${ov[key] ? `<button class="tool-btn wide" data-action="tier-clear"
+        data-key="${esc(key)}">Eigene Einstufung entfernen</button>` : ''}`;
+  }
+
   $('#modalContent').innerHTML = `
     <div class="dex-head">
       ${p.icon ? `<img src="${esc(p.icon)}" alt="">` : ''}
@@ -196,6 +296,8 @@ function openPal(key) {
         <div class="pal-elems">${elems}</div>
       </div>
     </div>
+    ${tierBlock}
+    ${breedingSection(p)}
 
     <div class="dex-section-title">Arbeitseignung</div>
     <div class="work-list">${works}</div>
@@ -628,35 +730,6 @@ function renderTierList() {
   }).join('');
 }
 
-/** Kleines Auswahlfenster: Stufe ändern oder zum Pal springen. */
-function openTierPicker(key) {
-  const p = PALS.find(x => x.key === key);
-  const ov = tierOverrides[tierList] || {};
-  const current = ov[key] || TIER_ORDER.find(t =>
-    (TIERLISTS[tierList].tiers[t] || []).includes(p.i));
-
-  $('#modalContent').innerHTML = `
-    <div class="dex-head">
-      ${p.icon ? `<img src="${esc(p.icon)}" alt="">` : ''}
-      <div class="h-main">
-        <h2>${esc(p.name)}</h2>
-        <div class="h-title">${esc(TIERLISTS[tierList].label)} · aktuell
-          ${current ? 'Stufe ' + current : 'nicht eingestuft'}</div>
-      </div>
-    </div>
-    <div class="dex-section-title">Stufe ändern</div>
-    <div class="tier-picker">
-      ${TIER_ORDER.map(t => `<button class="tier-badge t-${t}${t === current ? ' on' : ''}"
-        data-action="tier-set" data-key="${esc(key)}" data-tier="${t}">${t}</button>`).join('')}
-    </div>
-    ${ov[key] ? `<button class="tool-btn wide" data-action="tier-clear"
-      data-key="${esc(key)}">Eigene Einstufung entfernen</button>` : ''}
-    <div class="dex-section-title">Pal</div>
-    <button class="tool-btn wide" data-action="open-pal" data-key="${esc(key)}">
-      Alle Daten zu ${esc(p.name)} ansehen</button>`;
-  $('#modalOverlay').hidden = false;
-}
-
 /* ============================================================
    Guide
    ============================================================ */
@@ -789,13 +862,7 @@ function init() {
     if (card) return openPal(card.dataset.key);
 
     const nav = e.target.closest('.nav-btn');
-    if (nav) {
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b === nav));
-      document.querySelectorAll('.tab-panel').forEach(s =>
-        s.classList.toggle('active', s.id === 'tab-' + nav.dataset.nav));
-      window.scrollTo(0, 0);
-      return;
-    }
+    if (nav) return showTab(nav.dataset.nav);
 
     const act = e.target.closest('[data-action]');
     if (!act) return;
@@ -874,20 +941,21 @@ function init() {
         renderTierList();
         break;
       case 'tier-pal':
-        openTierPicker(act.dataset.key);
+        // Volles Detailfenster inkl. Zucht, plus Tier-Auswahl fuer diese Liste
+        openPal(act.dataset.key, tierList);
         break;
       case 'tier-set': {
         (tierOverrides[tierList] ||= {})[act.dataset.key] = act.dataset.tier;
         saveOverrides();
         renderTierList();
-        $('#modalOverlay').hidden = true;
+        openPal(act.dataset.key, tierList); // offen lassen, neue Stufe zeigen
         break;
       }
       case 'tier-clear':
         if (tierOverrides[tierList]) delete tierOverrides[tierList][act.dataset.key];
         saveOverrides();
         renderTierList();
-        $('#modalOverlay').hidden = true;
+        openPal(act.dataset.key, tierList);
         break;
       case 'tier-reset':
         delete tierOverrides[tierList];
@@ -897,6 +965,16 @@ function init() {
       case 'open-pal':
         openPal(act.dataset.key);
         break;
+      case 'goto-breeding': {
+        const p = PALS.find(x => x.key === act.dataset.key);
+        breedTarget = p.i;
+        $('#targetSearch').value = p.name;
+        $('#targetResults').innerHTML = '';
+        renderBreeding();
+        $('#modalOverlay').hidden = true;
+        showTab('breeding');
+        break;
+      }
     }
   });
 
