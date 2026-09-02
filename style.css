@@ -259,6 +259,36 @@ code { background: var(--bg-card-2); border-radius: 5px; padding: 1px 5px; font-
 .pp img { width: 26px; height: 26px; object-fit: contain; }
 .pp.mine { color: var(--green); font-weight: 600; }
 
+/* ============ Eltern kombinieren ============ */
+.combine-slots { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; }
+.combine-slot { flex: 1; min-width: 0; }
+.cs-label { font-size: .72rem; color: var(--text-dim); margin-bottom: 5px; }
+.combine-x { align-self: center; color: var(--text-dim); font-size: 1.2rem; padding-top: 18px; }
+.cs-picked {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-card); border: 1px solid var(--accent);
+  border-radius: 10px; padding: 7px 8px;
+}
+.cs-picked img { width: 36px; height: 36px; object-fit: contain; }
+.cs-main { flex: 1; min-width: 0; }
+.cs-name { font-weight: 700; font-size: .88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cs-sub { font-size: .7rem; color: var(--text-dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.combine-slot .search-box { height: 38px; font-size: .85rem; width: 100%; }
+
+.combine-outs { display: flex; flex-direction: column; gap: 8px; }
+.combine-out {
+  display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 11px;
+}
+.combine-out:active { border-color: var(--accent); }
+.combine-out img { width: 52px; height: 52px; object-fit: contain; }
+.co-main { flex: 1; min-width: 0; }
+.co-name { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; }
+.co-arrow { color: var(--text-dim); font-size: 1.3rem; }
+.cr-cond { font-size: .74rem; color: var(--yellow); margin-top: 4px; }
+.cr-owned { font-size: .74rem; color: var(--green); margin-top: 3px; }
+
 /* ============ Bestand ============ */
 .roster-add { margin-bottom: 6px; }
 .roster-card { display: flex; align-items: center; gap: 10px; }

@@ -642,6 +642,93 @@ function renderRoster() {
         mit denen du züchten willst — Geschlecht per Tipp auf ♂/♀.</span></div>`;
 }
 
+/* ---- Zwei Eltern frei kombinieren ---- */
+
+/** Ausgewählte Eltern, als PALS-Index oder null. */
+const combine = { a: null, b: null };
+
+/**
+ * Schlägt das Ergebnis eines Elternpaars nach.
+ * Liefert eine Liste, weil zwei Paare geschlechtsabhängig sind und dann
+ * je nach Konstellation zwei verschiedene Kinder möglich sind.
+ */
+function lookupPair(a, b) {
+  buildBreedIndexes();
+  return BREEDING
+    .filter(r => (r[0] === a && r[1] === b) || (r[0] === b && r[1] === a))
+    .map(r => ({ child: r[2], gender: r[3] || null, firstParent: r[0] }));
+}
+
+function renderCombine() {
+  const slot = (which, idx) => {
+    const el = $('#slot' + which.toUpperCase());
+    const inp = $('#search' + which.toUpperCase());
+    if (idx === null) {
+      el.innerHTML = '';
+      inp.hidden = false;
+      return;
+    }
+    const p = PALS[idx];
+    const owned = roster.some(r => r.key === p.key);
+    el.innerHTML = `<div class="cs-picked">
+      ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
+      <div class="cs-main">
+        <div class="cs-name">${esc(p.name)}</div>
+        <div class="cs-sub">${owned ? '✅ im Bestand' : p.elements.join(' · ') || '—'}</div>
+      </div>
+      <button class="mini-btn" data-action="combine-clear" data-which="${which}">✕</button>
+    </div>`;
+    inp.hidden = true;
+  };
+
+  slot('a', combine.a);
+  slot('b', combine.b);
+
+  const box = $('#combineResult');
+  if (combine.a === null || combine.b === null) {
+    box.innerHTML = `<div class="stub">🔀<span>Wähle beide Eltern, dann steht hier
+      das Ergebnis.</span></div>`;
+    return;
+  }
+
+  const results = lookupPair(combine.a, combine.b);
+  if (!results.length) {
+    box.innerHTML = `<div class="dex-section-title">Ergebnis</div>
+      <p class="no-data">Für diese Kombination ist kein Ergebnis hinterlegt.
+      Das sollte eigentlich nicht vorkommen — alle 44.851 Paare sind erfasst.</p>`;
+    return;
+  }
+
+  const karte = ({ child, gender, firstParent }) => {
+    const c = PALS[child];
+    const owned = roster.some(r => r.key === c.key);
+    // Bei geschlechtsabhängigen Sonderfällen sagen, welcher Elternteil männlich sein muss
+    const bedingung = gender
+      ? `<div class="cr-cond">nur wenn <b>${esc(PALS[firstParent].name)}</b>
+         ${gender === 'MALE' ? '♂ männlich' : '♀ weiblich'} ist</div>`
+      : '';
+    return `<button class="combine-out" data-action="open-pal" data-key="${esc(c.key)}">
+      ${c.icon ? `<img src="${esc(c.icon)}" alt="" loading="lazy">` : ''}
+      <div class="co-main">
+        <div class="co-name">${esc(c.name)}</div>
+        <div class="pal-elems">${c.elements.map(e =>
+          `<span class="elem ${esc(e)}">${esc(e)}</span>`).join('')}</div>
+        ${bedingung}
+        ${owned ? '<div class="cr-owned">✅ hast du schon</div>' : ''}
+      </div>
+      <span class="co-arrow">›</span>
+    </button>`;
+  };
+
+  box.innerHTML = `
+    <div class="dex-section-title">Ergebnis${results.length > 1 ? ' (geschlechtsabhängig)' : ''}</div>
+    <div class="combine-outs">${results.map(karte).join('')}</div>
+    ${results.length > 1
+      ? `<p class="no-data">Das ist die einzige Paarung im ganzen Spiel mit zwei
+         möglichen Ergebnissen — welches Kind schlüpft, hängt hier am Geschlecht.</p>`
+      : ''}`;
+}
+
 /** Vorschlagsliste für die beiden Suchfelder (Ziel-Pal und Bestand). */
 function renderSuggest(listEl, query, action) {
   const q = query.trim().toLowerCase();
@@ -801,6 +888,7 @@ function init() {
   renderRoster();
   renderTierList();
   renderGuide();
+  renderCombine();
 
   // Header-Hoehe an die echte Hoehe angleichen (Notch/Safe-Area)
   const syncHeader = () => document.documentElement.style
@@ -823,6 +911,11 @@ function init() {
     tierQuery = e.target.value;
     renderTierList();
   });
+
+  $('#searchA').addEventListener('input', e =>
+    renderSuggest($('#suggestA'), e.target.value, 'combine-a'));
+  $('#searchB').addEventListener('input', e =>
+    renderSuggest($('#suggestB'), e.target.value, 'combine-b'));
 
   $('#rosterFile').addEventListener('change', async e => {
     const file = e.target.files[0];
@@ -888,6 +981,31 @@ function init() {
         break;
       case 'open-map':
         window.open('https://palworld.gg/map', '_blank', 'noopener');
+        break;
+
+      /* ---- Zucht: Modus umschalten ---- */
+      case 'breed-mode': {
+        const mode = act.dataset.mode;
+        document.querySelectorAll('[data-action="breed-mode"]').forEach(b =>
+          b.classList.toggle('active', b === act));
+        $('#breedModeTarget').hidden = mode !== 'target';
+        $('#breedModeCombine').hidden = mode !== 'combine';
+        break;
+      }
+
+      /* ---- Zucht: zwei Eltern kombinieren ---- */
+      case 'combine-a':
+      case 'combine-b': {
+        const which = act.dataset.action.endsWith('a') ? 'a' : 'b';
+        combine[which] = PALS.find(p => p.key === act.dataset.key).i;
+        $('#search' + which.toUpperCase()).value = '';
+        $('#suggest' + which.toUpperCase()).innerHTML = '';
+        renderCombine();
+        break;
+      }
+      case 'combine-clear':
+        combine[act.dataset.which] = null;
+        renderCombine();
         break;
 
       /* ---- Zucht ---- */
@@ -989,7 +1107,18 @@ function init() {
   // hartnaeckig alte Dateien ausliefern und jede Aenderung verschlucken.
   const lokal = ['localhost', '127.0.0.1'].includes(location.hostname);
   if ('serviceWorker' in navigator && !lokal) {
-    navigator.serviceWorker.register('./sw.js').catch(() => { /* offline egal */ });
+    navigator.serviceWorker.register('./sw.js').then(reg => {
+      reg.update();  // bei jedem Start nach einer neueren Version sehen
+    }).catch(() => { /* offline egal */ });
+
+    // Uebernimmt ein neuer Service Worker, einmal neu laden - sonst laeuft die
+    // Seite mit dem alten Code weiter, bis der Nutzer selbst neu startet.
+    let reloading = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (reloading) return;
+      reloading = true;
+      location.reload();
+    });
   }
 }
 

@@ -76,12 +76,44 @@
     <!-- ---- Zucht ---- -->
     <section id="tab-breeding" class="tab-panel">
       <h2 class="panel-title">Zucht</h2>
-      <div class="sticky-bar">
-        <input id="targetSearch" class="search-box" type="search"
-               placeholder="🎯 Ziel-Pal wählen…" autocomplete="off">
+
+      <div class="subtab-bar">
+        <button class="subtab active" data-action="breed-mode" data-mode="target">🎯 Ziel suchen</button>
+        <button class="subtab" data-action="breed-mode" data-mode="combine">🔀 Eltern kombinieren</button>
       </div>
-      <ul id="targetResults" class="target-results"></ul>
-      <div id="breedResult"></div>
+
+      <!-- Modus 1: Ziel vorgeben, Weg dorthin finden -->
+      <div id="breedModeTarget">
+        <div class="sticky-bar">
+          <input id="targetSearch" class="search-box" type="search"
+                 placeholder="🎯 Ziel-Pal wählen…" autocomplete="off">
+        </div>
+        <ul id="targetResults" class="target-results"></ul>
+        <div id="breedResult"></div>
+      </div>
+
+      <!-- Modus 2: zwei Eltern vorgeben, Ergebnis sehen -->
+      <div id="breedModeCombine" hidden>
+        <p class="hint">Wähle zwei Eltern — du siehst sofort, was dabei herauskommt.</p>
+        <div class="combine-slots">
+          <div class="combine-slot">
+            <div class="cs-label">Elternteil A</div>
+            <div id="slotA"></div>
+            <input id="searchA" class="search-box" type="search"
+                   placeholder="🔍 Pal suchen…" autocomplete="off">
+            <ul id="suggestA" class="target-results"></ul>
+          </div>
+          <div class="combine-x">×</div>
+          <div class="combine-slot">
+            <div class="cs-label">Elternteil B</div>
+            <div id="slotB"></div>
+            <input id="searchB" class="search-box" type="search"
+                   placeholder="🔍 Pal suchen…" autocomplete="off">
+            <ul id="suggestB" class="target-results"></ul>
+          </div>
+        </div>
+        <div id="combineResult"></div>
+      </div>
     </section>
 
     <!-- ---- Meine Pals ---- -->
