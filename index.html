@@ -80,6 +80,7 @@
       <div class="subtab-bar">
         <button class="subtab active" data-action="breed-mode" data-mode="target">🎯 Ziel suchen</button>
         <button class="subtab" data-action="breed-mode" data-mode="combine">🔀 Eltern kombinieren</button>
+        <button class="subtab" data-action="breed-mode" data-mode="watch">📌 Merkliste <span id="watchCount"></span></button>
       </div>
 
       <!-- Modus 1: Ziel vorgeben, Weg dorthin finden -->
@@ -113,6 +114,13 @@
           </div>
         </div>
         <div id="combineResult"></div>
+      </div>
+
+      <!-- Modus 3: gemerkte Zuchtziele -->
+      <div id="breedModeWatch" hidden>
+        <p class="hint">Pals, die du später züchten willst. Der Aufwand wird laufend
+          gegen deinen aktuellen Bestand neu berechnet.</p>
+        <div id="watchList"></div>
       </div>
     </section>
 

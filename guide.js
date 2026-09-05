@@ -124,10 +124,10 @@ const GUIDE = [
     title: 'Praktisches Vorgehen',
     blocks: [
       { t: 'steps', items: [
-        'Trage unter <b>Meine Pals</b> ein, was du besitzt — es reichen die Arten, mit ' +
-          'denen du wirklich züchtest.',
-        'Setze bei den wichtigen das Geschlecht. Jede Zucht braucht ♂ und ♀; die App ' +
-          'warnt dich, wenn ein Schritt daran scheitern würde.',
+        'Trage unter <b>Meine Pals</b> ein, welche Arten du besitzt. Jede Art zählt nur ' +
+          'einmal — es geht allein darum, ob du sie hast.',
+        'Optional das Geschlecht setzen. Jede Zucht braucht ♂ und ♀; sind zwei Eltern ' +
+          'nachweislich gleichgeschlechtlich, warnt die App im Zuchtplan.',
         'Wähle im <b>Zucht</b>-Tab dein Ziel. Du bekommst den kürzesten Plan aus deinem ' +
           'Bestand plus alle Elternpaare, die direkt zum Ziel führen.',
         'Ist der Plan lang, lohnt sich fast immer der Blick auf die direkten Elternpaare: ' +
@@ -135,6 +135,11 @@ const GUIDE = [
         'Erst wenn die Art stimmt, kümmere dich um Passives — sonst züchtest du gute ' +
           'Eigenschaften auf die falsche Art.',
       ]},
+      { t: 'note', text: '📌 Was du später angehen willst, kannst du bei jedem Pal auf ' +
+        'die <b>Merkliste</b> setzen. Dort steht laufend, wie viele Schritte du aktuell ' +
+        'davon entfernt bist — und je mehr du einträgst, desto kürzer werden die Wege.' },
+      { t: 'note', text: '🔀 Umgekehrt geht es auch: unter „Eltern kombinieren“ wählst du ' +
+        'zwei beliebige Pals und siehst sofort, was dabei herauskommt.' },
       { t: 'note', text: 'Wo ein Pal wild vorkommt, zeigt die Habitat-Karte im ' +
         'Detailfenster der Pal-Datenbank, umschaltbar zwischen Tag und Nacht.' },
     ],

@@ -116,6 +116,17 @@ function renderList() {
    Detail-Modal
    ============================================================ */
 
+/**
+ * Nach jeder Bestandsaenderung: alles neu zeichnen, was davon abhaengt.
+ * Der Bestand steckt im Zuchtplan, in der Merkliste und im Kombinierer.
+ */
+function afterDataChange() {
+  renderRoster();
+  renderBreeding();
+  renderWatchlist();
+  renderCombine();
+}
+
 /** Wechselt den Tab. Wird auch aus Modalen heraus aufgerufen. */
 function showTab(name) {
   document.querySelectorAll('.nav-btn').forEach(b =>
@@ -173,9 +184,7 @@ function breedingSection(p) {
       own: (ownedKeys.has(PALS[a].key) ? 1 : 0) + (ownedKeys.has(PALS[b].key) ? 1 : 0),
     })).sort((x, y) => y.own - x.own || PALS[x.a].name.localeCompare(PALS[y.a].name));
 
-    const cell = i => `<span class="pp ${ownedKeys.has(PALS[i].key) ? 'mine' : ''}">
-      ${PALS[i].icon ? `<img src="${esc(PALS[i].icon)}" alt="" loading="lazy">` : ''}
-      ${esc(PALS[i].name)}</span>`;
+    const cell = i => palChip(i, ownedKeys.has(PALS[i].key) ? 'mine' : '');
 
     const top = sortiert.slice(0, 10);
     allgemein = `<ul class="pair-list">${top.map(({ a, b, g, own }) =>
@@ -192,8 +201,16 @@ function breedingSection(p) {
     ${mine}
     <div class="dex-section-title">Zucht — alle Elternpaare (${pairs.length})</div>
     ${allgemein}
-    <button class="tool-btn wide" data-action="goto-breeding" data-key="${esc(p.key)}">
-      🥚 Im Zucht-Tab öffnen</button>`;
+    <div class="modal-actions">
+      <button class="tool-btn" data-action="goto-breeding" data-key="${esc(p.key)}">
+        🥚 Im Zucht-Tab</button>
+      <button class="tool-btn${isWatched(p.key) ? ' on' : ''}"
+              data-action="watch-toggle" data-key="${esc(p.key)}">
+        ${isWatched(p.key) ? '📌 gemerkt' : '📌 Merken'}</button>
+      <button class="tool-btn${hasPal(p.key) ? ' on' : ''}"
+              data-action="own-toggle" data-key="${esc(p.key)}">
+        ${hasPal(p.key) ? '✅ im Bestand' : '➕ Besitze ich'}</button>
+    </div>`;
 }
 
 /**
@@ -337,12 +354,36 @@ function openPal(key, tierCtx) {
 
 const ROSTER_KEY = 'palworldapp-roster-v1';
 
-/** Bestand: [{ key, gender }] mit gender 'M' | 'F' | '?' */
+/**
+ * Bestand: [{ key, gender }] mit gender 'M' | 'F' | '?'.
+ * Jede Art steht hoechstens EINMAL drin - es geht nur darum, ob man sie hat.
+ */
 let roster = [];
 try { roster = JSON.parse(localStorage.getItem(ROSTER_KEY)) || []; } catch { roster = []; }
 const saveRoster = () => {
   try { localStorage.setItem(ROSTER_KEY, JSON.stringify(roster)); } catch { /* voll/privat */ }
 };
+
+// Altbestaende koennen Doppelte enthalten (frueher war Mehrfachauswahl moeglich).
+// Bereinigtes Ergebnis gleich zurueckschreiben, sonst schleppt der Speicher
+// die Doppelten weiter mit.
+{
+  const vorher = roster.length;
+  roster = roster.filter((r, i, all) => r && all.findIndex(x => x.key === r.key) === i);
+  if (roster.length !== vorher) saveRoster();
+}
+const hasPal = key => roster.some(r => r.key === key);
+
+/* ---- Merkliste: Pals, die man spaeter zuechten moechte ---- */
+const WATCH_KEY = 'palworldapp-watchlist-v1';
+let watchlist = [];
+try { watchlist = JSON.parse(localStorage.getItem(WATCH_KEY)) || []; } catch { watchlist = []; }
+watchlist = watchlist.filter((k, i, all) => typeof k === 'string' && all.indexOf(k) === i);
+
+const saveWatchlist = () => {
+  try { localStorage.setItem(WATCH_KEY, JSON.stringify(watchlist)); } catch { /* egal */ }
+};
+const isWatched = key => watchlist.includes(key);
 
 /* Indizes werden erst beim ersten Zucht-Aufruf gebaut - der Pals-Tab
    soll nicht auf 45.000 Zeilen warten muessen. */
@@ -361,15 +402,14 @@ function buildBreedIndexes() {
   }
 }
 
-/** Wie viele Exemplare dieser Art hat der Nutzer, und welche Geschlechter? */
+/** Besitzt der Nutzer diese Art, und mit welchem Geschlecht? */
 function ownedInfo(palIdx) {
-  const key = PALS[palIdx].key;
-  const mine = roster.filter(r => r.key === key);
+  const e = roster.find(r => r.key === PALS[palIdx].key);
   return {
-    count: mine.length,
-    male: mine.some(r => r.gender === 'M'),
-    female: mine.some(r => r.gender === 'F'),
-    unknown: mine.some(r => r.gender === '?'),
+    owned: !!e,
+    male: e?.gender === 'M',
+    female: e?.gender === 'F',
+    unknown: !e || e.gender === '?',
   };
 }
 
@@ -488,16 +528,18 @@ function planSteps(targetIdx, via, ownedIdx) {
   return steps;
 }
 
+/** Anklickbarer Pal-Name mit Icon. Oeffnet ueberall das Detailfenster. */
+function palChip(i, extraClass = '') {
+  const p = PALS[i];
+  return `<button class="pp ${extraClass}" data-action="open-pal" data-key="${esc(p.key)}">
+    ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}${esc(p.name)}</button>`;
+}
+
 function renderSteps(steps, ownedIdx) {
   const ownedSet = new Set(ownedIdx);
   const bred = new Set();
 
-  const cell = i => {
-    const p = PALS[i];
-    const tag = ownedSet.has(i) ? 'mine' : (bred.has(i) ? 'bred' : '');
-    return `<span class="pp ${tag}">${p.icon
-      ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}${esc(p.name)}</span>`;
-  };
+  const cell = i => palChip(i, ownedSet.has(i) ? 'mine' : (bred.has(i) ? 'bred' : ''));
 
   return steps.map((s, n) => {
     // Jede Zucht braucht ♂ und ♀. Gewarnt wird nur, wenn beide Eltern im
@@ -583,9 +625,7 @@ function renderBreeding() {
   }).sort((x, y) => y.own - x.own || PALS[x.a].name.localeCompare(PALS[y.a].name));
 
   const rows = scored.slice(0, 80).map(({ a, b, g, own }) => {
-    const cell = i => `<span class="pp ${ownedKeys.has(PALS[i].key) ? 'mine' : ''}">
-      ${PALS[i].icon ? `<img src="${esc(PALS[i].icon)}" alt="" loading="lazy">` : ''}
-      ${esc(PALS[i].name)}</span>`;
+    const cell = i => palChip(i, ownedKeys.has(PALS[i].key) ? 'mine' : '');
     return `<li class="pair-row${own === 2 ? ' both' : ''}">
       ${cell(a)}<span class="x">×</span>${cell(b)}
       ${g ? `<span class="tn-tag">nur ${g === 'MALE' ? '♂ links' : '♀ links'}</span>` : ''}
@@ -619,27 +659,34 @@ function renderBreeding() {
 
 function renderRoster() {
   $('#rosterCount').textContent = roster.length
-    ? `${roster.length} ${roster.length === 1 ? 'Pal' : 'Pals'} im Bestand`
+    ? `${roster.length} von ${PALS.length} Pals`
     : '';
 
-  $('#rosterList').innerHTML = roster.length
-    ? roster.map((r, idx) => {
-        const p = PALS.find(x => x.key === r.key);
-        if (!p) return '';
+  // Nach Namen sortiert, nicht nach Reihenfolge des Eintragens - so findet
+  // man einen Pal wieder, ohne die ganze Liste durchzugehen.
+  const sortiert = roster
+    .map(r => ({ r, p: PALS.find(x => x.key === r.key) }))
+    .filter(x => x.p)
+    .sort((a, b) => a.p.name.localeCompare(b.p.name));
+
+  $('#rosterList').innerHTML = sortiert.length
+    ? sortiert.map(({ r, p }) => {
         const g = { M: '♂', F: '♀', '?': '?' }[r.gender] || '?';
         return `<li class="card roster-card">
-          ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
-          <div class="r-main">
-            <div class="r-name">${esc(p.name)}</div>
-            <div class="r-sub">${p.elements.join(' · ') || '—'}</div>
-          </div>
+          <button class="r-open" data-action="open-pal" data-key="${esc(p.key)}">
+            ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
+            <div class="r-main">
+              <div class="r-name">${esc(p.name)}</div>
+              <div class="r-sub">${p.elements.join(' · ') || '—'}</div>
+            </div>
+          </button>
           <button class="gender-btn g-${r.gender}" data-action="roster-gender"
-                  data-idx="${idx}" title="Geschlecht umschalten">${g}</button>
-          <button class="mini-btn" data-action="roster-del" data-idx="${idx}">🗑️</button>
+                  data-key="${esc(p.key)}" title="Geschlecht (optional)">${g}</button>
+          <button class="mini-btn" data-action="roster-del" data-key="${esc(p.key)}">🗑️</button>
         </li>`;
       }).join('')
-    : `<div class="stub">📋<span>Noch nichts eingetragen. Trage die Pals ein,
-        mit denen du züchten willst — Geschlecht per Tipp auf ♂/♀.</span></div>`;
+    : `<div class="stub">📋<span>Noch nichts eingetragen. Trage ein, welche Arten du
+        besitzt — jede genügt einmal. Der Zucht-Tab rechnet dann damit.</span></div>`;
 }
 
 /* ---- Zwei Eltern frei kombinieren ---- */
@@ -729,15 +776,81 @@ function renderCombine() {
       : ''}`;
 }
 
-/** Vorschlagsliste für die beiden Suchfelder (Ziel-Pal und Bestand). */
+/* ---- Merkliste ---- */
+
+function renderWatchlist() {
+  const badge = $('#watchCount');
+  badge.textContent = watchlist.length ? watchlist.length : '';
+  badge.className = watchlist.length ? 'count-badge' : '';
+
+  const box = $('#watchList');
+  if (!watchlist.length) {
+    box.innerHTML = `<div class="stub">📌<span>Noch nichts gemerkt. Tippe bei einem Pal
+      auf „Merken“ — hier siehst du dann, wie weit du jeweils davon entfernt bist.</span></div>`;
+    return;
+  }
+
+  buildBreedIndexes();
+  const ownedKeys = new Set(roster.map(r => r.key));
+  const ownedIdx = PALS.filter(x => ownedKeys.has(x.key)).map(x => x.i);
+  // Einmal loesen und fuer alle Eintraege nutzen statt pro Pal neu zu rechnen
+  const loesung = ownedIdx.length ? solvePath(ownedIdx) : null;
+
+  const eintraege = watchlist
+    .map(key => PALS.find(p => p.key === key))
+    .filter(Boolean)
+    .map(p => {
+      let status, klasse;
+      if (ownedKeys.has(p.key)) {
+        status = '✅ hast du bereits';
+        klasse = 'done';
+      } else if (!loesung) {
+        status = 'kein Bestand hinterlegt';
+        klasse = 'unknown';
+      } else if (!isFinite(loesung.cost[p.i])) {
+        status = 'aus deinem Bestand nicht erreichbar';
+        klasse = 'blocked';
+      } else {
+        const n = planSteps(p.i, loesung.via, ownedIdx).length;
+        status = `${n} ${n === 1 ? 'Schritt' : 'Schritte'} · ${loesung.cost[p.i]} Gen.`;
+        klasse = n <= 3 ? 'near' : 'far';
+      }
+      return { p, status, klasse };
+    })
+    .sort((a, b) => a.p.name.localeCompare(b.p.name));
+
+  box.innerHTML = `<ul class="card-list">${eintraege.map(({ p, status, klasse }) => `
+    <li class="card watch-card">
+      <button class="r-open" data-action="goto-breeding" data-key="${esc(p.key)}">
+        ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
+        <div class="r-main">
+          <div class="r-name">${esc(p.name)}</div>
+          <div class="w-status ${klasse}">${esc(status)}</div>
+        </div>
+      </button>
+      <button class="mini-btn" data-action="watch-del" data-key="${esc(p.key)}"
+              title="Von der Merkliste nehmen">✕</button>
+    </li>`).join('')}</ul>`;
+}
+
+/**
+ * Vorschlagsliste für die Suchfelder.
+ * Beim Bestand werden bereits eingetragene Arten als solche markiert und sind
+ * nicht mehr auswaehlbar - jede Art gehoert nur einmal in die Liste.
+ */
 function renderSuggest(listEl, query, action) {
   const q = query.trim().toLowerCase();
   if (!q) { listEl.innerHTML = ''; return; }
+  const fuerBestand = action === 'roster-add';
+
   const hits = PALS.filter(p => p.name.toLowerCase().includes(q)).slice(0, 8);
-  listEl.innerHTML = hits.map(p => `<li data-action="${action}" data-key="${esc(p.key)}">
-    ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
-    <span>${esc(p.name)}</span>
-    <span class="s-elems">${p.elements.join(' · ')}</span></li>`).join('');
+  listEl.innerHTML = hits.map(p => {
+    const schonDa = fuerBestand && hasPal(p.key);
+    return `<li ${schonDa ? 'class="dimmed"' : `data-action="${action}" data-key="${esc(p.key)}"`}>
+      ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
+      <span>${esc(p.name)}</span>
+      <span class="s-elems">${schonDa ? '✅ schon drin' : p.elements.join(' · ')}</span></li>`;
+  }).join('');
 }
 
 /* ============================================================
@@ -889,6 +1002,7 @@ function init() {
   renderTierList();
   renderGuide();
   renderCombine();
+  renderWatchlist();
 
   // Header-Hoehe an die echte Hoehe angleichen (Notch/Safe-Area)
   const syncHeader = () => document.documentElement.style
@@ -990,6 +1104,8 @@ function init() {
           b.classList.toggle('active', b === act));
         $('#breedModeTarget').hidden = mode !== 'target';
         $('#breedModeCombine').hidden = mode !== 'combine';
+        $('#breedModeWatch').hidden = mode !== 'watch';
+        if (mode === 'watch') renderWatchlist();  // Aufwand gegen aktuellen Bestand
         break;
       }
 
@@ -1019,26 +1135,50 @@ function init() {
 
       /* ---- Bestand ---- */
       case 'roster-add':
-        roster.push({ key: act.dataset.key, gender: '?' });
+        if (!hasPal(act.dataset.key)) roster.push({ key: act.dataset.key, gender: '?' });
         saveRoster();
         $('#rosterInput').value = '';
         $('#rosterSuggest').innerHTML = '';
-        renderRoster();
-        renderBreeding();
+        afterDataChange();
         break;
       case 'roster-gender': {
-        const r = roster[Number(act.dataset.idx)];
-        r.gender = { '?': 'M', M: 'F', F: '?' }[r.gender] || '?';
+        const r = roster.find(x => x.key === act.dataset.key);
+        if (r) r.gender = { '?': 'M', M: 'F', F: '?' }[r.gender] || '?';
         saveRoster();
-        renderRoster();
-        renderBreeding();
+        afterDataChange();
         break;
       }
       case 'roster-del':
-        roster.splice(Number(act.dataset.idx), 1);
+        roster = roster.filter(r => r.key !== act.dataset.key);
         saveRoster();
-        renderRoster();
-        renderBreeding();
+        afterDataChange();
+        break;
+
+      /* ---- Besitz und Merkliste aus dem Detailfenster ---- */
+      case 'own-toggle': {
+        const key = act.dataset.key;
+        if (hasPal(key)) roster = roster.filter(r => r.key !== key);
+        else roster.push({ key, gender: '?' });
+        saveRoster();
+        afterDataChange();
+        openPal(key, act.closest('#modalContent')?.querySelector('.tier-picker')
+          ? tierList : undefined);
+        break;
+      }
+      case 'watch-toggle': {
+        const key = act.dataset.key;
+        if (isWatched(key)) watchlist = watchlist.filter(k => k !== key);
+        else watchlist.push(key);
+        saveWatchlist();
+        renderWatchlist();
+        openPal(key, act.closest('#modalContent')?.querySelector('.tier-picker')
+          ? tierList : undefined);
+        break;
+      }
+      case 'watch-del':
+        watchlist = watchlist.filter(k => k !== act.dataset.key);
+        saveWatchlist();
+        renderWatchlist();
         break;
       case 'roster-export': {
         const blob = new Blob([JSON.stringify(roster, null, 2)], { type: 'application/json' });

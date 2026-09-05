@@ -255,9 +255,37 @@ code { background: var(--bg-card-2); border-radius: 5px; padding: 1px 5px; font-
 }
 .pair-row.both { border-color: var(--green); }
 .pair-row .x { color: var(--text-dim); }
-.pp { display: flex; align-items: center; gap: 5px; }
+/* Pal-Namen sind ueberall Knoepfe: Tippen oeffnet das Detailfenster */
+.pp {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: none; padding: 2px 4px; margin: -2px -4px;
+  border-radius: 7px; font-size: inherit; color: inherit; text-align: left;
+}
+.pp:active { background: var(--bg-elev); }
 .pp img { width: 26px; height: 26px; object-fit: contain; }
 .pp.mine { color: var(--green); font-weight: 600; }
+
+/* Aktionsleiste im Detailfenster */
+.modal-actions { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; }
+.modal-actions .tool-btn { flex: 1; min-width: 118px; padding: 11px 8px; font-size: .82rem; }
+.tool-btn.on { background: var(--accent); color: #fff; }
+
+/* Merkliste */
+.count-badge {
+  display: inline-block; min-width: 18px; margin-left: 4px; padding: 0 5px;
+  background: var(--accent-2); color: #08131d; border-radius: 9px;
+  font-size: .7rem; font-weight: 800;
+}
+.subtab.active .count-badge { background: #fff; color: var(--accent); }
+.watch-card { display: flex; align-items: center; gap: 8px; }
+.w-status { font-size: .78rem; margin-top: 2px; }
+.w-status.done    { color: var(--green); }
+.w-status.near    { color: var(--accent-2); }
+.w-status.far     { color: var(--yellow); }
+.w-status.blocked { color: #d9534f; }
+.w-status.unknown { color: var(--text-dim); }
+
+.target-results li.dimmed { opacity: .45; cursor: default; }
 
 /* ============ Eltern kombinieren ============ */
 .combine-slots { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 14px; }
@@ -291,8 +319,18 @@ code { background: var(--bg-card-2); border-radius: 5px; padding: 1px 5px; font-
 
 /* ============ Bestand ============ */
 .roster-add { margin-bottom: 6px; }
-.roster-card { display: flex; align-items: center; gap: 10px; }
-.roster-card img { width: 40px; height: 40px; object-fit: contain; }
+.roster-card { display: flex; align-items: center; gap: 8px; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 8px 10px; margin-bottom: 7px;
+}
+.card-list { list-style: none; }
+.r-open {
+  display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;
+  background: none; text-align: left; padding: 2px; border-radius: 9px;
+}
+.r-open:active { background: var(--bg-card-2); }
+.roster-card img, .watch-card img { width: 40px; height: 40px; object-fit: contain; }
 .r-main { flex: 1; min-width: 0; }
 .r-name { font-weight: 700; }
 .r-sub { font-size: .78rem; color: var(--text-dim); }
