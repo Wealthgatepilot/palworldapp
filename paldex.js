@@ -17934,6 +17934,58 @@ const BREEDING_MECHANICS = {
 const ELEMENTS = ["Neutral","Fire","Water","Grass","Electric","Ice","Ground","Dark","Dragon"];
 const WORK_TYPES = ["Kindling","Watering","Planting","GenerateElectricity","Handiwork","Gathering","Lumbering","Mining","MedicineProduction","Cooling","Transporting","Farming"];
 
+// Bezeichnung und Original-Icon je Arbeitsart, so wie sie im Spiel aussehen.
+const WORK_META = {
+ "Kindling": {
+  "label": "Kindling",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_00.png"
+ },
+ "Watering": {
+  "label": "Watering",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_01.png"
+ },
+ "Planting": {
+  "label": "Planting",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_02.png"
+ },
+ "GenerateElectricity": {
+  "label": "Generating Electricity",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_03.png"
+ },
+ "Handiwork": {
+  "label": "Handiwork",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_04.png"
+ },
+ "Gathering": {
+  "label": "Gathering",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_05.png"
+ },
+ "Lumbering": {
+  "label": "Deforesting",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_06.png"
+ },
+ "Mining": {
+  "label": "Mining",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_07.png"
+ },
+ "MedicineProduction": {
+  "label": "Medicine Production",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_08.png"
+ },
+ "Cooling": {
+  "label": "Cooling",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_10.png"
+ },
+ "Transporting": {
+  "label": "Transporting",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_11.png"
+ },
+ "Farming": {
+  "label": "Farming",
+  "icon": "https://palworld.gg/images/icons/T_icon_palwork_12.png"
+ }
+};
+
 // Tier Lists von palworld.gg - redaktionelle Einschaetzung, keine Spieldaten.
 // Werte sind PALS-Indizes. In der App ueberschreibbar.
 const TIERLISTS = {

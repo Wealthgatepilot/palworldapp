@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -19,7 +19,7 @@
   <header id="appHeader">
     <div class="header-row">
       <span class="header-title">Palworld&nbsp;Tool</span>
-      <button class="icon-btn" data-action="open-map" title="Interaktive Karte öffnen">🗺️</button>
+      <button class="icon-btn" data-action="open-map" title="Open interactive map">🗺️</button>
     </div>
   </header>
 
@@ -30,8 +30,8 @@
     <section id="tab-pals" class="tab-panel active">
       <div class="sticky-bar">
         <input id="palSearch" class="search-box" type="search"
-               placeholder="🔍 Pal suchen (Name, Titel, Drop)…" autocomplete="off">
-        <button id="filterToggle" class="icon-btn" data-action="toggle-filters" title="Filter">⚙️</button>
+               placeholder="🔍 Search pals (name, title, drop)…" autocomplete="off">
+        <button id="filterToggle" class="icon-btn" data-action="toggle-filters" title="Filters">⚙️</button>
       </div>
 
       <div id="filterPanel" class="filter-panel" hidden>
@@ -39,108 +39,102 @@
           <label>Element
             <select id="fElement"></select>
           </label>
-          <label>Arbeit
+          <label>Work
             <select id="fWork"></select>
           </label>
         </div>
         <div class="filter-row">
-          <label>min. Level
-            <select id="fWorkLv">
-              <option value="1">Lv 1+</option>
-              <option value="2">Lv 2+</option>
-              <option value="3">Lv 3+</option>
-              <option value="4">Lv 4+</option>
-            </select>
+          <label>Min. level
+            <select id="fWorkLv"><!-- aus den Daten befuellt: Level reichen bis 8 --></select>
           </label>
-          <label>Sortierung
+          <label>Sort by
             <select id="fSort">
-              <option value="dex">Dex-Nummer</option>
+              <option value="dex">Paldeck no.</option>
               <option value="name">Name (A–Z)</option>
-              <option value="rarity">Seltenheit</option>
-              <option value="breed">Breeding Power</option>
+              <option value="rarity">Rarity</option>
+              <option value="breed">Breeding power</option>
             </select>
           </label>
         </div>
         <div class="filter-row filter-checks">
-          <label class="chk"><input type="checkbox" id="fNocturnal"> nur nachtaktiv</label>
-          <label class="chk"><input type="checkbox" id="fVariant"> Varianten ausblenden</label>
-          <button class="tool-btn" data-action="reset-filters">Zurücksetzen</button>
+          <label class="chk"><input type="checkbox" id="fNocturnal"> Nocturnal only</label>
+          <label class="chk"><input type="checkbox" id="fVariant"> Hide variants</label>
+          <button class="tool-btn" data-action="reset-filters">Reset</button>
         </div>
       </div>
 
       <div id="palCount" class="result-count"></div>
       <ul id="palList" class="pal-grid"></ul>
-      <button id="loadMore" class="add-btn" data-action="load-more" hidden>Weitere anzeigen</button>
+      <button id="loadMore" class="add-btn" data-action="load-more" hidden>Show more</button>
     </section>
 
-    <!-- ---- Zucht ---- -->
+    <!-- ---- Breeding ---- -->
     <section id="tab-breeding" class="tab-panel">
-      <h2 class="panel-title">Zucht</h2>
+      <h2 class="panel-title">Breeding</h2>
 
       <div class="subtab-bar">
-        <button class="subtab active" data-action="breed-mode" data-mode="target">🎯 Ziel suchen</button>
-        <button class="subtab" data-action="breed-mode" data-mode="combine">🔀 Eltern kombinieren</button>
-        <button class="subtab" data-action="breed-mode" data-mode="watch">📌 Merkliste <span id="watchCount"></span></button>
+        <button class="subtab active" data-action="breed-mode" data-mode="target">🎯 Find a target</button>
+        <button class="subtab" data-action="breed-mode" data-mode="combine">🔀 Combine parents</button>
+        <button class="subtab" data-action="breed-mode" data-mode="watch">📌 Watchlist <span id="watchCount"></span></button>
       </div>
 
-      <!-- Modus 1: Ziel vorgeben, Weg dorthin finden -->
+      <!-- Mode 1: pick a target, find the way there -->
       <div id="breedModeTarget">
         <div class="sticky-bar">
           <input id="targetSearch" class="search-box" type="search"
-                 placeholder="🎯 Ziel-Pal wählen…" autocomplete="off">
+                 placeholder="🎯 Pick a target pal…" autocomplete="off">
         </div>
         <ul id="targetResults" class="target-results"></ul>
         <div id="breedResult"></div>
       </div>
 
-      <!-- Modus 2: zwei Eltern vorgeben, Ergebnis sehen -->
+      <!-- Mode 2: pick two parents, see the outcome -->
       <div id="breedModeCombine" hidden>
-        <p class="hint">Wähle zwei Eltern — du siehst sofort, was dabei herauskommt.</p>
+        <p class="hint">Pick any two parents and see what they produce.</p>
         <div class="combine-slots">
           <div class="combine-slot">
-            <div class="cs-label">Elternteil A</div>
+            <div class="cs-label">Parent A</div>
             <div id="slotA"></div>
             <input id="searchA" class="search-box" type="search"
-                   placeholder="🔍 Pal suchen…" autocomplete="off">
+                   placeholder="🔍 Search…" autocomplete="off">
             <ul id="suggestA" class="target-results"></ul>
           </div>
           <div class="combine-x">×</div>
           <div class="combine-slot">
-            <div class="cs-label">Elternteil B</div>
+            <div class="cs-label">Parent B</div>
             <div id="slotB"></div>
             <input id="searchB" class="search-box" type="search"
-                   placeholder="🔍 Pal suchen…" autocomplete="off">
+                   placeholder="🔍 Search…" autocomplete="off">
             <ul id="suggestB" class="target-results"></ul>
           </div>
         </div>
         <div id="combineResult"></div>
       </div>
 
-      <!-- Modus 3: gemerkte Zuchtziele -->
+      <!-- Mode 3: saved breeding goals -->
       <div id="breedModeWatch" hidden>
-        <p class="hint">Pals, die du später züchten willst. Der Aufwand wird laufend
-          gegen deinen aktuellen Bestand neu berechnet.</p>
+        <p class="hint">Pals you want to breed later. The effort is recalculated
+          against your current collection every time.</p>
         <div id="watchList"></div>
       </div>
     </section>
 
-    <!-- ---- Meine Pals ---- -->
+    <!-- ---- My Pals ---- -->
     <section id="tab-roster" class="tab-panel">
-      <h2 class="panel-title">Meine Pals</h2>
-      <p class="hint">Dein Bestand ist die Grundlage für den Pathfinder. Auf PlayStation
-        lassen sich die Spielstände nicht auslesen — daher von Hand gepflegt.
-        Es reichen die Pals, mit denen du wirklich züchtest.</p>
+      <h2 class="panel-title">My Pals</h2>
+      <p class="hint">Your collection is what the pathfinder works from. PlayStation
+        saves can't be read, so this is kept by hand — each species counts once.</p>
 
       <div class="roster-add">
         <input id="rosterInput" class="search-box" type="search"
-               placeholder="➕ Pal hinzufügen…" autocomplete="off">
+               placeholder="➕ Add a pal…" autocomplete="off">
         <ul id="rosterSuggest" class="target-results"></ul>
       </div>
 
       <div id="rosterCount" class="result-count"></div>
       <ul id="rosterList" class="card-list"></ul>
 
-      <div class="section-divider">Daten &amp; Backup</div>
+      <div class="section-divider">Data &amp; backup</div>
       <div class="data-tools">
         <button class="tool-btn" data-action="roster-export">⬇️ Export (JSON)</button>
         <button class="tool-btn" data-action="roster-import">⬆️ Import (JSON)</button>
@@ -151,13 +145,13 @@
     <!-- ---- Tier List ---- -->
     <section id="tab-tier" class="tab-panel">
       <h2 class="panel-title">Tier List</h2>
-      <p class="hint">Einschätzung von palworld.gg — Meinung, keine Spieldaten, und mit
-        jedem Patch veraltet. Tippe auf eine Stufe eines Pals, um sie selbst zu ändern.</p>
+      <p class="hint">Ratings from palworld.gg — opinion, not game data, and they age
+        with every patch. Tap a pal to change its tier yourself.</p>
 
       <div id="tierTabs" class="subtab-bar"></div>
       <div class="sticky-bar">
         <input id="tierSearch" class="search-box" type="search"
-               placeholder="🔍 Im Ranking suchen…" autocomplete="off">
+               placeholder="🔍 Search the ranking…" autocomplete="off">
       </div>
       <div id="tierOverrideNote"></div>
       <div id="tierRows"></div>
@@ -166,8 +160,9 @@
     <!-- ---- Guide ---- -->
     <section id="tab-guide" class="tab-panel">
       <h2 class="panel-title">Guide</h2>
-      <p class="hint">Selbst zusammengestellt. Alle Zahlen stammen aus den Spieldaten
-        und sind in <code>paldex.js</code> nachprüfbar.</p>
+      <p class="hint">Written for this app. Every number comes from the game data and
+        can be checked in <code>paldex.js</code>.</p>
+      <div id="guideNav" class="subtab-bar"></div>
       <div id="guideBody"></div>
     </section>
 
@@ -176,17 +171,17 @@
   <!-- ============ BOTTOM NAV ============ -->
   <nav id="bottomNav">
     <button class="nav-btn active" data-nav="pals"><span class="nav-ico">📖</span><span>Pals</span></button>
-    <button class="nav-btn" data-nav="breeding"><span class="nav-ico">🥚</span><span>Zucht</span></button>
-    <button class="nav-btn" data-nav="roster"><span class="nav-ico">📋</span><span>Meine Pals</span></button>
+    <button class="nav-btn" data-nav="breeding"><span class="nav-ico">🥚</span><span>Breeding</span></button>
+    <button class="nav-btn" data-nav="roster"><span class="nav-ico">📋</span><span>My Pals</span></button>
     <button class="nav-btn" data-nav="tier"><span class="nav-ico">🏆</span><span>Tier</span></button>
     <button class="nav-btn" data-nav="guide"><span class="nav-ico">📚</span><span>Guide</span></button>
   </nav>
 
-  <!-- ============ MODAL (Pal-Detail) ============ -->
+  <!-- ============ MODAL (pal detail) ============ -->
   <div id="modalOverlay" class="modal-overlay" hidden>
     <div class="modal" role="dialog" aria-modal="true">
       <div id="modalContent"></div>
-      <button class="modal-close" data-action="modal-close">Schließen</button>
+      <button class="modal-close" data-action="modal-close">Close</button>
     </div>
   </div>
 

@@ -19,7 +19,7 @@
    anrechnet - bei knapp 300 Icons waere die Quota schnell erreicht. Die
    Bilder nutzen den normalen HTTP-Cache des Browsers. */
 
-const CACHE_NAME = 'palworld-v2';
+const CACHE_NAME = 'palworld-v3';
 
 const ASSETS = [
   './index.html',

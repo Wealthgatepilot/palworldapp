@@ -203,6 +203,22 @@ input, select { font-family: inherit; font-size: 16px; }
 .g-table { border-collapse: collapse; width: 100%; font-size: .85rem; }
 .g-table th, .g-table td { padding: 7px 9px; text-align: left; border-bottom: 1px solid var(--border); }
 .g-table th { color: var(--text-dim); font-size: .74rem; text-transform: uppercase; letter-spacing: .4px; }
+/* Arbeitsarten mit den echten Spiel-Icons */
+.g-works {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 7px; margin-bottom: 12px;
+}
+.g-work {
+  display: flex; align-items: center; gap: 9px;
+  background: var(--bg-card-2); border-radius: 9px; padding: 7px 10px; font-size: .85rem;
+}
+.wicon { object-fit: contain; vertical-align: middle; flex: none; }
+.pal-works .w { display: inline-flex; align-items: center; gap: 2px; }
+.work-item .wi { display: flex; align-items: center; }
+#guideNav { margin-bottom: 16px; }
+#guideNav .subtab { font-size: .76rem; padding: 7px 11px; }
+.g-section { scroll-margin-top: calc(var(--header-h) + 12px); }
+
 .g-passives { margin-bottom: 12px; }
 .g-plabel { font-size: .76rem; color: var(--text-dim); margin-bottom: 5px; }
 code { background: var(--bg-card-2); border-radius: 5px; padding: 1px 5px; font-size: .85em; }

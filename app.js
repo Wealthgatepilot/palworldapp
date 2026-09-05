@@ -10,20 +10,15 @@ const $ = sel => document.querySelector(sel);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c =>
   ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-/* ---- Work-Typen: deutsche Beschriftung + Symbol ---- */
-const WORK_LABEL = {
-  Kindling:            ['🔥', 'Feuer machen'],
-  Watering:            ['💧', 'Bewässern'],
-  Planting:            ['🌱', 'Pflanzen'],
-  GenerateElectricity: ['⚡', 'Strom erzeugen'],
-  Handiwork:           ['🔨', 'Handwerk'],
-  Gathering:           ['🧺', 'Sammeln'],
-  Lumbering:           ['🪓', 'Holzfällen'],
-  Mining:              ['⛏️', 'Bergbau'],
-  MedicineProduction:  ['💊', 'Medizin'],
-  Cooling:             ['❄️', 'Kühlen'],
-  Transporting:        ['📦', 'Transport'],
-  Farming:             ['🥚', 'Farm'],
+/* ---- Work suitability: label and icon come straight from the game data ----
+   (WORK_META in paldex.js — the real in-game icons, e.g. Handiwork is a hand,
+   not a hammer, and Lumbering is called "Deforesting" in game.) */
+const workLabel = k => (WORK_META[k] || {}).label || k;
+const workIcon = (k, size = 18) => {
+  const m = WORK_META[k];
+  return m
+    ? `<img class="wicon" src="${esc(m.icon)}" alt="" width="${size}" height="${size}" loading="lazy">`
+    : '';
 };
 
 const PAGE_SIZE = 60;
@@ -84,13 +79,13 @@ function renderList() {
   $('#palCount').textContent =
     list.length === PALS.length
       ? `${PALS.length} Pals`
-      : `${list.length} von ${PALS.length} Pals`;
+      : `${list.length} of ${PALS.length} pals`;
 
   $('#palList').innerHTML = slice.map(p => {
     const works = Object.entries(p.work)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 4)
-      .map(([k, lv]) => `<span class="w">${(WORK_LABEL[k] || ['·'])[0]}${lv}</span>`)
+      .map(([k, lv]) => `<span class="w" title="${esc(workLabel(k))}">${workIcon(k, 16)}${lv}</span>`)
       .join('');
     const elems = p.elements.map(e =>
       `<span class="elem ${esc(e)}">${esc(e)}</span>`).join('');
@@ -109,7 +104,7 @@ function renderList() {
 
   const more = list.length > state.shown;
   $('#loadMore').hidden = !more;
-  if (more) $('#loadMore').textContent = `Weitere ${Math.min(PAGE_SIZE, list.length - state.shown)} anzeigen`;
+  if (more) $('#loadMore').textContent = `Show ${Math.min(PAGE_SIZE, list.length - state.shown)} more`;
 }
 
 /* ============================================================
@@ -150,25 +145,25 @@ function breedingSection(p) {
   /* --- Weg aus dem eigenen Bestand --- */
   let mine;
   if (ownedKeys.has(p.key)) {
-    mine = '<p class="ok-note">✅ Diesen Pal hast du bereits.</p>';
+    mine = '<p class="ok-note">✅ You already have this one.</p>';
   } else if (!ownedIdx.length) {
-    mine = `<p class="no-data">Noch kein eigener Bestand hinterlegt — trage unter
-      „Meine Pals“ ein, was du besitzt, dann steht hier dein kürzester Weg.</p>`;
+    mine = `<p class="no-data">No collection yet — add what you own under
+      “My Pals” and your shortest route shows up here.</p>`;
   } else {
     const { cost, via } = solvePath(ownedIdx);
     if (!isFinite(cost[p.i])) {
-      mine = `<p class="no-data">Aus deinem Bestand nicht erreichbar. Fang einen der
-        unten gelisteten Eltern-Pals, dann geht es.</p>`;
+      mine = `<p class="no-data">Not reachable from your collection. Catch one of the
+        parents listed below and it opens up.</p>`;
     } else {
       const steps = planSteps(p.i, via, ownedIdx);
       const gens = cost[p.i];
       const gezeigt = steps.slice(0, 6);
       mine = `<p class="ok-note"><b>${steps.length}</b>
-        ${steps.length === 1 ? 'Zuchtschritt' : 'Zuchtschritte'} über <b>${gens}</b>
-        ${gens === 1 ? 'Generation' : 'Generationen'}</p>
+        ${steps.length === 1 ? 'breeding step' : 'breeding steps'} across <b>${gens}</b>
+        ${gens === 1 ? 'generation' : 'generations'}</p>
         <ol class="step-list">${renderSteps(gezeigt, ownedIdx)}</ol>
         ${steps.length > gezeigt.length
-          ? `<p class="no-data">… und ${steps.length - gezeigt.length} weitere Schritte.</p>`
+          ? `<p class="no-data">… and ${steps.length - gezeigt.length} more steps.</p>`
           : ''}`;
     }
   }
@@ -176,8 +171,8 @@ function breedingSection(p) {
   /* --- Allgemeine Möglichkeiten --- */
   let allgemein;
   if (!pairs.length) {
-    allgemein = `<p class="no-data">${esc(p.name)} lässt sich nicht erzüchten —
-      es gibt kein Elternpaar, das ihn ergibt.</p>`;
+    allgemein = `<p class="no-data">${esc(p.name)} cannot be bred —
+      no parent pair produces it.</p>`;
   } else {
     const sortiert = pairs.map(([a, b, g]) => ({
       a, b, g,
@@ -189,27 +184,27 @@ function breedingSection(p) {
     const top = sortiert.slice(0, 10);
     allgemein = `<ul class="pair-list">${top.map(({ a, b, g, own }) =>
       `<li class="pair-row${own === 2 ? ' both' : ''}">${cell(a)}<span class="x">×</span>${cell(b)}
-        ${g ? `<span class="tn-tag">nur ${g === 'MALE' ? '♂ links' : '♀ links'}</span>` : ''}</li>`
+        ${g ? `<span class="tn-tag">${g === 'MALE' ? '♂ left only' : '♀ left only'}</span>` : ''}</li>`
       ).join('')}</ul>
       ${pairs.length > top.length
-        ? `<p class="no-data">… ${pairs.length - top.length} weitere Paare.
-           Paare mit deinen Pals stehen oben.</p>` : ''}`;
+        ? `<p class="no-data">… ${pairs.length - top.length} more pairs.
+           Pairs using your pals are listed first.</p>` : ''}`;
   }
 
   return `
-    <div class="dex-section-title">Zucht — dein Weg</div>
+    <div class="dex-section-title">Breeding — your route</div>
     ${mine}
-    <div class="dex-section-title">Zucht — alle Elternpaare (${pairs.length})</div>
+    <div class="dex-section-title">Breeding — all parent pairs (${pairs.length})</div>
     ${allgemein}
     <div class="modal-actions">
       <button class="tool-btn" data-action="goto-breeding" data-key="${esc(p.key)}">
-        🥚 Im Zucht-Tab</button>
+        🥚 Breeding tab</button>
       <button class="tool-btn${isWatched(p.key) ? ' on' : ''}"
               data-action="watch-toggle" data-key="${esc(p.key)}">
-        ${isWatched(p.key) ? '📌 gemerkt' : '📌 Merken'}</button>
+        ${isWatched(p.key) ? '📌 Saved' : '📌 Save'}</button>
       <button class="tool-btn${hasPal(p.key) ? ' on' : ''}"
               data-action="own-toggle" data-key="${esc(p.key)}">
-        ${hasPal(p.key) ? '✅ im Bestand' : '➕ Besitze ich'}</button>
+        ${hasPal(p.key) ? '✅ Owned' : '➕ I own this'}</button>
     </div>`;
 }
 
@@ -222,51 +217,50 @@ function openPal(key, tierCtx) {
   if (!p) return;
 
   const elems = p.elements.map(e => `<span class="elem ${esc(e)}">${esc(e)}</span>`).join('')
-    || '<span class="no-data">keine Elementdaten</span>';
+    || '<span class="no-data">no element data</span>';
 
-  const works = Object.entries(p.work).sort((a, b) => b[1] - a[1]).map(([k, lv]) => {
-    const [ico, label] = WORK_LABEL[k] || ['·', k];
-    return `<div class="work-item"><span class="wi">${ico}</span>
-      <span class="wn">${esc(label)}</span><span class="wl">Lv ${lv}</span></div>`;
-  }).join('') || '<p class="no-data">Keine Arbeitseignung.</p>';
+  const works = Object.entries(p.work).sort((a, b) => b[1] - a[1]).map(([k, lv]) =>
+    `<div class="work-item"><span class="wi">${workIcon(k, 26)}</span>
+      <span class="wn">${esc(workLabel(k))}</span><span class="wl">Lv ${lv}</span></div>`
+  ).join('') || '<p class="no-data">No work suitability.</p>';
 
   const kv = (k, v) => `<div class="kv"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`;
   // -1 heisst im Datensatz "nicht vorhanden" (z. B. nicht reitbar) - nicht als Zahl zeigen.
   const num = v => (v === -1 || v === null || v === undefined ? '–' : v);
   const stats = [
     kv('HP', p.stats.hp),
-    kv('Angriff', p.stats.attack),
-    kv('Verteidigung', p.stats.defense),
-    kv('Ausdauer', p.stats.stamina),
-    kv('Laufen', num(p.stats.runSpeed)),
-    kv('Reiten', num(p.stats.rideSprintSpeed)),
-    kv('Traglast', num(p.stats.transportSpeed)),
-    kv('Nahrung', p.stats.food),
+    kv('Attack', p.stats.attack),
+    kv('Defense', p.stats.defense),
+    kv('Stamina', p.stats.stamina),
+    kv('Run speed', num(p.stats.runSpeed)),
+    kv('Ride sprint', num(p.stats.rideSprintSpeed)),
+    kv('Transport', num(p.stats.transportSpeed)),
+    kv('Food', p.stats.food),
   ].join('');
 
   const meta = [
-    kv('Seltenheit', p.rarity),
-    kv('Größe', p.size),
-    kv('Wildlevel', `${p.wildLevel[0]}–${p.wildLevel[1]}`),
-    kv('Preis', p.price),
-    kv('Nachtaktiv', p.nocturnal ? 'ja' : 'nein'),
+    kv('Rarity', p.rarity),
+    kv('Size', p.size),
+    kv('Wild level', `${p.wildLevel[0]}–${p.wildLevel[1]}`),
+    kv('Price', p.price),
+    kv('Nocturnal', p.nocturnal ? 'yes' : 'no'),
     kv('♂ / ♀', `${Math.round(p.gender.male * 100)} / ${Math.round(p.gender.female * 100)}%`),
     kv('Breeding Power', p.breedPower),
-    kv('Elternpaare', parentPairCount[p.i]),
+    kv('Parent pairs', parentPairCount[p.i]),
   ].join('');
 
   const drops = p.drops.length
     ? `<div class="chip-row">${p.drops.map(d => `<span class="chip">${esc(d)}</span>`).join('')}</div>`
-    : '<p class="no-data">Keine Drop-Daten.</p>';
+    : '<p class="no-data">No drop data.</p>';
 
   const passives = p.guaranteedPassives.length
-    ? `<div class="dex-section-title">Garantierte Passives</div>
+    ? `<div class="dex-section-title">Guaranteed passives</div>
        <div class="chip-row">${p.guaranteedPassives.map(x =>
          `<span class="chip pass">${esc(x)}</span>`).join('')}</div>`
     : '';
 
   const partner = p.partnerSkill
-    ? `<div class="dex-section-title">Partner-Skill</div>
+    ? `<div class="dex-section-title">Partner skill</div>
        <div class="partner">
          <div class="p-name">${esc(p.partnerSkill.name)}</div>
          ${p.partnerSkill.description
@@ -275,17 +269,17 @@ function openPal(key, tierCtx) {
     : '';
 
   const habitat = p.habitat
-    ? `<div class="dex-section-title">Wo zu finden</div>
+    ? `<div class="dex-section-title">Where to find</div>
        <div class="habitat">
          <div class="habitat-toggle">
-           <button class="on" data-action="hab" data-when="day">☀️ Tag</button>
-           <button data-action="hab" data-when="night">🌙 Nacht</button>
+           <button class="on" data-action="hab" data-when="day">☀️ Day</button>
+           <button data-action="hab" data-when="night">🌙 Night</button>
          </div>
          <img id="habImg" src="${esc(p.habitat.day || p.habitat.night)}"
-              alt="Fundorte von ${esc(p.name)}" loading="lazy">
+              alt="${esc(p.name)} habitat" loading="lazy">
        </div>`
-    : `<div class="dex-section-title">Wo zu finden</div>
-       <p class="no-data">Für diesen Pal liegt keine Habitat-Karte vor.</p>`;
+    : `<div class="dex-section-title">Where to find</div>
+       <p class="no-data">No habitat map available for this pal.</p>`;
 
   // Aus der Tier List heraus: Stufe direkt hier ändern können
   let tierBlock = '';
@@ -294,20 +288,20 @@ function openPal(key, tierCtx) {
     const current = ov[key] || TIER_ORDER.find(t =>
       (TIERLISTS[tierCtx].tiers[t] || []).includes(p.i));
     tierBlock = `
-      <div class="dex-section-title">Stufe · ${esc(TIERLISTS[tierCtx].label)}</div>
+      <div class="dex-section-title">Tier · ${esc(TIERLISTS[tierCtx].label)}</div>
       <div class="tier-picker">
         ${TIER_ORDER.map(t => `<button class="tier-badge t-${t}${t === current ? ' on' : ''}"
           data-action="tier-set" data-key="${esc(key)}" data-tier="${t}">${t}</button>`).join('')}
       </div>
       ${ov[key] ? `<button class="tool-btn wide" data-action="tier-clear"
-        data-key="${esc(key)}">Eigene Einstufung entfernen</button>` : ''}`;
+        data-key="${esc(key)}">Remove custom rating</button>` : ''}`;
   }
 
   $('#modalContent').innerHTML = `
     <div class="dex-head">
       ${p.icon ? `<img src="${esc(p.icon)}" alt="">` : ''}
       <div class="h-main">
-        <div class="h-dex">No.${p.dex}${p.variant ? ' · Variante' : ''}</div>
+        <div class="h-dex">No.${p.dex}${p.variant ? ' · variant' : ''}</div>
         <h2>${esc(p.name)}</h2>
         ${p.title ? `<div class="h-title">${esc(p.title)}</div>` : ''}
         <div class="pal-elems">${elems}</div>
@@ -316,13 +310,13 @@ function openPal(key, tierCtx) {
     ${tierBlock}
     ${breedingSection(p)}
 
-    <div class="dex-section-title">Arbeitseignung</div>
+    <div class="dex-section-title">Work suitability</div>
     <div class="work-list">${works}</div>
 
-    <div class="dex-section-title">Werte</div>
+    <div class="dex-section-title">Stats</div>
     <div class="kv-grid">${stats}</div>
 
-    <div class="dex-section-title">Allgemein</div>
+    <div class="dex-section-title">General</div>
     <div class="kv-grid">${meta}</div>
 
     <div class="dex-section-title">Drops</div>
@@ -554,8 +548,8 @@ function renderSteps(steps, ownedIdx) {
       const paarbar = (oa.male && ob.female) || (oa.female && ob.male);
       if (known && !paarbar) {
         const g = o => (o.male ? '♂' : '♀');
-        warn = `<div class="tn-warn">⚠️ Beide sind ${g(oa)} — für die Zucht brauchst du
-          ein Paar aus ♂ und ♀.</div>`;
+        warn = `<div class="tn-warn">⚠️ Both are ${g(oa)} — breeding needs
+          one ♂ and one ♀.</div>`;
       }
     }
     const row = `<li class="step-row">
@@ -578,9 +572,9 @@ let breedTarget = null;
 function renderBreeding() {
   const box = $('#breedResult');
   if (breedTarget === null) {
-    box.innerHTML = `<div class="stub">🥚<span>Wähle oben einen Ziel-Pal.
-      <b>${BREEDING.length.toLocaleString('de-DE')}</b> Zuchtpaare sind geladen,
-      inklusive der Unique-Combos.</span></div>`;
+    box.innerHTML = `<div class="stub">🥚<span>Pick a target pal above.
+      <b>${BREEDING.length.toLocaleString('de-DE')}</b> breeding pairs loaded,
+      unique combos included.</span></div>`;
     return;
   }
 
@@ -593,16 +587,16 @@ function renderBreeding() {
   /* --- Weg aus dem eigenen Bestand --- */
   let pathHtml;
   if (!ownedIdx.length) {
-    pathHtml = `<p class="no-data">Trage unter „Meine Pals" ein, was du besitzt —
-      dann zeigt dir der Pathfinder hier den kürzesten Weg von deinem Bestand aus.</p>`;
+    pathHtml = `<p class="no-data">Add what you own under “My Pals” —
+      then the pathfinder shows your shortest route right here.</p>`;
   } else if (ownedKeys.has(t.key)) {
-    pathHtml = `<p class="ok-note">✅ Diesen Pal hast du bereits.</p>`;
+    pathHtml = `<p class="ok-note">✅ You already have this one.</p>`;
   } else {
     const { cost, via } = solvePath(ownedIdx);
     if (!isFinite(cost[breedTarget])) {
-      pathHtml = `<p class="no-data">Aus deinem aktuellen Bestand ist ${esc(t.name)}
-        nicht erreichbar. Fang zuerst weitere Arten — unten stehen die Eltern,
-        die direkt zum Ziel führen.</p>`;
+      pathHtml = `<p class="no-data">${esc(t.name)} is not reachable from your
+        current collection. Catch more species first — the parents that lead
+        straight to it are listed below.</p>`;
     } else {
       const steps = planSteps(breedTarget, via, ownedIdx);
       const gens = cost[breedTarget];
@@ -610,10 +604,10 @@ function renderBreeding() {
       // sagen, dass Fangen der schnellere Weg ist.
       const long = steps.length > 12;
       pathHtml = `<p class="ok-note"><b>${steps.length}</b>
-        ${steps.length === 1 ? 'Zuchtschritt' : 'Zuchtschritte'}
-        über <b>${gens}</b> ${gens === 1 ? 'Generation' : 'Generationen'}</p>
-        ${long ? `<p class="no-data">Das ist eine lange Kette. Schneller geht es,
-          wenn du einen der unten gelisteten Eltern-Pals fängst und ihn hier einträgst.</p>` : ''}
+        ${steps.length === 1 ? 'breeding step' : 'breeding steps'}
+        across <b>${gens}</b> ${gens === 1 ? 'generation' : 'generations'}</p>
+        ${long ? `<p class="no-data">That is a long chain. It gets much shorter if
+          you catch one of the parents listed below and add it to your collection.</p>` : ''}
         <ol class="step-list">${renderSteps(steps, ownedIdx)}</ol>`;
     }
   }
@@ -628,7 +622,7 @@ function renderBreeding() {
     const cell = i => palChip(i, ownedKeys.has(PALS[i].key) ? 'mine' : '');
     return `<li class="pair-row${own === 2 ? ' both' : ''}">
       ${cell(a)}<span class="x">×</span>${cell(b)}
-      ${g ? `<span class="tn-tag">nur ${g === 'MALE' ? '♂ links' : '♀ links'}</span>` : ''}
+      ${g ? `<span class="tn-tag">${g === 'MALE' ? '♂ left only' : '♀ left only'}</span>` : ''}
     </li>`;
   }).join('');
 
@@ -643,23 +637,23 @@ function renderBreeding() {
       </div>
     </div>
 
-    <div class="dex-section-title">Weg aus deinem Bestand</div>
+    <div class="dex-section-title">Route from your collection</div>
     ${pathHtml}
 
-    <div class="dex-section-title">Direkte Elternpaare (${pairs.length})</div>
+    <div class="dex-section-title">Direct parent pairs (${pairs.length})</div>
     ${pairs.length
       ? `<ul class="pair-list">${rows}</ul>
-         ${pairs.length > 80 ? `<p class="no-data">… ${pairs.length - 80} weitere Paare
-            nicht gezeigt. Paare mit deinen Pals stehen oben.</p>` : ''}`
-      : `<p class="no-data">Für ${esc(t.name)} gibt es kein Elternpaar —
-         dieser Pal lässt sich nicht erzüchten.</p>`}`;
+         ${pairs.length > 80 ? `<p class="no-data">… ${pairs.length - 80} more pairs
+            not shown. Pairs using your pals are first.</p>` : ''}`
+      : `<p class="no-data">No parent pair produces ${esc(t.name)} —
+         this pal cannot be bred.</p>`}`;
 }
 
 /* ---- Bestand ---- */
 
 function renderRoster() {
   $('#rosterCount').textContent = roster.length
-    ? `${roster.length} von ${PALS.length} Pals`
+    ? `${roster.length} of ${PALS.length} pals`
     : '';
 
   // Nach Namen sortiert, nicht nach Reihenfolge des Eintragens - so findet
@@ -681,12 +675,12 @@ function renderRoster() {
             </div>
           </button>
           <button class="gender-btn g-${r.gender}" data-action="roster-gender"
-                  data-key="${esc(p.key)}" title="Geschlecht (optional)">${g}</button>
+                  data-key="${esc(p.key)}" title="Gender (optional)">${g}</button>
           <button class="mini-btn" data-action="roster-del" data-key="${esc(p.key)}">🗑️</button>
         </li>`;
       }).join('')
-    : `<div class="stub">📋<span>Noch nichts eingetragen. Trage ein, welche Arten du
-        besitzt — jede genügt einmal. Der Zucht-Tab rechnet dann damit.</span></div>`;
+    : `<div class="stub">📋<span>Nothing added yet. Add the species you own —
+        each one counts once. The breeding tab works from this.</span></div>`;
 }
 
 /* ---- Zwei Eltern frei kombinieren ---- */
@@ -721,7 +715,7 @@ function renderCombine() {
       ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
       <div class="cs-main">
         <div class="cs-name">${esc(p.name)}</div>
-        <div class="cs-sub">${owned ? '✅ im Bestand' : p.elements.join(' · ') || '—'}</div>
+        <div class="cs-sub">${owned ? '✅ owned' : p.elements.join(' · ') || '—'}</div>
       </div>
       <button class="mini-btn" data-action="combine-clear" data-which="${which}">✕</button>
     </div>`;
@@ -733,16 +727,16 @@ function renderCombine() {
 
   const box = $('#combineResult');
   if (combine.a === null || combine.b === null) {
-    box.innerHTML = `<div class="stub">🔀<span>Wähle beide Eltern, dann steht hier
-      das Ergebnis.</span></div>`;
+    box.innerHTML = `<div class="stub">🔀<span>Pick both parents and the result
+      appears here.</span></div>`;
     return;
   }
 
   const results = lookupPair(combine.a, combine.b);
   if (!results.length) {
-    box.innerHTML = `<div class="dex-section-title">Ergebnis</div>
-      <p class="no-data">Für diese Kombination ist kein Ergebnis hinterlegt.
-      Das sollte eigentlich nicht vorkommen — alle 44.851 Paare sind erfasst.</p>`;
+    box.innerHTML = `<div class="dex-section-title">Result</div>
+      <p class="no-data">No result is recorded for this combination.
+      That should not happen — all 44,851 pairs are covered.</p>`;
     return;
   }
 
@@ -751,8 +745,8 @@ function renderCombine() {
     const owned = roster.some(r => r.key === c.key);
     // Bei geschlechtsabhängigen Sonderfällen sagen, welcher Elternteil männlich sein muss
     const bedingung = gender
-      ? `<div class="cr-cond">nur wenn <b>${esc(PALS[firstParent].name)}</b>
-         ${gender === 'MALE' ? '♂ männlich' : '♀ weiblich'} ist</div>`
+      ? `<div class="cr-cond">only if <b>${esc(PALS[firstParent].name)}</b> is
+         ${gender === 'MALE' ? '♂ male' : '♀ female'}</div>`
       : '';
     return `<button class="combine-out" data-action="open-pal" data-key="${esc(c.key)}">
       ${c.icon ? `<img src="${esc(c.icon)}" alt="" loading="lazy">` : ''}
@@ -761,18 +755,18 @@ function renderCombine() {
         <div class="pal-elems">${c.elements.map(e =>
           `<span class="elem ${esc(e)}">${esc(e)}</span>`).join('')}</div>
         ${bedingung}
-        ${owned ? '<div class="cr-owned">✅ hast du schon</div>' : ''}
+        ${owned ? '<div class="cr-owned">✅ already owned</div>' : ''}
       </div>
       <span class="co-arrow">›</span>
     </button>`;
   };
 
   box.innerHTML = `
-    <div class="dex-section-title">Ergebnis${results.length > 1 ? ' (geschlechtsabhängig)' : ''}</div>
+    <div class="dex-section-title">Ergebnis${results.length > 1 ? ' (depends on gender)' : ''}</div>
     <div class="combine-outs">${results.map(karte).join('')}</div>
     ${results.length > 1
-      ? `<p class="no-data">Das ist die einzige Paarung im ganzen Spiel mit zwei
-         möglichen Ergebnissen — welches Kind schlüpft, hängt hier am Geschlecht.</p>`
+      ? `<p class="no-data">This is the only pairing in the whole game with two
+         possible outcomes — which one hatches depends on gender.</p>`
       : ''}`;
 }
 
@@ -785,8 +779,8 @@ function renderWatchlist() {
 
   const box = $('#watchList');
   if (!watchlist.length) {
-    box.innerHTML = `<div class="stub">📌<span>Noch nichts gemerkt. Tippe bei einem Pal
-      auf „Merken“ — hier siehst du dann, wie weit du jeweils davon entfernt bist.</span></div>`;
+    box.innerHTML = `<div class="stub">📌<span>Nothing saved yet. Tap “Save” on any pal
+      and you will see how far away each one is.</span></div>`;
     return;
   }
 
@@ -802,17 +796,17 @@ function renderWatchlist() {
     .map(p => {
       let status, klasse;
       if (ownedKeys.has(p.key)) {
-        status = '✅ hast du bereits';
+        status = '✅ already owned';
         klasse = 'done';
       } else if (!loesung) {
-        status = 'kein Bestand hinterlegt';
+        status = 'no collection set';
         klasse = 'unknown';
       } else if (!isFinite(loesung.cost[p.i])) {
-        status = 'aus deinem Bestand nicht erreichbar';
+        status = 'not reachable yet';
         klasse = 'blocked';
       } else {
         const n = planSteps(p.i, loesung.via, ownedIdx).length;
-        status = `${n} ${n === 1 ? 'Schritt' : 'Schritte'} · ${loesung.cost[p.i]} Gen.`;
+        status = `${n} ${n === 1 ? 'step' : 'steps'} · ${loesung.cost[p.i]} gen.`;
         klasse = n <= 3 ? 'near' : 'far';
       }
       return { p, status, klasse };
@@ -829,7 +823,7 @@ function renderWatchlist() {
         </div>
       </button>
       <button class="mini-btn" data-action="watch-del" data-key="${esc(p.key)}"
-              title="Von der Merkliste nehmen">✕</button>
+              title="Remove from watchlist">✕</button>
     </li>`).join('')}</ul>`;
 }
 
@@ -849,7 +843,7 @@ function renderSuggest(listEl, query, action) {
     return `<li ${schonDa ? 'class="dimmed"' : `data-action="${action}" data-key="${esc(p.key)}"`}>
       ${p.icon ? `<img src="${esc(p.icon)}" alt="" loading="lazy">` : ''}
       <span>${esc(p.name)}</span>
-      <span class="s-elems">${schonDa ? '✅ schon drin' : p.elements.join(' · ')}</span></li>`;
+      <span class="s-elems">${schonDa ? '✅ already added' : p.elements.join(' · ')}</span></li>`;
   }).join('');
 }
 
@@ -901,8 +895,8 @@ function renderTierList() {
 
   const ovCount = Object.keys(tierOverrides[tierList] || {}).length;
   $('#tierOverrideNote').innerHTML = ovCount
-    ? `<div class="ov-note">${ovCount} eigene ${ovCount === 1 ? 'Einstufung' : 'Einstufungen'}
-       in dieser Liste <button class="tool-btn" data-action="tier-reset">zurücksetzen</button></div>`
+    ? `<div class="ov-note">${ovCount} custom ${ovCount === 1 ? 'rating' : 'ratings'}
+       in this list <button class="tool-btn" data-action="tier-reset">reset</button></div>`
     : '';
 
   const tiers = effectiveTiers(tierList);
@@ -961,13 +955,23 @@ function renderGuide() {
             `<span class="chip pass" title="${esc(p.description || '')}">${esc(p.name)}</span>`
           ).join('')}</div></div>`;
       }
+      case 'works':
+        // Echte Spiel-Icons statt frei gewaehlter Symbole
+        return `<div class="g-works">${WORK_TYPES.map(w =>
+          `<div class="g-work">${workIcon(w, 30)}<span>${esc(workLabel(w))}</span></div>`
+        ).join('')}</div>`;
       default:
         return '';
     }
   };
 
+  // Sprungleiste, damit man bei acht Abschnitten nicht endlos scrollt
+  $('#guideNav').innerHTML = GUIDE.map(s =>
+    `<button class="subtab" data-action="guide-jump" data-id="${esc(s.id)}">
+      ${s.icon} ${esc(s.title)}</button>`).join('');
+
   $('#guideBody').innerHTML = GUIDE.map(s => `
-    <section class="g-section">
+    <section class="g-section" id="guide-${esc(s.id)}">
       <h3 class="g-title"><span class="g-ico">${s.icon}</span>${esc(s.title)}</h3>
       ${s.blocks.map(block).join('')}
     </section>`).join('');
@@ -979,15 +983,20 @@ function renderGuide() {
 
 function initFilters() {
   $('#fElement').innerHTML =
-    '<option value="">alle</option>' +
+    '<option value="">All</option>' +
     ELEMENTS.map(e => `<option value="${esc(e)}">${esc(e)}</option>`).join('');
 
+  // Ein <option> kann kein Bild tragen - hier bleibt es beim Klartext.
   $('#fWork').innerHTML =
-    '<option value="">alle</option>' +
-    WORK_TYPES.map(w => {
-      const [ico, label] = WORK_LABEL[w] || ['·', w];
-      return `<option value="${esc(w)}">${ico} ${esc(label)}</option>`;
-    }).join('');
+    '<option value="">All</option>' +
+    WORK_TYPES.map(w => `<option value="${esc(w)}">${esc(workLabel(w))}</option>`).join('');
+
+  // Hoechstes tatsaechlich vorkommendes Arbeitslevel aus den Daten holen -
+  // fest verdrahtete 4 waren zu niedrig, es geht bis 8.
+  let maxLv = 1;
+  for (const p of PALS) for (const v of Object.values(p.work)) if (v > maxLv) maxLv = v;
+  $('#fWorkLv').innerHTML = Array.from({ length: maxLv }, (_, i) =>
+    `<option value="${i + 1}">Lv ${i + 1}+</option>`).join('');
 }
 
 function resetPageAndRender() {
@@ -1036,7 +1045,7 @@ function init() {
     if (!file) return;
     try {
       const data = JSON.parse(await file.text());
-      if (!Array.isArray(data)) throw new Error('Kein Array');
+      if (!Array.isArray(data)) throw new Error('Not an array');
       const known = new Set(PALS.map(p => p.key));
       roster = data
         .filter(r => r && known.has(r.key))
@@ -1044,9 +1053,9 @@ function init() {
       saveRoster();
       renderRoster();
       renderBreeding();
-      alert(`${roster.length} Pals importiert.`);
+      alert(`Imported ${roster.length} pals.`);
     } catch (err) {
-      alert('Import fehlgeschlagen: ' + err.message);
+      alert('Import failed: ' + err.message);
     }
     e.target.value = '';
   });
@@ -1184,7 +1193,7 @@ function init() {
         const blob = new Blob([JSON.stringify(roster, null, 2)], { type: 'application/json' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
-        a.download = 'palworld-bestand.json';
+        a.download = 'palworld-collection.json';
         a.click();
         setTimeout(() => URL.revokeObjectURL(a.href), 1000);
         break;
@@ -1223,6 +1232,11 @@ function init() {
       case 'open-pal':
         openPal(act.dataset.key);
         break;
+      case 'guide-jump': {
+        const el = document.getElementById('guide-' + act.dataset.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        break;
+      }
       case 'goto-breeding': {
         const p = PALS.find(x => x.key === act.dataset.key);
         breedTarget = p.i;

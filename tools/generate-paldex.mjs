@@ -174,6 +174,45 @@ function parsePalPage(html) {
   return out
 }
 
+/**
+ * Arbeitsarten: echtes Spiel-Icon und die Bezeichnung, wie sie im Spiel steht.
+ *
+ * Die Icons stehen auf den Pal-Seiten als
+ *   <img src="/images/icons/T_icon_palwork_04.png" alt="Handiwork">
+ * Handiwork ist im Spiel eine Hand, nicht etwa ein Hammer - deshalb kommen
+ * hier die Originalgrafiken zum Einsatz statt frei gewaehlter Emoji.
+ *
+ * Zwei Schluessel von PalCalc heissen im Spiel anders und brauchen eine
+ * ausdrueckliche Zuordnung.
+ */
+const WORK_ALIAS = {
+  GenerateElectricity: 'Generating Electricity',
+  Lumbering: 'Deforesting',   // im Spiel heisst es Deforesting
+}
+
+function collectWorkMeta(pages, workTypes) {
+  const byLabel = new Map()
+  for (const html of pages) {
+    for (const m of html.matchAll(/<img src="\/images\/icons\/(T_icon_palwork_\d+\.png)" alt="([^"]+)"/g)) {
+      if (!byLabel.has(m[2])) byLabel.set(m[2], m[1])
+    }
+  }
+  const norm = s => s.toLowerCase().replace(/[^a-z]/g, '')
+  const byNorm = new Map([...byLabel].map(([label, icon]) => [norm(label), { label, icon }]))
+
+  const meta = {}
+  const fehlend = []
+  for (const key of workTypes) {
+    const treffer = byNorm.get(norm(WORK_ALIAS[key] || key))
+    if (!treffer) { fehlend.push(key); continue }
+    meta[key] = {
+      label: treffer.label,
+      icon: `https://palworld.gg/images/icons/${treffer.icon}`,
+    }
+  }
+  return { meta, fehlend }
+}
+
 /* palworld.gg fuehrt fuenf getrennte Tier Lists. Die sind redaktionelle
    Meinung, keine Spieldaten - deshalb werden sie in der App auch
    ueberschreibbar gehalten. */
@@ -264,9 +303,12 @@ async function main() {
   const fehlgeschlagen = []
   let done = 0
 
+  const seiten = []   // Roh-HTML, wird fuer die Arbeits-Icons nochmal gebraucht
   for (const slug of slugs) {
     try {
-      const data = parsePalPage(await fetchText(SRC.palPage(slug)))
+      const html = await fetchText(SRC.palPage(slug))
+      seiten.push(html)
+      const data = parsePalPage(html)
       if (!data.internalName) {
         fehlgeschlagen.push(`${slug} (kein Icon gefunden)`)
       } else {
@@ -459,6 +501,10 @@ async function main() {
   const ELEMENTS = db.Elements.map(e => e.Name)
   const WORK_TYPES = Object.keys(db.Pals[0].WorkSuitability || {})
 
+  const { meta: WORK_META, fehlend: workFehlend } = collectWorkMeta(seiten, WORK_TYPES)
+  log(`\n      Arbeits-Icons: ${Object.keys(WORK_META).length}/${WORK_TYPES.length}` +
+      (workFehlend.length ? ` (ohne Icon: ${workFehlend.join(', ')})` : ''))
+
   // --- Ausgabe ----------------------------------------------------------
   // MinBreedingSteps aus PalCalc wird bewusst NICHT mitgeschrieben: eine
   // Breitensuche ueber 44.851 Kanten laeuft im Browser in Sekundenbruchteilen,
@@ -498,6 +544,9 @@ const BREEDING_MECHANICS = ${JSON.stringify(db.BreedingMechanics, null, 1)};
 
 const ELEMENTS = ${JSON.stringify(ELEMENTS)};
 const WORK_TYPES = ${JSON.stringify(WORK_TYPES)};
+
+// Bezeichnung und Original-Icon je Arbeitsart, so wie sie im Spiel aussehen.
+const WORK_META = ${JSON.stringify(WORK_META, null, 1)};
 
 // Tier Lists von palworld.gg - redaktionelle Einschaetzung, keine Spieldaten.
 // Werte sind PALS-Indizes. In der App ueberschreibbar.
