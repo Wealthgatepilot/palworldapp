@@ -226,7 +226,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Sandstorm's Blessing",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type to Ground and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GoldenHorse_icon_normal.png",
   "habitat": null
@@ -333,7 +333,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Shiny Hauler",
-   "description": "While in party, reduces weight of Sulfur and Coal by 80~100%. Also improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground damage to enemy weak points by 80~100%. (Does not stack)"
+   "description": "While in party, reduces weight of Sulfur and Coal by 80~100%. Also improves player's and Pals' Ground damage to enemy weak points by 80~100%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_TentacleTurtle_Ground_icon_normal.png",
   "habitat": null
@@ -395,7 +395,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Guardian of the Desert",
-   "description": "When activated, Anubis changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground and increases Attack by 30~50%. Occasionally evades attacks with a flash sidestep during battle."
+   "description": "When activated, Anubis changes the player's attack type to Ground and increases Attack by 30~50%. Occasionally evades attacks with a flash sidestep during battle."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Anubis_icon_normal.png",
   "habitat": null
@@ -1362,7 +1362,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Jolt Bomb",
-   "description": "When activated, equips Jolthog to the player to be thrown at an enemy, causing an <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric explosion upon impact."
+   "description": "When activated, equips Jolthog to the player to be thrown at an enemy, causing an Electric explosion upon impact."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Hedgehog_icon_normal.png",
   "habitat": {
@@ -1415,7 +1415,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Cold Bomb",
-   "description": "When activated, equips Jolthog Cryst to the player to be thrown at an enemy, causing an <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice explosion upon impact."
+   "description": "When activated, equips Jolthog Cryst to the player to be thrown at an enemy, causing an Ice explosion upon impact."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Hedgehog_Ice_icon_normal.png",
   "habitat": null
@@ -1474,7 +1474,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Swift Deity",
-   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric damage to weak points by 25~40%. (Does not stack)"
+   "description": "Can be ridden. While in party, improves player's and Pals' Electric damage to weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Kirin_icon_normal.png",
   "habitat": {
@@ -1537,7 +1537,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Frigid Deity",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type to Ice and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Kirin_Ice_icon_normal.png",
   "habitat": null
@@ -1646,7 +1646,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Princess Gaze",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass  Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Attack of Grass Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_LittleBriarRose_icon_normal.png",
   "habitat": {
@@ -1867,7 +1867,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Lady of Lightning",
-   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric bolts. These bolts will not reduce the target's Health below 1."
+   "description": "While in party, appears near the player. Attacks hostile enemies with Electric bolts. These bolts will not reduce the target's Health below 1."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_RaijinDaughter_icon_normal.png",
   "habitat": {
@@ -2381,7 +2381,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wings of Flame",
-   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pal in your party. (Excluding Suzaku)"
+   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other Fire Pal in your party. (Excluding Suzaku)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_icon_normal.png",
   "habitat": {
@@ -2440,7 +2440,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wings of Water",
-   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Suzaku Aqua)"
+   "description": "Can be ridden as a flying mount. This Pal’s Movement Speed increases by 5~25% for each other Water Pal in your party. (Excluding Suzaku Aqua)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_Water_icon_normal.png",
   "habitat": null
@@ -2498,7 +2498,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Red Hare",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type to Fire and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_icon_normal.png",
   "habitat": {
@@ -2560,7 +2560,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Black Hare",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type toDark and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_Dark_icon_normal.png",
   "habitat": {
@@ -2619,7 +2619,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Amicable Holy Dragon",
-   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, Dark Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_icon_normal.png",
   "habitat": {
@@ -2680,7 +2680,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Amicable Water Dragon",
-   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire damage and are immune to Burn. (Does not stack)"
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. While in party, player and party Pals take 15~30% less Fire damage and are immune to Burn. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_Water_icon_normal.png",
   "habitat": null
@@ -2838,7 +2838,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Dragon Hunter",
-   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "While in party, Dragon Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteTiger_icon_normal.png",
   "habitat": {
@@ -3117,7 +3117,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Waterwing Dance",
-   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water and increases Attack by 5~20%."
+   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to Water and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_icon_normal.png",
   "habitat": {
@@ -3179,7 +3179,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Icewing Dance",
-   "description": "Can be ridden to travel on water. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%."
+   "description": "Can be ridden to travel on water. While mounted, changes the player’s attack type to Ice and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_Ice_icon_normal.png",
   "habitat": null
@@ -3813,7 +3813,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wolf of the Sun",
-   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice damage and are immune to Freeze. (Does not stack)"
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less Ice damage and are immune to Freeze. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_icon_normal.png",
   "habitat": {
@@ -4265,7 +4265,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Fragrant Dragon",
-   "description": "Can be ridden. While in party, increase Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals by 15~30%. (Does not stack)"
+   "description": "Can be ridden. While in party, increase Defense of Dragon Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_icon_normal.png",
   "habitat": {
@@ -4321,7 +4321,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Thunder Dragon",
-   "description": "Can be ridden. While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals by 15~30%.  (Does not stack)"
+   "description": "Can be ridden. While in party, increases Defense of Electric Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_Electric_icon_normal.png",
   "habitat": {
@@ -4377,7 +4377,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Static Electricity",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals by 15~30%. (Does not stack) Sometimes drops Electric Organ when assigned to Ranch."
+   "description": "While in party, increases Attack of Electric Pals by 15~30%. (Does not stack) Sometimes drops Electric Organ when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecCat_icon_normal.png",
   "habitat": {
@@ -4434,7 +4434,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Icy Steed",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice, inflict Freeze 2~6, increases Attack by 10~40%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to Ice, inflict Freeze 2~6, increases Attack by 10~40%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_icon_normal.png",
   "habitat": {
@@ -4491,7 +4491,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Black Steed",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark, inflict Blind 2~6, increases Attack by 10~40%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to Dark, inflict Blind 2~6, increases Attack by 10~40%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_Dark_icon_normal.png",
   "habitat": null
@@ -4858,7 +4858,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Scorching Predator",
-   "description": "Can be ridden as a flying mount. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden as a flying mount. While in party, Ice Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Horus_icon_normal.png",
   "habitat": {
@@ -4985,7 +4985,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Dragon Kaiser",
-   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon damage to enemy weak points by 25~40%. (Does not stack)"
+   "description": "Can be ridden. While in party, improves player's and Pals' Dragon damage to enemy weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_KingBahamut_Dragon_icon_normal.png",
   "habitat": null
@@ -5163,7 +5163,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Modified DNA",
-   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. Enhances <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark attacks by 15~30% while mounted."
+   "description": "Can be ridden as a flying mount. While flying, Movement Speed is increased. Enhances Dark attacks by 15~30% while mounted."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_BlackGriffon_icon_normal.png",
   "habitat": {
@@ -5281,7 +5281,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Gilded Shroud",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) Sometimes makes High Quality Cloth when assigned to Ranch."
+   "description": "While in party, increases Defense of Neutral Pals by 15~30%. (Does not stack) Sometimes makes High Quality Cloth when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteMoth_Neutral_icon_normal.png",
   "habitat": null
@@ -5389,7 +5389,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Lord Fox",
-   "description": "When activated, Wixen changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 30~50%."
+   "description": "When activated, Wixen changes the player's attack type to Fire and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FoxMage_icon_normal.png",
   "habitat": {
@@ -5446,7 +5446,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Black Fox Lord",
-   "description": "When activated, Wixen Noct changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 30~50%."
+   "description": "When activated, Wixen Noct changes the player's attack type to Dark and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FoxMage_Dark_icon_normal.png",
   "habitat": null
@@ -5559,7 +5559,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Dark Knowledge",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WizardOwl_icon_normal.png",
   "habitat": {
@@ -5614,7 +5614,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Aqua Spout",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals by 15~30%. (Does not stack) Sometimes drops Aquatic Pal Fluids when assigned to Ranch."
+   "description": "While in party, increases Attack of Water Pals by 15~30%. (Does not stack) Sometimes drops Aquatic Pal Fluids when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Kelpie_icon_normal.png",
   "habitat": {
@@ -5669,7 +5669,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Lava Spout",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
+   "description": "While in party, increases Attack of Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Kelpie_Fire_icon_normal.png",
   "habitat": {
@@ -5963,7 +5963,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Guardian of the South",
-   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground damage and are immune to Muddy status. (Does not stack)"
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less Ground damage and are immune to Muddy status. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Yeti_Grass_icon_normal.png",
   "habitat": {
@@ -6023,7 +6023,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Purification of Gaia",
-   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals drop 40~80% more items when defeated. (Does not stack) Sometimes drops various seeds when assigned to Ranch."
+   "description": "While in party, Ground Pals drop 40~80% more items when defeated. (Does not stack) Sometimes drops various seeds when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_VioletFairy_icon_normal.png",
   "habitat": {
@@ -6677,7 +6677,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Lightning Shepherd",
-   "description": "Can be ridden. Can perform a double jump while mounted. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pal in your party. (Excluding Rayhound)"
+   "description": "Can be ridden. Can perform a double jump while mounted. This Pal’s Movement Speed increases by 5~25% for each other Electric Pal in your party. (Excluding Rayhound)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderDog_icon_normal.png",
   "habitat": {
@@ -6737,7 +6737,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Snow Shepherd",
-   "description": "Can be ridden. Can perform a double jump while mounted. While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals by 15~30%.  (Does not stack)"
+   "description": "Can be ridden. Can perform a double jump while mounted. While in party, increases Defense of Ice Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderDog_Ice_icon_normal.png",
   "habitat": null
@@ -6966,7 +6966,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Aurora Guide",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pals by 15~30%. (Does not stack) Sometimes drops Ice Organ when assigned to Ranch."
+   "description": "While in party, increases Attack of Ice Pals by 15~30%. (Does not stack) Sometimes drops Ice Organ when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_IceFox_icon_normal.png",
   "habitat": {
@@ -7081,7 +7081,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Dream Chaser",
-   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark magic bullets. These bullets will not reduce the target's Health below 1."
+   "description": "While in party, appears near the player. Attacks hostile enemies with Dark magic bullets. These bullets will not reduce the target's Health below 1."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_DreamDemon_icon_normal.png",
   "habitat": {
@@ -7195,7 +7195,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Chipper Chimp Gunfire",
-   "description": "When activated, Tanzee Ignis will mercilessly fire a <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire assault rifle at nearby enemies for a limited time."
+   "description": "When activated, Tanzee Ignis will mercilessly fire a Fire assault rifle at nearby enemies for a limited time."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Monkey_Fire_icon_normal.png",
   "habitat": null
@@ -7252,7 +7252,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Hellflame Lion",
-   "description": "Can be ridden. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden. While in party, Grass Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Manticore_icon_normal.png",
   "habitat": {
@@ -7313,7 +7313,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Darkflame Lion",
-   "description": "Can be ridden. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden. While in party, Neutral Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Manticore_Dark_icon_normal.png",
   "habitat": {
@@ -7707,7 +7707,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Mystical Black Magic",
-   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals drop 40~80% more items when defeated. Also has a 10~50% chance to prevent Pal Sphere consumption when thrown. (Does not stack)"
+   "description": "While in party, Neutral Pals drop 40~80% more items when defeated. Also has a 10~50% chance to prevent Pal Sphere consumption when thrown. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_CatMage_icon_normal.png",
   "habitat": {
@@ -7821,7 +7821,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Happy-Go-Lucky Bunny",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) While at a base, increases the Handiwork Work Suitability Level for all other Base Pals by +1. (Does not stack)"
+   "description": "While in party, increases Attack of Neutral Pals by 15~30%. (Does not stack) While at a base, increases the Handiwork Work Suitability Level for all other Base Pals by +1. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkRabbit_icon_normal.png",
   "habitat": {
@@ -7882,7 +7882,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Thunderous",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pal in your party. (Excluding Beakon)"
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to Electric and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other Electric Pal in your party. (Excluding Beakon)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_icon_normal.png",
   "habitat": {
@@ -7944,7 +7944,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Coldsnap",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pal in your party. (Excluding Beakon Cryst)"
+   "description": "Can be ridden as a flying mount. While mounted, changes the player's attack type to Ice and increases Attack by 5~20%. This Pal’s Movement Speed increases by 5~25% for each other Ice Pal in your party. (Excluding Beakon Cryst)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_Ice_icon_normal.png",
   "habitat": null
@@ -8232,7 +8232,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Brave Sailor",
-   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "While in party, Fire Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_CaptainPenguin_icon_normal.png",
   "habitat": {
@@ -8291,7 +8291,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Unyielding Storm Commander",
-   "description": "While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water damage to enemy weak points by 25~40%. (Does not stack)"
+   "description": "While in party, improves player's and Pals' Water damage to enemy weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_CaptainPenguin_Black_icon_normal.png",
   "habitat": null
@@ -8350,7 +8350,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wriggling Weasel",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type to Dragon and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_icon_normal.png",
   "habitat": {
@@ -8412,7 +8412,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Sparkling Weasel",
-   "description": "Can be ridden. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+   "description": "Can be ridden. While mounted, changes the player’s attack type to Fire and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_Fire_icon_normal.png",
   "habitat": null
@@ -8471,7 +8471,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Sky Dragon Affection",
-   "description": "Can be ridden as a flying mount. While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pals by 15~30%. (Does not stack)"
+   "description": "Can be ridden as a flying mount. While in party, increases Attack of Dragon Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_icon_normal.png",
   "habitat": {
@@ -8537,7 +8537,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Grass Dragon Affection",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass and increases Attack by 5~20%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to Grass and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_Grass_icon_normal.png",
   "habitat": null
@@ -8594,7 +8594,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wings of Death",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark and increases Attack by 5~20%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to Dark and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_icon_normal.png",
   "habitat": {
@@ -8656,7 +8656,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Wings of Thunder",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to Electric and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_Electric_icon_normal.png",
   "habitat": null
@@ -8713,7 +8713,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Flame Wing",
-   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire and increases Attack by 5~20%."
+   "description": "Can be ridden as a flying mount. While mounted, changes the player’s attack type to Fire and increases Attack by 5~20%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_RedArmorBird_icon_normal.png",
   "habitat": {
@@ -9117,7 +9117,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Passion of the Flower Spirit",
-   "description": "When activated, soothing blossoms restore the player's Health by 80~90%. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass damage, and are immune to Ivy-Covered. (Does not stack)"
+   "description": "When activated, soothing blossoms restore the player's Health by 80~90%. While in party, player and party Pals take 15~30% less Grass damage, and are immune to Ivy-Covered. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FlowerDoll_Fire_icon_normal.png",
   "habitat": null
@@ -9280,7 +9280,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Steel Scorpion",
-   "description": "While in party, player's Defense increases by 5~10%, and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "While in party, player's Defense increases by 5~10%, and Electric Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkScorpion_icon_normal.png",
   "habitat": {
@@ -9335,7 +9335,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Golden Scorpion",
-   "description": "While in party, player's Defense increases by 5~10%, and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "While in party, player's Defense increases by 5~10%, and Electric Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_DarkScorpion_Ground_icon_normal.png",
   "habitat": null
@@ -9452,7 +9452,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Fluffy Wool",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pals by 15~30%. (Does not stack) Sometimes drops Wool when assigned to Ranch."
+   "description": "While in party, increases Attack of Neutral Pals by 15~30%. (Does not stack) Sometimes drops Wool when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WoolFox_icon_normal.png",
   "habitat": {
@@ -9510,7 +9510,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Soil Improver",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals by 15~30%. (Does not stack) Sometimes drops High Quality Pal Oil when assigned to Ranch."
+   "description": "While in party, increases Attack of Ground Pals by 15~30%. (Does not stack) Sometimes drops High Quality Pal Oil when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_LazyCatfish_icon_normal.png",
   "habitat": {
@@ -9678,7 +9678,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Tiny Spark",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
+   "description": "While in party, increases Defense of Fire Pals by 15~30%. (Does not stack) Sometimes drops Flame Organ when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FlameBambi_icon_normal.png",
   "habitat": {
@@ -9850,7 +9850,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Celestial Darkness",
-   "description": "Can be ridden as a flying mount. While mounted, enhances <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral and <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark attacks by 15~30%."
+   "description": "Can be ridden as a flying mount. While mounted, enhances Neutral and Dark attacks by 15~30%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_MoonQueen_icon_normal.png",
   "habitat": null
@@ -9960,7 +9960,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Shadow Stance",
-   "description": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark damage to enemy weak points by 25~40%. (Does not stack)"
+   "description": "When activated, Croajiro Noct channels its loyalty and puffs up its abdomen to store energy. Climbing on top will propel the player high into the air. While in party, improves player's and Pals' Dark damage to enemy weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_KendoFrog_Dark_icon_normal.png",
   "habitat": null
@@ -10183,7 +10183,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Sandball Soccer",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Defense of Ground Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_SmallArmadillo_icon_normal.png",
   "habitat": null
@@ -10240,7 +10240,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Grave Robber",
-   "description": "While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral damage. (Does not stack) Sometimes digs up Bone when assigned to Ranch."
+   "description": "While in party, player and party Pals take 15~30% less Neutral damage. (Does not stack) Sometimes digs up Bone when assigned to Ranch."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_CandleGhost_icon_normal.png",
   "habitat": null
@@ -10347,7 +10347,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Scorpion Longwave",
-   "description": "When activated, Prixter Lux changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 30~50%."
+   "description": "When activated, Prixter Lux changes the player's attack type to Electric and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ScorpionMan_Electric_icon_normal.png",
   "habitat": null
@@ -10843,7 +10843,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Magma Overload",
-   "description": "Can be ridden as a mount. This Pal's Attack increases by 4~8% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_07.png\" alt=\"Earth\" width=\"18\" height=\"18\">Ground Pal in your party."
+   "description": "Can be ridden as a mount. This Pal's Attack increases by 4~8% for each other Fire or Ground Pal in your party."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_icon_normal.png",
   "habitat": null
@@ -10896,7 +10896,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Ice Overload",
-   "description": "Can be ridden. While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice damage to enemy weak points by 25~40%. (Does not stack)"
+   "description": "Can be ridden. While in party, improves player's and Pals' Ice damage to enemy weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_Ice_icon_normal.png",
   "habitat": null
@@ -11060,7 +11060,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Soul Binder",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Defense of Grass Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostRabbit_Grass_icon_normal.png",
   "habitat": null
@@ -11175,7 +11175,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Light Dancer",
-   "description": "Can be ridden. Boosts Jump Power while mounted. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pal in your party. (Excluding Starryon Primo)"
+   "description": "Can be ridden. Boosts Jump Power while mounted. This Pal’s Movement Speed increases by 5~25% for each other Neutral Pal in your party. (Excluding Starryon Primo)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_NightBlueHorse_Neutral_icon_normal.png",
   "habitat": null
@@ -11402,7 +11402,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Blessing of Purification",
-   "description": "Can be ridden. This Pal's Attack and Movement Speed increases by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_00.png\" alt=\"Normal\" width=\"18\" height=\"18\">Neutral Pal in your party. When in party, recovers Health of the player and Party Pals by 0.15~0.75% per second. (Does not stack)"
+   "description": "Can be ridden. This Pal's Attack and Movement Speed increases by 2~6% for each other Neutral Pal in your party. When in party, recovers Health of the player and Party Pals by 0.15~0.75% per second. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_WhiteDeer_icon_normal.png",
   "habitat": null
@@ -12010,7 +12010,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Power Crystal",
-   "description": "While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon damage. (Does not stack)"
+   "description": "While in party, player and party Pals take 15~30% less Dragon damage. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_RockBeast_Ice_icon_normal.png",
   "habitat": null
@@ -12118,7 +12118,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Cephalo-Princess",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Defense of Water Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_OctopusGirl_Neutral_icon_normal.png",
   "habitat": null
@@ -12456,7 +12456,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Ground 'n' Pound",
-   "description": "While in party, improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass damage to enemy weak points by 25~40%. (Does not stack) Increases efficiency by 200~400% when working at a Weapon Workbench, Weapon Assembly Line, or other related facilities."
+   "description": "While in party, improves player's and Pals' Grass damage to enemy weak points by 25~40%. (Does not stack) Increases efficiency by 200~400% when working at a Weapon Workbench, Weapon Assembly Line, or other related facilities."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_PinkRabbit_Grass_icon_normal.png",
   "habitat": null
@@ -12559,7 +12559,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Gloomhowl",
-   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark damage and are immune to Blind. (Does not stack)"
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less Dark damage and are immune to Blind. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_Dark_icon_normal.png",
   "habitat": null
@@ -12615,7 +12615,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Lady of Dark Lightning",
-   "description": "While in party, appears near the player. Attacks hostile enemies with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark bolts. These bolts will not reduce the target's Health below 1."
+   "description": "While in party, appears near the player. Attacks hostile enemies with Dark bolts. These bolts will not reduce the target's Health below 1."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_RaijinDaughter_Water_icon_normal.png",
   "habitat": null
@@ -12727,7 +12727,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Stormcloud",
-   "description": "Can be ridden. Can double jump while mounted. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden. Can double jump while mounted. While in party, Water Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_FengyunDeeper_Electric_icon_normal.png",
   "habitat": null
@@ -12786,7 +12786,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Tidal Predator",
-   "description": "Can be ridden as a flying mount. While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "Can be ridden as a flying mount. While in party, Fire Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_Horus_Water_icon_normal.png",
   "habitat": null
@@ -12846,7 +12846,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Blizzard Crash",
-   "description": "Can be ridden. While mounted, delivers crushing blows with a hammer forged from <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice."
+   "description": "Can be ridden. While mounted, delivers crushing blows with a hammer forged from Ice."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_SnowTigerBeastman_icon_normal.png",
   "habitat": null
@@ -12960,7 +12960,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Master of Darkness",
-   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Ghangler)"
+   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other Dark or Water Pal in your party. (Excluding Ghangler)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_icon_normal.png",
   "habitat": null
@@ -13014,7 +13014,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Abyssal Celebrity Chef",
-   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water Pal in your party. (Excluding Ghangler Ignis)"
+   "description": "Can be ridden to travel on water. This Pal’s Movement Speed increases by 5~25% for each other Fire or Water Pal in your party. (Excluding Ghangler Ignis)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_Fire_icon_normal.png",
   "habitat": null
@@ -13067,7 +13067,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Witch's Icy Veil",
-   "description": "When activated, Icelyn changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice and increases Attack by 30~50%."
+   "description": "When activated, Icelyn changes the player's attack type to Ice and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_IceWitch_icon_normal.png",
   "habitat": null
@@ -13128,7 +13128,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Trick-Loving Fluffle",
-   "description": "While in party, when the player's Health falls below 50%, Dupin generates an explosion around the player (<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire / Power: 100~200 / Burn buildup: 777). Additionally, while the player's Health is below 50%, the player's Attack is increased by 30~50%. (Does not stack)"
+   "description": "While in party, when the player's Health falls below 50%, Dupin generates an explosion around the player (Fire / Power: 100~200 / Burn buildup: 777). Additionally, while the player's Health is below 50%, the player's Attack is increased by 30~50%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ClownRabbit_icon_normal.png",
   "habitat": null
@@ -13353,7 +13353,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Icy Maw",
-   "description": "While in party, reduces the weight of ingredient and food by 30~60%. When paired with another <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_08.png\" alt=\"Ice\" width=\"18\" height=\"18\">Ice Pal, their Rot Speed also reduces by -80~-30%. (Does not stack)"
+   "description": "While in party, reduces the weight of ingredient and food by 30~60%. When paired with another Ice Pal, their Rot Speed also reduces by -80~-30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_IceCrocodile_icon_normal.png",
   "habitat": null
@@ -13573,7 +13573,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Water Gun",
-   "description": "When activated, Finsider changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water and increases Attack by  30~50%."
+   "description": "When activated, Finsider changes the player's attack type to Water and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_StuffedShark_icon_normal.png",
   "habitat": null
@@ -13628,7 +13628,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Ember Chamber",
-   "description": "While in party, Finsider Ignis helps carry supplies, reducing the weight of weapons in your inventory by 60~100%. Also improves player's and Pals' <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire damage to enemy weak points by 25~40%. (Does not stack)"
+   "description": "While in party, Finsider Ignis helps carry supplies, reducing the weight of weapons in your inventory by 60~100%. Also improves player's and Pals' Fire damage to enemy weak points by 25~40%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_StuffedShark_Fire_icon_normal.png",
   "habitat": null
@@ -14260,7 +14260,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Forest Laser",
-   "description": "Can be ridden. When activated, Dualith fires a powerful <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass laser from its right hand."
+   "description": "Can be ridden. When activated, Dualith fires a powerful Grass laser from its right hand."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_icon_normal.png",
   "habitat": null
@@ -14325,7 +14325,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Corruption Laser",
-   "description": "Can be ridden. When activated, Dualith Noct fires a powerful <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark laser from its right hand."
+   "description": "Can be ridden. When activated, Dualith Noct fires a powerful Dark laser from its right hand."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_Dark_icon_normal.png",
   "habitat": null
@@ -14708,7 +14708,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Hidden Dark Energy",
-   "description": "While in party, increases Defense of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Defense of Dark Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_MoonChild_icon_normal.png",
   "habitat": null
@@ -14816,7 +14816,7 @@ const PALS = [
   ],
   "partnerSkill": {
    "name": "Sentinel of the Great Sea",
-   "description": "While in party, it follows up the player's attacks with <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water spear strikes. Can be ridden to travel on water. While mounted, it can leap high into the air over water."
+   "description": "While in party, it follows up the player's attacks with Water spear strikes. Can be ridden to travel on water. While mounted, it can leap high into the air over water."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_PoseidonOrca_icon_normal.png",
   "habitat": null
@@ -15281,7 +15281,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Enchant",
-   "description": "While in party, <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals drop 40~80% more items when defeated. (Does not stack)"
+   "description": "While in party, Dark Pals drop 40~80% more items when defeated. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaMonster002_icon_normal.png",
   "habitat": null
@@ -15481,7 +15481,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Demonic Sight",
-   "description": "While in party, increases Attack of <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pals by 15~30%. (Does not stack)"
+   "description": "While in party, increases Attack of Dark Pals by 15~30%. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_YakushimaBoss001_Small_icon_normal.png",
   "habitat": null
@@ -15646,7 +15646,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Shocking Fish",
-   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric and increases Attack by 5~20%. While in party, makes it easier to fish up talented Pals. (Does not stack)"
+   "description": "Can be ridden to travel on water. While mounted, changes the player's attack type to Electric and increases Attack by 5~20%. While in party, makes it easier to fish up talented Pals. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_KingSunfish_Thunder_icon_normal.png",
   "habitat": null
@@ -15817,7 +15817,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Grounding Shell",
-   "description": "While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_02.png\" alt=\"Water\" width=\"18\" height=\"18\">Water damage, and are immune to Soak. (Does not stack)"
+   "description": "While in party, player and party Pals take 15~30% less Water damage, and are immune to Soak. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_ElecSnail_Ground_icon_normal.png",
   "habitat": null
@@ -15931,7 +15931,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Yokozuna's Presence",
-   "description": "Can be ridden. While in party, player and party Pals take 15~30% less <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_03.png\" alt=\"Electricity\" width=\"18\" height=\"18\">Electric damage and are immune to Electrify. (Does not stack)"
+   "description": "Can be ridden. While in party, player and party Pals take 15~30% less Electric damage and are immune to Electrify. (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_SumoDog_icon_normal.png",
   "habitat": null
@@ -15992,7 +15992,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Entangling Tongue",
-   "description": "While in party, when the player performs a dodge roll or dodge step, Carnibora creates a whirlwind that deals damage to enemies it touches (<img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass / Power: 40~80). (Does not stack)"
+   "description": "While in party, when the player performs a dodge roll or dodge step, Carnibora creates a whirlwind that deals damage to enemies it touches (Grass / Power: 40~80). (Does not stack)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_VenusFlytrap_icon_normal.png",
   "habitat": null
@@ -16431,7 +16431,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Azure Sovereign",
-   "description": "Can be ridden as a flying mount. This Pal's Attack increases by 4~8% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon Pal in your party."
+   "description": "Can be ridden as a flying mount. This Pal's Attack increases by 4~8% for each other Dragon Pal in your party."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_BlueSkyDragon_icon_normal.png",
   "habitat": null
@@ -16484,7 +16484,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Selfless Discipline",
-   "description": "This Pal's Attack and Defense increase by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass Pal in your party."
+   "description": "This Pal's Attack and Defense increase by 2~6% for each other Grass Pal in your party."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_PandaGirl_icon_normal.png",
   "habitat": null
@@ -16546,7 +16546,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Mother Nature's Menace",
-   "description": "When activated, Elgrove changes the player's attack type to <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_04.png\" alt=\"Leaf\" width=\"18\" height=\"18\">Grass and increases Attack by 30~50%."
+   "description": "When activated, Elgrove changes the player's attack type to Grass and increases Attack by 30~50%."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GrassMinotaur_icon_normal.png",
   "habitat": null
@@ -16728,7 +16728,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Liberated Pterosaur",
-   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% for each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragonor <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_05.png\" alt=\"Dark\" width=\"18\" height=\"18\">Dark Pal in your party."
+   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% for each other Dragonor Dark Pal in your party."
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_icon_normal.png",
   "habitat": null
@@ -16789,7 +16789,7 @@ const PALS = [
   "guaranteedPassives": [],
   "partnerSkill": {
    "name": "Resentful Pterosaur",
-   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% or each other <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_06.png\" alt=\"Dragon\" width=\"18\" height=\"18\">Dragon or <img class=\"elem-inline\" src=\"/images/icons/T_Icon_element_s_01.png\" alt=\"Fire\" width=\"18\" height=\"18\">Fire Pal in your party. (Excluding Eidrolon Ignis)"
+   "description": "Can be ridden as a flying mount. This Pal's Attack and Movement Speed increase by 2~6% or each other Dragon or Fire Pal in your party. (Excluding Eidrolon Ignis)"
   },
   "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_Fire_icon_normal.png",
   "habitat": null

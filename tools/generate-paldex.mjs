@@ -100,14 +100,38 @@ function section(html, startMarker, span = 4000) {
   return html.slice(i, i + span)
 }
 
+/**
+ * Entfernt HTML-Tags aus einem Textausschnitt.
+ *
+ * palworld.gg setzt in Beschreibungen Inline-Icons, z. B.
+ *   ... attack type to <img class="elem-inline" alt="Earth" ...>Ground and ...
+ * Der Elementname steht direkt daneben im Klartext, das Tag kann also
+ * ersatzlos entfallen. Wird es stehen gelassen, zeigt die App rohes HTML.
+ */
+const stripTags = s => String(s ?? '')
+  .replace(/<br\s*\/?>/gi, ' ')     // Zeilenumbrueche zu Leerzeichen
+  .replace(/<[^>]*>/g, '')          // alle uebrigen Tags weg
+  .replace(/\s+/g, ' ')             // Mehrfach-Leerzeichen einebnen
+  .trim()
+
+/**
+ * Holt sauberen Klartext aus einem HTML-Ausschnitt.
+ * Reihenfolge ist wichtig: erst Tags entfernen, dann Entities aufloesen.
+ * Andersherum wuerde ein woertlich gemeintes &lt;b&gt; zu einem Tag und
+ * anschliessend faelschlich geloescht.
+ */
 const decodeEntities = s =>
-  s
+  stripTags(s)
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
-    .replace(/&#0?39;/g, "'")
     .replace(/&nbsp;/g, ' ')
+    // Numerische Entities richtig aufloesen statt sie zu verwerfen -
+    // sonst gingen Zeichen wie &#8217; (Apostroph) verloren.
+    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/\s+/g, ' ')
     .trim()
 
 // -------------------------------------------------- palworld.gg HTML parsen
