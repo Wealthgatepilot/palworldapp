@@ -54,6 +54,7 @@ const SRC = {
   sitemap: 'https://palworld.gg/__sitemap__/en.xml',
   palPage: slug => `https://palworld.gg/pal/${slug}`,
   tierList: path => `https://palworld.gg/tier-list${path}`,
+  techTree: 'https://palworld.gg/technology-tree',
   icon: internal => `https://palworld.gg/images/full_palicon/T_${internal}_icon_normal.png`,
   habitat: (key, when) =>
     `${RAW}/mlg404/palworld-paldex-api/main/public/images/maps/${key}-${when}.png`,
@@ -235,6 +236,40 @@ function collectWorkMeta(pages, workTypes) {
     }
   }
   return { meta, fehlend }
+}
+
+/**
+ * Technologiebaum: 80 Stufen mit den jeweils freischaltbaren Gegenstaenden.
+ *
+ * Aufbau der Seite:
+ *   <div class="tech"><div class="level"><span>1</span></div><div class="items">
+ *     <div class="item ancient" style="background-image:url('…/T_x.png');">
+ *       <div class="cost"><span>1</span></div><div class="name"><span>Wooden Club</span></div>
+ *
+ * Ancient-Gegenstaende kosten eine eigene Waehrung (Ancient Technology Points),
+ * deshalb wird das Kennzeichen mitgenommen und spaeter getrennt summiert.
+ */
+function parseTechTree(html) {
+  const ITEM = /<div class="item([^"]*)" style="background-image:url\(&#39;(.*?)&#39;\);"><div class="cost"><span>(\d+)<\/span><\/div><div class="name"><span>(.*?)<\/span>/g
+
+  const stufen = []
+  for (const block of html.split('<div class="tech">').slice(1)) {
+    const lvl = Number((block.match(/<div class="level"><span>(\d+)<\/span>/) || [])[1])
+    if (!lvl) continue
+
+    const items = [...block.matchAll(ITEM)].map(m => {
+      // Aus "/_ipx/q_80&amp;s_100x100/images/items/T_x.png" den echten Pfad ziehen
+      const pfad = (m[2].match(/(\/images\/[^?]*)$/) || [])[1]
+      return {
+        name: decodeEntities(m[4]),
+        cost: Number(m[3]),
+        ancient: /\bancient\b/.test(m[1]),
+        icon: pfad ? `https://palworld.gg${pfad}` : null,
+      }
+    })
+    if (items.length) stufen.push({ level: lvl, items })
+  }
+  return stufen
 }
 
 /* palworld.gg fuehrt fuenf getrennte Tier Lists. Die sind redaktionelle
@@ -436,6 +471,15 @@ async function main() {
         (missed.length ? ` (ohne Zuordnung: ${missed.join(', ')})` : ''))
   }
 
+  // --- Technologiebaum -------------------------------------------------
+  log('\n      Technologiebaum ...')
+  const TECH_TREE = parseTechTree(await fetchText(SRC.techTree))
+  const techItems = TECH_TREE.reduce((n, s) => n + s.items.length, 0)
+  const techAncient = TECH_TREE.reduce((n, s) => n + s.items.filter(i => i.ancient).length, 0)
+  const techOhneIcon = TECH_TREE.flatMap(s => s.items).filter(i => !i.icon).length
+  log(`      ${TECH_TREE.length} Stufen, ${techItems} Gegenstaende (${techAncient} ancient)` +
+      (techOhneIcon ? `, ${techOhneIcon} ohne Icon` : ''))
+
   const passiveNameById = new Map(db.PassiveSkills.map(p => [p.InternalName, p.Name]))
   const index = new Map(db.Pals.map((p, i) => [p.InternalName, i]))
 
@@ -544,6 +588,8 @@ async function main() {
     palsWithIcon: PALS.filter(p => p.icon).length,
     palsWithPartnerSkill: PALS.filter(p => p.partnerSkill).length,
     tierLists: Object.keys(TIERLISTS).length,
+    techLevels: TECH_TREE.length,
+    techItems,
   }
 
   const js = `// AUTO-GENERIERT von tools/generate-paldex.mjs - nicht von Hand bearbeiten.
@@ -575,6 +621,9 @@ const WORK_META = ${JSON.stringify(WORK_META, null, 1)};
 // Tier Lists von palworld.gg - redaktionelle Einschaetzung, keine Spieldaten.
 // Werte sind PALS-Indizes. In der App ueberschreibbar.
 const TIERLISTS = ${JSON.stringify(TIERLISTS, null, 1)};
+
+// Technologiebaum: 80 Stufen. Ancient-Gegenstaende kosten eine eigene Waehrung.
+const TECH_TREE = ${JSON.stringify(TECH_TREE, null, 1)};
 `
 
   await writeFile(OUT_FILE, js, 'utf8')

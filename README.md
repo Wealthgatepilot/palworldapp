@@ -14,7 +14,8 @@ Pal-Bestand wird von Hand gepflegt und liegt im `localStorage` (Import/Export al
 | **Zucht / Pathfinder** | ✅ | Ziel-Pal wählen → kürzester Zuchtplan aus dem eigenen Bestand, plus alle direkten Elternpaare. |
 | **Meine Pals** | ✅ | Manuell gepflegter Bestand mit Geschlecht, im `localStorage`, Import/Export als JSON. |
 | **Tier List** | ✅ | Fünf Ranglisten von palworld.gg (Gesamt, Arbeit, Kampf, Flug-/Bodenreittiere), S–D, mit Namen an jedem Pal. Jede Einstufung selbst überschreibbar, Overrides im `localStorage`. |
-| **Guide** | ✅ | Zuchtgrundlagen, Passive-Vererbung mit den echten Wahrscheinlichkeiten aus den Spieldaten, Arbeitseignung, Vorgehen — und was das Tool *nicht* kann. |
+| **Technology** | ✅ | Kompletter Technologiebaum: 80 Stufen, 588 Freischaltungen mit Original-Icons. Suche, Filter nach normal/Ancient, Punktsummen (1413 Technology Points, 182 Ancient). |
+| **Guide** | ✅ | Zucht, Passive-Vererbung mit den echten Wahrscheinlichkeiten aus den Spieldaten, Elemente und Kampf, Fangen, Partner-Skills, Basis — und was das Tool *nicht* kann. |
 | **Karte** | ✅ | Link auf palworld.gg (keine eigenen Kacheln/Marker). „Wo finde ich Pal X" löst stattdessen die Habitat-Karte im Detail-Modal. |
 
 ### Wie der Pathfinder rechnet

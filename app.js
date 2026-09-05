@@ -925,6 +925,59 @@ function renderTierList() {
 }
 
 /* ============================================================
+   Technology tree
+   ============================================================ */
+
+let techQuery = '';
+let techKind = 'all';   // all | normal | ancient
+
+function renderTech() {
+  const q = techQuery.trim().toLowerCase();
+
+  const stufen = TECH_TREE
+    .map(s => ({
+      level: s.level,
+      items: s.items.filter(i =>
+        (techKind === 'all' || (techKind === 'ancient' ? i.ancient : !i.ancient)) &&
+        (!q || i.name.toLowerCase().includes(q))),
+    }))
+    .filter(s => s.items.length);
+
+  // Punkte sind zwei getrennte Waehrungen im Spiel, also auch getrennt summieren
+  const sichtbar = stufen.flatMap(s => s.items);
+  const punkte = sichtbar.filter(i => !i.ancient).reduce((n, i) => n + i.cost, 0);
+  const ancient = sichtbar.filter(i => i.ancient).reduce((n, i) => n + i.cost, 0);
+
+  $('#techSummary').innerHTML = sichtbar.length
+    ? `<div class="tech-summary">
+        <div class="ts-item"><div class="ts-v">${sichtbar.length}</div><div class="ts-k">unlocks</div></div>
+        ${punkte ? `<div class="ts-item"><div class="ts-v">${punkte}</div>
+          <div class="ts-k">Technology Points</div></div>` : ''}
+        ${ancient ? `<div class="ts-item anc"><div class="ts-v">${ancient}</div>
+          <div class="ts-k">Ancient Points</div></div>` : ''}
+        <div class="ts-item"><div class="ts-v">${stufen.length}</div><div class="ts-k">levels</div></div>
+      </div>`
+    : '';
+
+  $('#techLevels').innerHTML = stufen.length
+    ? stufen.map(s => `
+        <div class="tech-level">
+          <div class="tl-head"><span class="tl-lv">Lv ${s.level}</span>
+            <span class="tl-cost">${s.items.reduce((n, i) => n + i.cost, 0)} pts</span></div>
+          <div class="tl-items">
+            ${s.items.map(i => `<div class="tech-item${i.ancient ? ' ancient' : ''}">
+              ${i.icon ? `<img src="${esc(i.icon)}" alt="" loading="lazy">` : ''}
+              <div class="ti-main">
+                <div class="ti-name">${esc(i.name)}</div>
+                <div class="ti-cost">${i.cost} ${i.ancient ? 'ancient pt' : 'pt'}${i.cost > 1 ? 's' : ''}</div>
+              </div>
+            </div>`).join('')}
+          </div>
+        </div>`).join('')
+    : '<div class="stub">🔧<span>Nothing matches that search.</span></div>';
+}
+
+/* ============================================================
    Guide
    ============================================================ */
 
@@ -1012,6 +1065,7 @@ function init() {
   renderGuide();
   renderCombine();
   renderWatchlist();
+  renderTech();
 
   // Header-Hoehe an die echte Hoehe angleichen (Notch/Safe-Area)
   const syncHeader = () => document.documentElement.style
@@ -1033,6 +1087,11 @@ function init() {
   $('#tierSearch').addEventListener('input', e => {
     tierQuery = e.target.value;
     renderTierList();
+  });
+
+  $('#techSearch').addEventListener('input', e => {
+    techQuery = e.target.value;
+    renderTech();
   });
 
   $('#searchA').addEventListener('input', e =>
@@ -1232,6 +1291,14 @@ function init() {
       case 'open-pal':
         openPal(act.dataset.key);
         break;
+      /* ---- Technology ---- */
+      case 'tech-filter':
+        techKind = act.dataset.kind;
+        document.querySelectorAll('[data-action="tech-filter"]').forEach(b =>
+          b.classList.toggle('active', b === act));
+        renderTech();
+        break;
+
       case 'guide-jump': {
         const el = document.getElementById('guide-' + act.dataset.id);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -181,6 +181,38 @@ input, select { font-family: inherit; font-size: 16px; }
 .tier-picker .tier-badge.on { opacity: 1; box-shadow: 0 0 0 2px var(--text) inset; }
 .tool-btn.wide { width: 100%; margin-top: 8px; padding: 12px; }
 
+/* ============ Technologiebaum ============ */
+.tech-summary { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
+.ts-item {
+  flex: 1; min-width: 78px; background: var(--bg-card-2);
+  border-radius: 10px; padding: 8px 10px; text-align: center;
+}
+.ts-item.anc { background: rgba(201,162,39,.16); }
+.ts-v { font-weight: 800; font-size: 1.15rem; }
+.ts-k { font-size: .66rem; color: var(--text-dim); }
+
+.tech-level {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 9px; margin-bottom: 9px;
+}
+.tl-head {
+  display: flex; align-items: baseline; gap: 8px; margin-bottom: 7px;
+  padding-bottom: 5px; border-bottom: 1px solid var(--border);
+}
+.tl-lv { font-weight: 800; color: var(--accent-2); }
+.tl-cost { font-size: .7rem; color: var(--text-dim); margin-left: auto; }
+.tl-items { display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr)); gap: 6px; }
+.tech-item {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--bg-card-2); border-radius: 9px; padding: 6px 8px;
+  border-left: 3px solid transparent;
+}
+.tech-item.ancient { border-left-color: var(--yellow); background: rgba(201,162,39,.09); }
+.tech-item img { width: 34px; height: 34px; object-fit: contain; flex: none; }
+.ti-main { min-width: 0; }
+.ti-name { font-size: .82rem; font-weight: 600; line-height: 1.2; }
+.ti-cost { font-size: .66rem; color: var(--text-dim); }
+
 /* ============ Guide ============ */
 .g-section { margin-bottom: 26px; }
 .g-title { font-size: 1.05rem; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }

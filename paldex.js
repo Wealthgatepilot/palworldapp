@@ -1,7 +1,7 @@
 // AUTO-GENERIERT von tools/generate-paldex.mjs - nicht von Hand bearbeiten.
 //
 // Quellen: tylercamp/palcalc (MIT), mlg404/palworld-paldex-api (MIT), palworld.gg
-// {"generatedFrom":"tools/generate-paldex.mjs","palcalcVersion":"v27","palCount":299,"breedingPairs":44851,"passiveCount":115,"palsWithElements":299,"palsWithHabitat":127,"palsWithIcon":299,"palsWithPartnerSkill":299,"tierLists":5}
+// {"generatedFrom":"tools/generate-paldex.mjs","palcalcVersion":"v27","palCount":299,"breedingPairs":44851,"passiveCount":115,"palsWithElements":299,"palsWithHabitat":127,"palsWithIcon":299,"palsWithPartnerSkill":299,"tierLists":5,"techLevels":80,"techItems":588}
 
 const PALDEX_META = {
   "generatedFrom": "tools/generate-paldex.mjs",
@@ -13,7 +13,9 @@ const PALDEX_META = {
   "palsWithHabitat": 127,
   "palsWithIcon": 299,
   "palsWithPartnerSkill": 299,
-  "tierLists": 5
+  "tierLists": 5,
+  "techLevels": 80,
+  "techItems": 588
 };
 
 // Alle 299 Pals. Feld "i" ist der Index, auf den BREEDING verweist.
@@ -19043,3 +19045,3935 @@ const TIERLISTS = {
   }
  }
 };
+
+// Technologiebaum: 80 Stufen. Ancient-Gegenstaende kosten eine eigene Waehrung.
+const TECH_TREE = [
+ {
+  "level": 1,
+  "items": [
+   {
+    "name": "Wooden Club",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Bat.png"
+   },
+   {
+    "name": "Hand-Held Torch",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TorchStand.png"
+   },
+   {
+    "name": "Stone Axe",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Axe_Tier_00.png"
+   },
+   {
+    "name": "Stone Pickaxe",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Pickaxe_Tier_00.png"
+   },
+   {
+    "name": "Primitive Workbench",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WorkBench.png"
+   }
+  ]
+ },
+ {
+  "level": 2,
+  "items": [
+   {
+    "name": "Wooden Chest",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ItemChest.png"
+   },
+   {
+    "name": "Palbox",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PalBoxV2.png"
+   },
+   {
+    "name": "Campfire",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CampFire.png"
+   },
+   {
+    "name": "Repair Bench",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_RepairBench.png"
+   },
+   {
+    "name": "Pal Dressing Facility",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SkinChange.png"
+   },
+   {
+    "name": "Pal Sphere",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere.png"
+   },
+   {
+    "name": "Wooden Structure Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Wood_Foundation.png"
+   }
+  ]
+ },
+ {
+  "level": 3,
+  "items": [
+   {
+    "name": "Arrow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_Arrow.png"
+   },
+   {
+    "name": "Old Bow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_WeakerBow.png"
+   },
+   {
+    "name": "Global Palbox",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_GlobalPalStorage.png"
+   },
+   {
+    "name": "Straw Pal Bed",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicalPalBed_02.png"
+   },
+   {
+    "name": "Shoddy Bed",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PlayerBed_02.png"
+   },
+   {
+    "name": "Stone Spear",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_Tier_00.png"
+   }
+  ]
+ },
+ {
+  "level": 4,
+  "items": [
+   {
+    "name": "Cloth Outfit",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_ClothArmor.png"
+   },
+   {
+    "name": "Cloth",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Cloth.png"
+   },
+   {
+    "name": "Feed Box",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PalFoodBox.png"
+   },
+   {
+    "name": "Common Shield",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_01.png"
+   }
+  ]
+ },
+ {
+  "level": 5,
+  "items": [
+   {
+    "name": "Normal Parachute",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Glider_Glider_Old.png"
+   },
+   {
+    "name": "Wooden Living Room Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TableSquare_Wood.png"
+   },
+   {
+    "name": "Wooden Tavern Cabinet Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Barrel_Wood.png"
+   },
+   {
+    "name": "Wooden Tavern Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Counter_Wood.png"
+   },
+   {
+    "name": "Ranch",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MonsterFarm.png"
+   },
+   {
+    "name": "Berry Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_Berries.png"
+   }
+  ]
+ },
+ {
+  "level": 6,
+  "items": [
+   {
+    "name": "Fire Arrow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_Arrow_Fire.png"
+   },
+   {
+    "name": "Houseplant Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Plant01_Plant.png"
+   },
+   {
+    "name": "Pal Gear Workbench",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WorkBench_SkillUnlock.png"
+   },
+   {
+    "name": "Sign",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Signboard.png"
+   },
+   {
+    "name": "Rushoar Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Boar_icon_normal.png"
+   },
+   {
+    "name": "Foxparks' Harness",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Kitsunebi_icon_normal.png"
+   },
+   {
+    "name": "Mounted Torch",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TorchStand.png"
+   },
+   {
+    "name": "Wall-Mounted Sign",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WallSignboard.png"
+   }
+  ]
+ },
+ {
+  "level": 7,
+  "items": [
+   {
+    "name": "Alarm Bell",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampBattleDirector.png"
+   },
+   {
+    "name": "Monitoring Stand",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampWorkHard.png"
+   },
+   {
+    "name": "Bat",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_Bat2.png"
+   },
+   {
+    "name": "Sandbag",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DefenseWait.png"
+   },
+   {
+    "name": "Wall-Mounted Houseplant Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ivy01.png"
+   },
+   {
+    "name": "Logging Site",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_StationDeforest2.png"
+   },
+   {
+    "name": "Stone Pit",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_StonePit.png"
+   },
+   {
+    "name": "Melpaca Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Alpaca_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 8,
+  "items": [
+   {
+    "name": "Poison Arrow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_Arrow_Poison.png"
+   },
+   {
+    "name": "Crusher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Crusher.png"
+   },
+   {
+    "name": "Wooden Defensive Wall",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DefenseWall_Wood.png"
+   },
+   {
+    "name": "Fireplace Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Light_FirePlace01.png"
+   },
+   {
+    "name": "Hanging Trap",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_Noose.png"
+   },
+   {
+    "name": "Wooden Gate",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Wood_Gate.png"
+   }
+  ]
+ },
+ {
+  "level": 9,
+  "items": [
+   {
+    "name": "Small Feed Bag",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AutoMealPouch_Tier1.png"
+   },
+   {
+    "name": "Tundra Outfit",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_ClothArmorCold.png"
+   },
+   {
+    "name": "Tropical Outfit",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_ClothArmorHeat.png"
+   },
+   {
+    "name": "Statue of Power",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BuildableGoddessStatue.png"
+   },
+   {
+    "name": "Carpet Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Rug01_Stone.png"
+   },
+   {
+    "name": "Direhowl's Saddled Harness",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Garm_icon_normal.png"
+   },
+   {
+    "name": "Hot Spring",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Spa.png"
+   }
+  ]
+ },
+ {
+  "level": 10,
+  "items": [
+   {
+    "name": "Feathered Hair Band",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_FurHelmet.png"
+   },
+   {
+    "name": "Three Shot Bow",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Bow.png"
+   },
+   {
+    "name": "Antique Storage Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Shelf01_Stone.png"
+   },
+   {
+    "name": "Nail",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_MachineParts.png"
+   },
+   {
+    "name": "Primitive Furnace",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BlastFurnace.png"
+   },
+   {
+    "name": "Egg Incubator",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_HatchingPalEgg.png"
+   },
+   {
+    "name": "Bear Trap (Small)",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_LegHold.png"
+   },
+   {
+    "name": "Ladder",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Wooden_Ladder.png"
+   }
+  ]
+ },
+ {
+  "level": 11,
+  "items": [
+   {
+    "name": "Antique Chair Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Chair01_Stone.png"
+   },
+   {
+    "name": "Rayne Syndicate Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Hunter_Flag.png"
+   },
+   {
+    "name": "Metal Axe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Axe_Tier_00.png"
+   },
+   {
+    "name": "High-Quality Workbench",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Factory_Hard_01.png"
+   },
+   {
+    "name": "Metal Pickaxe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Pickaxe_Tier_00.png"
+   },
+   {
+    "name": "Lifmunk's Submachine Gun",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Carbunclo_icon_normal.png"
+   },
+   {
+    "name": "Chillet Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 12,
+  "items": [
+   {
+    "name": "Pelt Armor",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_FurArmor.png"
+   },
+   {
+    "name": "Faux Greenery Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Green.png"
+   },
+   {
+    "name": "Grappling Gun",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrapplingGun.png"
+   },
+   {
+    "name": "Meat Cleaver",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_MeatCutterKnife.png"
+   },
+   {
+    "name": "Medieval Medicine Workbench",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicineFacility_01.png"
+   },
+   {
+    "name": "Eikthyrdeer Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Deer_icon_normal.png"
+   },
+   {
+    "name": "Tanzee's Assault Rifle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Monkey_icon_normal.png"
+   },
+   {
+    "name": "Tidy Table Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TableCircular_Wood_None.png"
+   }
+  ]
+ },
+ {
+  "level": 13,
+  "items": [
+   {
+    "name": "Crossbow",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_BowGun.png"
+   },
+   {
+    "name": "Cooler Box",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CoolerBox.png"
+   },
+   {
+    "name": "Training Dummy",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DamagedScarecrow.png"
+   },
+   {
+    "name": "Antique Storage Cabinet Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Shelf05_Stone.png"
+   },
+   {
+    "name": "Metal Chest",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ItemChest_02.png"
+   },
+   {
+    "name": "Tanzee Ignis's Assault Rifle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Monkey_Fire_icon_normal.png"
+   },
+   {
+    "name": "Metal Spear",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_Tier_00.png"
+   }
+  ]
+ },
+ {
+  "level": 14,
+  "items": [
+   {
+    "name": "Average Feed Bag",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AutoMealPouch_Tier2.png"
+   },
+   {
+    "name": "Antique Desk Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Desk01_Stone.png"
+   },
+   {
+    "name": "Faux Crimson Foliage Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Red.png"
+   },
+   {
+    "name": "Univolt Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Kirin_icon_normal.png"
+   },
+   {
+    "name": "Pal Essence Condenser",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CharacterRankUp.png"
+   },
+   {
+    "name": "Mega Sphere",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Mega.png"
+   },
+   {
+    "name": "Sphere Workbench",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SphereFactory_Black_01.png"
+   },
+   {
+    "name": "Wall Torch",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TorchHang.png"
+   }
+  ]
+ },
+ {
+  "level": 15,
+  "items": [
+   {
+    "name": "Viewing Cage",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DisplayCharacter.png"
+   },
+   {
+    "name": "Beginner Fishing Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FishingRod_1.png"
+   },
+   {
+    "name": "Mill",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FlourMill.png"
+   },
+   {
+    "name": "Hip Lantern",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_Lantern.png"
+   },
+   {
+    "name": "Wooden Board",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Processed_Wood.png"
+   },
+   {
+    "name": "Wheat Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_wheet.png"
+   },
+   {
+    "name": "Arsox Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FlameBuffalo_icon_normal.png"
+   },
+   {
+    "name": "Nitewing Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_HawkBird_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 16,
+  "items": [
+   {
+    "name": "Heat Resistant Pelt Armor",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_FurArmorHeat.png"
+   },
+   {
+    "name": "Antique Mirror Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Mirror01_Stone.png"
+   },
+   {
+    "name": "Antique Bath Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BathTub_Stone.png"
+   },
+   {
+    "name": "Faux Golden Foliage Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Yellow.png"
+   },
+   {
+    "name": "Mega Shield",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_02.png"
+   },
+   {
+    "name": "Surfent Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Serpent_icon_normal.png"
+   },
+   {
+    "name": "Lockpicking Tool v1",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_Unlock_Picking.png"
+   }
+  ]
+ },
+ {
+  "level": 17,
+  "items": [
+   {
+    "name": "Primitive Sword",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_BronzeSword.png"
+   },
+   {
+    "name": "Piano Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Piano01_Stone.png"
+   },
+   {
+    "name": "Metal Shelf Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Shelf01_Iron.png"
+   },
+   {
+    "name": "Mega Grappling Gun",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrapplingGun.png"
+   },
+   {
+    "name": "Tombstone",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Headstone.png"
+   },
+   {
+    "name": "Heater",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_HeaterMedieval.png"
+   },
+   {
+    "name": "Cooking Pot",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CookingStove.png"
+   },
+   {
+    "name": "Pengullet Rocket Launcher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Penguin_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 18,
+  "items": [
+   {
+    "name": "Ring of Mercy",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_Nonkilling.png"
+   },
+   {
+    "name": "Cold Resistant Pelt Armor",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_FurArmorCold.png"
+   },
+   {
+    "name": "Mega Glider",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Glider_Glider_Good.png"
+   },
+   {
+    "name": "Cooler",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CoolerMedieval.png"
+   },
+   {
+    "name": "Bathroom Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Toilet01_Stone.png"
+   },
+   {
+    "name": "Antique High Quality Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Curtain01_Wall_Stone.png"
+   },
+   {
+    "name": "Tocotoco's Gloves",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ColorfulBird_icon_normal.png"
+   },
+   {
+    "name": "Pengullet Lux's Rocket Launcher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Penguin_Electric_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 19,
+  "items": [
+   {
+    "name": "Breeding Farm",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BreedFarm.png"
+   },
+   {
+    "name": "Cement",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Cement.png"
+   },
+   {
+    "name": "Stone Defensive Wall",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DefenseWall.png"
+   },
+   {
+    "name": "Pal Labor Research Lab",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Lab.png"
+   },
+   {
+    "name": "Grintale Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_NaughtyCat_icon_normal.png"
+   },
+   {
+    "name": "Heavy Weight Module",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Heavy.png"
+   },
+   {
+    "name": "Stone Gate",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Stone_Gate.png"
+   },
+   {
+    "name": "Stone Structure Set",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Stone_Foundation.png"
+   }
+  ]
+ },
+ {
+  "level": 20,
+  "items": [
+   {
+    "name": "Free Pal Alliance Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Believer_Flag.png"
+   },
+   {
+    "name": "Dimensional Pal Storage",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DimensionPalStorage.png"
+   },
+   {
+    "name": "Antique Couch Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Sofa01_Stone.png"
+   },
+   {
+    "name": "Weapon Workbench",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WeaponFactory_Dirty_01.png"
+   },
+   {
+    "name": "Elphidran Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_icon_normal.png"
+   },
+   {
+    "name": "Sweepa Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_MopKing_icon_normal.png"
+   },
+   {
+    "name": "Tarantriss Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_PurpleSpider_icon_normal.png"
+   },
+   {
+    "name": "Giga Sphere",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Giga.png"
+   },
+   {
+    "name": "Large Toolbox",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ToolBoxV1.png"
+   }
+  ]
+ },
+ {
+  "level": 21,
+  "items": [
+   {
+    "name": "Gunpowder",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Gunpowder2.png"
+   },
+   {
+    "name": "Musket",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Musket.png"
+   },
+   {
+    "name": "Flame Cauldron",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_OlympicCauldron.png"
+   },
+   {
+    "name": "Tomato Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_tomato.png"
+   },
+   {
+    "name": "Coarse Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_RoughBullet.png"
+   },
+   {
+    "name": "Vanwyrm Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BirdDragon_icon_normal.png"
+   },
+   {
+    "name": "Eikthyrdeer Terra Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Deer_Ground_icon_normal.png"
+   },
+   {
+    "name": "Antique Dresser",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TableDresser01_Stone.png"
+   },
+   {
+    "name": "Bear Trap (Large)",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_LegHold.png"
+   }
+  ]
+ },
+ {
+  "level": 22,
+  "items": [
+   {
+    "name": "Stun Baton",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_ElecBaton.png"
+   },
+   {
+    "name": "Pal Expedition Station",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Expedition.png"
+   },
+   {
+    "name": "High Quality Bait",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Consume_FishingBait_2.png"
+   },
+   {
+    "name": "Metal Chair and Desk Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Stool01_Iron.png"
+   },
+   {
+    "name": "Clock Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Clock01_Wall_Iron.png"
+   },
+   {
+    "name": "Homeward Thundercloud",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Consume_Homeward.png"
+   },
+   {
+    "name": "Flea Market (Items)",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ItemBooth.png"
+   },
+   {
+    "name": "Flea Market (Pals)",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PalBooth.png"
+   },
+   {
+    "name": "Vanwyrm Cryst Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BirdDragon_Ice_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 23,
+  "items": [
+   {
+    "name": "Large Feed Bag",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AutoMealPouch_Tier3.png"
+   },
+   {
+    "name": "Metal Armor",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_CopperArmor.png"
+   },
+   {
+    "name": "Metal Helm",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_CopperHelmet.png"
+   },
+   {
+    "name": "Water Fountain",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Fountain.png"
+   },
+   {
+    "name": "Storage Container Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Container01_Iron.png"
+   },
+   {
+    "name": "Faux Bamboo Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Bamboo.png"
+   },
+   {
+    "name": "Kingpaca Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingAlpaca_icon_normal.png"
+   },
+   {
+    "name": "Curve Module",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Curve.png"
+   },
+   {
+    "name": "Aquatic Construction Kit",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_WaterBuildKit.png"
+   }
+  ]
+ },
+ {
+  "level": 24,
+  "items": [
+   {
+    "name": "Clinic",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Clinic.png"
+   },
+   {
+    "name": "Flower Bed",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FlowerBed.png"
+   },
+   {
+    "name": "Fluffy Pal Bed",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicalPalBed_03.png"
+   },
+   {
+    "name": "Makeshift Handgun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_MakeshiftHandgun.png"
+   },
+   {
+    "name": "Medicine Rack",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PalMedicineBox.png"
+   },
+   {
+    "name": "Ore Mining Site",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CopperPit.png"
+   },
+   {
+    "name": "Azurobe Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_icon_normal.png"
+   },
+   {
+    "name": "Dinossom Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_icon_normal.png"
+   },
+   {
+    "name": "Foxparks Cryst's Harness",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Kitsunebi_Ice_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 25,
+  "items": [
+   {
+    "name": "Heat Resistant Metal Armor",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_CopperArmorHeat.png"
+   },
+   {
+    "name": "Frag Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade.png"
+   },
+   {
+    "name": "Boost Gun",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_PalDopingShot.png"
+   },
+   {
+    "name": "Boost Gun Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_PalDopingShotBullet.png"
+   },
+   {
+    "name": "Lettuce Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_Lettuce.png"
+   },
+   {
+    "name": "Silo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Silo.png"
+   },
+   {
+    "name": "Helzephyr Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_icon_normal.png"
+   },
+   {
+    "name": "Surfent Terra Saddle",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Serpent_Ground_icon_normal.png"
+   },
+   {
+    "name": "Lockpicking Tool v2",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_Unlock_Picking_Tier2.png"
+   }
+  ]
+ },
+ {
+  "level": 26,
+  "items": [
+   {
+    "name": "Mounted Crossbow",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_efenseBulletLauncher_BowGun.png"
+   },
+   {
+    "name": "Single-Shot Sphere Launcher",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SphereLauncher_Once.png"
+   },
+   {
+    "name": "Antique Lamp Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Light_FloorLamp01.png"
+   },
+   {
+    "name": "Power Generator",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_EnergyGenerator_Electric.png"
+   },
+   {
+    "name": "Lamp",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_LampStand.png"
+   },
+   {
+    "name": "Makeshift SMG",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_MakeshiftSubmachineGun.png"
+   },
+   {
+    "name": "Human-Powered Generator",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ManualElectricGenerator.png"
+   },
+   {
+    "name": "Fenglope Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FengyunDeeper_icon_normal.png"
+   },
+   {
+    "name": "Polapup Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceSeal_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 27,
+  "items": [
+   {
+    "name": "Small Pouch",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AdditionalInventory_001.png"
+   },
+   {
+    "name": "Cold Resistant Metal Armor",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_CopperArmorCold.png"
+   },
+   {
+    "name": "Ceiling Lamp",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_LampTop.png"
+   },
+   {
+    "name": "Shock Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Elec.png"
+   },
+   {
+    "name": "Faux Tropical Greenery Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Tropical.png"
+   },
+   {
+    "name": "Azurobe Cryst Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlueDragon_Ice_icon_normal.png"
+   },
+   {
+    "name": "Hyper Sphere",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Tera.png"
+   },
+   {
+    "name": "Sphere Assembly Line",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SphereFactory_Black_02.png"
+   },
+   {
+    "name": "Extra Weapon Holster",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_UnlockEquipmentSlot_Weapon_01.png"
+   }
+  ]
+ },
+ {
+  "level": 28,
+  "items": [
+   {
+    "name": "Anti-Gravity Belt",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_JumpPower_Increase.png"
+   },
+   {
+    "name": "High Quality Monitoring Stand",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampWorkHard02.png"
+   },
+   {
+    "name": "Handgun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_HandGun_Default.png"
+   },
+   {
+    "name": "Brothers of the Eternal Pyre Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FireCult_Flag.png"
+   },
+   {
+    "name": "Handgun Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_HandgunBullet.png"
+   },
+   {
+    "name": "Fine Bed",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_PlayerBed_03.png"
+   },
+   {
+    "name": "Dazemu Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FeatherOstrich_icon_normal.png"
+   },
+   {
+    "name": "Mammorest Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassMammoth_icon_normal.png"
+   },
+   {
+    "name": "Stump and Axe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Stump.png"
+   }
+  ]
+ },
+ {
+  "level": 29,
+  "items": [
+   {
+    "name": "Sword",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Sword.png"
+   },
+   {
+    "name": "Intermediate Fishing Rod (Cattiva)",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FishingRod_3.png"
+   },
+   {
+    "name": "Ice Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Ice.png"
+   },
+   {
+    "name": "Enhanced Hip Lantern",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_Lantern.png"
+   },
+   {
+    "name": "Production Assembly Line",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Factory_Hard_02.png"
+   },
+   {
+    "name": "Potato Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_Potato.png"
+   },
+   {
+    "name": "Giga Shield",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_03.png"
+   },
+   {
+    "name": "Pyrin Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_icon_normal.png"
+   },
+   {
+    "name": "Beakon Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 30,
+  "items": [
+   {
+    "name": "Mushroom Cake",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_food_Cake02.png"
+   },
+   {
+    "name": "Metal Defensive Wall",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DefenseWall_Metal.png"
+   },
+   {
+    "name": "Makeshift Shotgun",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_MakeshiftShotgun.png"
+   },
+   {
+    "name": "Iron Gate",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Metal_Gate.png"
+   },
+   {
+    "name": "Metal Structure Set",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Metal_Foundation.png"
+   },
+   {
+    "name": "Mining Cart",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MiningTool.png"
+   },
+   {
+    "name": "Rayhound Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ThunderDog_icon_normal.png"
+   },
+   {
+    "name": "Mine",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_MineAttack.png"
+   },
+   {
+    "name": "Meowmere",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_YakushimaBlade.png"
+   }
+  ]
+ },
+ {
+  "level": 31,
+  "items": [
+   {
+    "name": "Cryogenic Coolant",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Bio_Coolant.png"
+   },
+   {
+    "name": "Fishing Pond",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FishingPond1.png"
+   },
+   {
+    "name": "Incendiary Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Fire.png"
+   },
+   {
+    "name": "Giga Grappling Gun",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrapplingGun.png"
+   },
+   {
+    "name": "Makeshift Assault Rifle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_MakeshiftAssaultRifle.png"
+   },
+   {
+    "name": "Ghangler Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_icon_normal.png"
+   },
+   {
+    "name": "Reindrix Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceDeer_icon_normal.png"
+   },
+   {
+    "name": "High Quality Hot Spring",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Spa_2.png"
+   },
+   {
+    "name": "Sniper Module",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Spiper.png"
+   }
+  ]
+ },
+ {
+  "level": 32,
+  "items": [
+   {
+    "name": "Palbox Control Device",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampWorkerExtraStation.png"
+   },
+   {
+    "name": "Witch Cauldron",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Cauldron.png"
+   },
+   {
+    "name": "ULTRAKILL Collab Set 1",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Octavia001_Armor.png"
+   },
+   {
+    "name": "Pal Recovery Grenade",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_PalHealingGrenade.png"
+   },
+   {
+    "name": "Carrot Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_Carrot.png"
+   },
+   {
+    "name": "Weapon Assembly Line",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WeaponFactory_Dirty_02.png"
+   },
+   {
+    "name": "Elphidran Aqua Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FairyDragon_Water_icon_normal.png"
+   },
+   {
+    "name": "Mossanda's Grenade Launcher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassPanda_icon_normal.png"
+   },
+   {
+    "name": "Rayhound Cryst Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Thunderdog_Ice_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 33,
+  "items": [
+   {
+    "name": "Summoning Altar",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Altar.png"
+   },
+   {
+    "name": "Old Revolver",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_OldRevolver.png"
+   },
+   {
+    "name": "Water Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Water.png"
+   },
+   {
+    "name": "Polymer",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Polymer.png"
+   },
+   {
+    "name": "Blazehowl Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Manticore_icon_normal.png"
+   },
+   {
+    "name": "Ragnahawk Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_RedArmorBird_icon_normal.png"
+   },
+   {
+    "name": "Broncherry Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SakuraSaurus_icon_normal.png"
+   },
+   {
+    "name": "Snowman",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Snowman.png"
+   },
+   {
+    "name": "Electric Mine",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_MineElecShock.png"
+   }
+  ]
+ },
+ {
+  "level": 34,
+  "items": [
+   {
+    "name": "Ability Glasses",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_TalentChecker.png"
+   },
+   {
+    "name": "Metal Barrel Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Barrel01_Iron.png"
+   },
+   {
+    "name": "Refined Metal Axe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Axe_Tier_00.png"
+   },
+   {
+    "name": "Improved Furnace",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BlastFurnace_2.png"
+   },
+   {
+    "name": "Refined Metal Pickaxe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Pickaxe_Tier_00.png"
+   },
+   {
+    "name": "Pyrin Noct Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FireKirin_Dark_icon_normal.png"
+   },
+   {
+    "name": "Dinossom Lux Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FlowerDinosaur_Electric_icon_normal.png"
+   },
+   {
+    "name": "Mossanda Lux's Grenade Launcher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassPanda_Electric_icon_normal.png"
+   },
+   {
+    "name": "Refined Metal Spear",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_Tier_00.png"
+   }
+  ]
+ },
+ {
+  "level": 35,
+  "items": [
+   {
+    "name": "Air Dash Boots",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_AirDash.png"
+   },
+   {
+    "name": "Carbon Fiber",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_CarbonFiber.png"
+   },
+   {
+    "name": "Grass Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Leaf.png"
+   },
+   {
+    "name": "Ironwood Table Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TableSide01_Iron.png"
+   },
+   {
+    "name": "Circuit Board",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_ElectronicCircuit.png"
+   },
+   {
+    "name": "Blazehowl Noct Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Manticore_Dark_icon_normal.png"
+   },
+   {
+    "name": "Palumba Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_TropicalOstrich_icon_normal.png"
+   },
+   {
+    "name": "Ultra Sphere",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Master.png"
+   },
+   {
+    "name": "Sphere Assembly Line II",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SphereFactory_Black_03.png"
+   }
+  ]
+ },
+ {
+  "level": 36,
+  "items": [
+   {
+    "name": "Huge Feed Bag",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AutoMealPouch_Tier4.png"
+   },
+   {
+    "name": "Single-Shot Rifle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SingleShotRifle.png"
+   },
+   {
+    "name": "High Quality Cloth",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Cloth.png"
+   },
+   {
+    "name": "Large Pal Bed",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicalPalBed_04.png"
+   },
+   {
+    "name": "Onion Plantation",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FarmBlockV2_Onion.png"
+   },
+   {
+    "name": "Rifle Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_RifleBullet.png"
+   },
+   {
+    "name": "Braloha Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Plesiosaur_icon_normal.png"
+   },
+   {
+    "name": "Moldron Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_icon_normal.png"
+   },
+   {
+    "name": "Electric Egg Incubator",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ElectricHatchingPalEgg.png"
+   }
+  ]
+ },
+ {
+  "level": 37,
+  "items": [
+   {
+    "name": "Refined Metal Armor",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_IronArmor.png"
+   },
+   {
+    "name": "Refined Metal Helm",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_IronHelmet.png"
+   },
+   {
+    "name": "SMG",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SubmachineGun.png"
+   },
+   {
+    "name": "Corrosive Solvent",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Corrosive_Solvent.png"
+   },
+   {
+    "name": "Accumulator",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_EnergyStorage_Electric.png"
+   },
+   {
+    "name": "Outdoor Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CableCoil01_Iron.png"
+   },
+   {
+    "name": "Faux Desert Greenery Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Desert.png"
+   },
+   {
+    "name": "Coal Quarry",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CoalPit.png"
+   },
+   {
+    "name": "Maraith Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GhostBeast_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 38,
+  "items": [
+   {
+    "name": "Scatter Sphere Launcher",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SphereLauncher.png"
+   },
+   {
+    "name": "Deluxe Bait",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Consume_FishingBait_3.png"
+   },
+   {
+    "name": "Ground Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Ground.png"
+   },
+   {
+    "name": "Leather Chair Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Sofa01_Iron.png"
+   },
+   {
+    "name": "Meteor Launcher",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Launcher_Meteor.png"
+   },
+   {
+    "name": "Pal Surgery Table",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_OperatingTable.png"
+   },
+   {
+    "name": "Refrigerator",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Refrigerator.png"
+   },
+   {
+    "name": "Quivern Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_icon_normal.png"
+   },
+   {
+    "name": "Ice Mine",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Trap_MineFreeze.png"
+   }
+  ]
+ },
+ {
+  "level": 39,
+  "items": [
+   {
+    "name": "Double-Barreled Shotgun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_DoubleBarrelShotgun.png"
+   },
+   {
+    "name": "Refined Metal Chest",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ItemChest_03.png"
+   },
+   {
+    "name": "PIDF Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Police_Flag.png"
+   },
+   {
+    "name": "Ore Mining Site II",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CopperPit_2.png"
+   },
+   {
+    "name": "Shotgun Shell",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_ShotgunBullet.png"
+   },
+   {
+    "name": "Astegon Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlackMetalDragon_icon_normal.png"
+   },
+   {
+    "name": "Shroomer Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_MushroomDragon_icon_normal.png"
+   },
+   {
+    "name": "Shroomer Noct Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_MushroomDragon_Dark_icon_normal.png"
+   },
+   {
+    "name": "Slider Module",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Curve2.png"
+   }
+  ]
+ },
+ {
+  "level": 40,
+  "items": [
+   {
+    "name": "Double Jump Boots",
+    "cost": 2,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_JumpCount_Increase.png"
+   },
+   {
+    "name": "Metal Bat",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Bat3.png"
+   },
+   {
+    "name": "Heat Resistant Refined Metal Armor",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_IronArmorHeat.png"
+   },
+   {
+    "name": "Mounted Machine Gun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DefenseMachinegun.png"
+   },
+   {
+    "name": "Giga Glider",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Glider_Glider_Super.png"
+   },
+   {
+    "name": "Dark Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Dark.png"
+   },
+   {
+    "name": "Grizzbolt's Minigun",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ElecPanda_icon_normal.png"
+   },
+   {
+    "name": "Jormuntide Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Umihebi_icon_normal.png"
+   },
+   {
+    "name": "Chillet Ignis Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WeaselDragon_Fire_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 41,
+  "items": [
+   {
+    "name": "Cold Resistant Refined Metal Armor",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_IronArmorCold.png"
+   },
+   {
+    "name": "Semi-Auto Rifle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SemiAutoRifle.png"
+   },
+   {
+    "name": "Electric Heater",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_HeaterElectric.png"
+   },
+   {
+    "name": "Guild Chest",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_GuildChest.png"
+   },
+   {
+    "name": "Electric Kitchen",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ElectricKitchen.png"
+   },
+   {
+    "name": "Alpha Wave Generator",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SanityDecrease1.png"
+   },
+   {
+    "name": "Mammorest Cryst Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassMammoth_Ice_icon_normal.png"
+   },
+   {
+    "name": "Yakumo Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GuardianDog_icon_normal.png"
+   },
+   {
+    "name": "Xenogard Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WhiteAlienDragon_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 42,
+  "items": [
+   {
+    "name": "Compound Bow",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_CompoundBow.png"
+   },
+   {
+    "name": "Electric Cooler",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CoolerElectric.png"
+   },
+   {
+    "name": "Dragon Grenade",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Dragon.png"
+   },
+   {
+    "name": "Production Assembly Line II",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Factory_Hard_03.png"
+   },
+   {
+    "name": "Reinforced Arrow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_ReinforcedArrow.png"
+   },
+   {
+    "name": "Ghangler Ignis Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GhostAnglerfish_Fire_icon_normal.png"
+   },
+   {
+    "name": "Whalaska Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceNarwhal_icon_normal.png"
+   },
+   {
+    "name": "Reptyro Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_VolcanicMonster_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 43,
+  "items": [
+   {
+    "name": "Medium Pouch",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AdditionalInventory_002.png"
+   },
+   {
+    "name": "Pump-Action Shotgun",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_PumpActionShotgun.png"
+   },
+   {
+    "name": "High Quality Wooden Board",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_HighGrade_Processed_Wood.png"
+   },
+   {
+    "name": "Electric Medicine Workbench",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicineFacility_02.png"
+   },
+   {
+    "name": "Logging Site II",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_StationDeforest3.png"
+   },
+   {
+    "name": "Hyper Shield",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_04.png"
+   },
+   {
+    "name": "Suzaku Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_icon_normal.png"
+   },
+   {
+    "name": "Reptyro Cryst Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_VolcanicMonster_Ice_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 44,
+  "items": [
+   {
+    "name": "Pal Metal Axe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Axe_Tier_03.png"
+   },
+   {
+    "name": "Pal Metal Pickaxe",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Pickaxe_Tier_03.png"
+   },
+   {
+    "name": "Bio Battery",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Bio_Battery.png"
+   },
+   {
+    "name": "Katana",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Katana.png"
+   },
+   {
+    "name": "Electric Furnace",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BlastFurnace3.png"
+   },
+   {
+    "name": "Broncherry Aqua Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SakuraSaurus_Water_icon_normal.png"
+   },
+   {
+    "name": "Suzaku Aqua Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Suzaku_Water_icon_normal.png"
+   },
+   {
+    "name": "Legendary Sphere",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Legend.png"
+   }
+  ]
+ },
+ {
+  "level": 45,
+  "items": [
+   {
+    "name": "Assault Rifle Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_AssaultRifleBullet.png"
+   },
+   {
+    "name": "Assault Rifle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_AssaultRifle_Default1.png"
+   },
+   {
+    "name": "Drafting Table",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CompositeDesk.png"
+   },
+   {
+    "name": "Decal Gun Set",
+    "cost": 1,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_InkBullet.png"
+   },
+   {
+    "name": "Advanced Fishing Rod (Pengullet)",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FishingRod_5.png"
+   },
+   {
+    "name": "Glass Structure Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Glass_foundation.png"
+   },
+   {
+    "name": "Relaxaurus' Missile Launcher",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_LazyDragon_icon_normal.png"
+   },
+   {
+    "name": "Quivern Botan Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SkyDragon_Grass_icon_normal.png"
+   },
+   {
+    "name": "Wumpo Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Yeti_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 46,
+  "items": [
+   {
+    "name": "Pal Metal Armor",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_StealArmor.png"
+   },
+   {
+    "name": "Pal Metal Helm",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_StealHelmet.png"
+   },
+   {
+    "name": "Amusement Furniture Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_GoalSoccer_Iron.png"
+   },
+   {
+    "name": "Street Lamp Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Light_LightPole01.png"
+   },
+   {
+    "name": "Large Mounted Lamp",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_LampStandLarge.png"
+   },
+   {
+    "name": "Sulfur Quarry",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SulfurPit.png"
+   },
+   {
+    "name": "Kingpaca Cryst Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingAlpaca_Ice_icon_normal.png"
+   },
+   {
+    "name": "Blazamut Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingBahamut_icon_normal.png"
+   },
+   {
+    "name": "Beta Wave Generator",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WorkSpeedIncrease1.png"
+   }
+  ]
+ },
+ {
+  "level": 47,
+  "items": [
+   {
+    "name": "Giant Feed Bag",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AutoMealPouch_Tier5.png"
+   },
+   {
+    "name": "Semi-Auto Shotgun",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SemiAutoShotgun.png"
+   },
+   {
+    "name": "Vegetable Cake",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_food_Cake03.png"
+   },
+   {
+    "name": "Emergency Exit Sign Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SignExit_Ceiling_Iron.png"
+   },
+   {
+    "name": "Large Ceiling Lamp",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_LampTopLarge.png"
+   },
+   {
+    "name": "Weapon Assembly Line II",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WeaponFactory_Dirty_03.png"
+   },
+   {
+    "name": "Shadowbeak Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlackGriffon_icon_normal.png"
+   },
+   {
+    "name": "Helzephyr Lux Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_HadesBird_Electric_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 48,
+  "items": [
+   {
+    "name": "Heat Resistant Pal Metal Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_StealArmorHeat.png"
+   },
+   {
+    "name": "Traffic Control Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TrafficCone01_Iron.png"
+   },
+   {
+    "name": "Large Incubator",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MultiHatchingPalEgg.png"
+   },
+   {
+    "name": "Tetroise Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_CubeTurtle_icon_normal.png"
+   },
+   {
+    "name": "Dualith Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_icon_normal.png"
+   },
+   {
+    "name": "Relaxaurus Lux's Missile Launcher",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_LazyDragon_Electric_icon_normal.png"
+   },
+   {
+    "name": "Sniper Module II",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Sniper2.png"
+   },
+   {
+    "name": "Electric Pylon",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TransmissionTower.png"
+   }
+  ]
+ },
+ {
+  "level": 49,
+  "items": [
+   {
+    "name": "Item Retrieval Machine",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampItemDispenser.png"
+   },
+   {
+    "name": "Barricade Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TrafficBarricade01_Iron.png"
+   },
+   {
+    "name": "Road Sign Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_TrafficSign01_Iron.png"
+   },
+   {
+    "name": "Faux Snowy Greenery Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Snow.png"
+   },
+   {
+    "name": "Hyper Grappling Gun",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrapplingGun.png"
+   },
+   {
+    "name": "Large-Scale Stone Oven",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_HugeKitchen.png"
+   },
+   {
+    "name": "Japanese-Style Structure Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_JapaneseStyle_foundation.png"
+   }
+  ]
+ },
+ {
+  "level": 50,
+  "items": [
+   {
+    "name": "Cold Resistant Pal Metal Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_StealArmorCold.png"
+   },
+   {
+    "name": "Mounted Missile Launcher",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_efenseBulletLauncher_Missile.png"
+   },
+   {
+    "name": "Computer",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Computer.png"
+   },
+   {
+    "name": "Large Power Generator",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ElectricGenerator_Large.png"
+   },
+   {
+    "name": "Crude Oil Extractor",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_OilPump.png"
+   },
+   {
+    "name": "Plasteel",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Plastic.png"
+   },
+   {
+    "name": "PAL Genetic Research Unit Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Scientist_Flag.png"
+   }
+  ]
+ },
+ {
+  "level": 51,
+  "items": [
+   {
+    "name": "Plasteel Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_PlasticArmor.png"
+   },
+   {
+    "name": "Plasteel Helmet",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_PlasticHelmet.png"
+   },
+   {
+    "name": "Laser Rifle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_LaserRifle.png"
+   },
+   {
+    "name": "Cold Food Box",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CoolerPalFoodBox.png"
+   },
+   {
+    "name": "Energy Cartridge",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_LaserBullet.png"
+   },
+   {
+    "name": "High-Pressure Crude Oil Extractor",
+    "cost": 4,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_OilPump02.png"
+   },
+   {
+    "name": "Wumpo Botan Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Yeti_Grass_icon_normal.png"
+   },
+   {
+    "name": "Ultimate Sphere",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Ultimate.png"
+   }
+  ]
+ },
+ {
+  "level": 52,
+  "items": [
+   {
+    "name": "Hyper Glider",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Glider_Glider_Legendary.png"
+   },
+   {
+    "name": "Flamethrower",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FlameThrower_Default.png"
+   },
+   {
+    "name": "Alluring Bait",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Consume_FishingBait_3_A.png"
+   },
+   {
+    "name": "Flamethrower Fuel",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_FlamethrowerBullet.png"
+   },
+   {
+    "name": "Pure Quartz Quarry",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_QuartzPit.png"
+   },
+   {
+    "name": "Nyafia's Shotgun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BadCatgirl_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 53,
+  "items": [
+   {
+    "name": "Large Pouch",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AdditionalInventory_003.png"
+   },
+   {
+    "name": "Heat Resistant Plasteel Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_PlasticArmorHeat.png"
+   },
+   {
+    "name": "Grenade Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrenadeLauncher.png"
+   },
+   {
+    "name": "Frag Grenade Mk2",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_FragGrenade_Super.png"
+   },
+   {
+    "name": "Grenade Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_GrenadeBullet.png"
+   },
+   {
+    "name": "Selyne Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_MoonQueen_icon_normal.png"
+   },
+   {
+    "name": "Bulldosu Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SumoDog_icon_normal.png"
+   },
+   {
+    "name": "Lockpicking Tool v3",
+    "cost": 3,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_Unlock_Picking_Tier3.png"
+   }
+  ]
+ },
+ {
+  "level": 54,
+  "items": [
+   {
+    "name": "Cold Resistant Plasteel Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_PlasticArmorCold.png"
+   },
+   {
+    "name": "Gatling Gun",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GatlingGun.png"
+   },
+   {
+    "name": "Gatling Gun Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_GatlingBullet.png"
+   },
+   {
+    "name": "Cryogenic Crusher",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_IceCrusher.png"
+   },
+   {
+    "name": "Plasma Multicutter",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_LaserMiningTool.png"
+   },
+   {
+    "name": "Gildane Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GoldenHorse_icon_normal.png"
+   },
+   {
+    "name": "Celesdir Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WhiteDeer_icon_normal.png"
+   },
+   {
+    "name": "Extra Weapon Holster 2",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_UnlockEquipmentSlot_Weapon_02.png"
+   }
+  ]
+ },
+ {
+  "level": 55,
+  "items": [
+   {
+    "name": "Lightweight Plasteel Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_PlasticArmorWeight.png"
+   },
+   {
+    "name": "Homing Sphere Launcher",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_HomingSphereLauncher.png"
+   },
+   {
+    "name": "Japanese-Style Furniture Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Byobu.png"
+   },
+   {
+    "name": "Moonflower Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ninja_Flag.png"
+   },
+   {
+    "name": "Ultra Shield",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_05.png"
+   },
+   {
+    "name": "Polapup Terra Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceSeal_Ground_icon_normal.png"
+   },
+   {
+    "name": "Blazamut Ryu Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingBahamut_Dragon_icon_normal.png"
+   },
+   {
+    "name": "Lily's Spear",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_ForestBoss.png"
+   }
+  ]
+ },
+ {
+  "level": 56,
+  "items": [
+   {
+    "name": "Guided Missile Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GuidedMissileLauncher.png"
+   },
+   {
+    "name": "Pal Disassembly Conveyor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DismantlingConveyor.png"
+   },
+   {
+    "name": "Faux Cherry Blossoms Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FurnitureTree01_Cherry.png"
+   },
+   {
+    "name": "Pal Pod",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicalPalBed_05.png"
+   },
+   {
+    "name": "Missile Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_MissileBullet.png"
+   },
+   {
+    "name": "ULTRAKILL Collab Set 2",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Octavia002_Armor.png"
+   }
+  ]
+ },
+ {
+  "level": 57,
+  "items": [
+   {
+    "name": "Giant Pouch",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_AdditionalInventory_004.png"
+   },
+   {
+    "name": "Beam Sword",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_BeamSword.png"
+   },
+   {
+    "name": "Advanced Arrow",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SFArrow.png"
+   },
+   {
+    "name": "Advanced Bow",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SFBow.png"
+   },
+   {
+    "name": "Kitsun Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_icon_normal.png"
+   },
+   {
+    "name": "Fenglope Lux Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_FengyunDeeper_Electric_icon_normal.png"
+   },
+   {
+    "name": "Starryon Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_NightBlueHorse_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 58,
+  "items": [
+   {
+    "name": "Gigantic Furnace",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BlastFurnace4.png"
+   },
+   {
+    "name": "Metal Detector",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Essential_MetalDetector.png"
+   },
+   {
+    "name": "Large-Scale Electric Egg Incubator",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MultiElectricHatchingPalEgg.png"
+   },
+   {
+    "name": "Exotic Sphere",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Exotic.png"
+   },
+   {
+    "name": "Smokie's Harness",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlackPuppy_icon_normal.png"
+   },
+   {
+    "name": "Azurmane Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlueThunderHorse_icon_normal.png"
+   },
+   {
+    "name": "Advanced Sphere Assembly Line",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SphereFactory_Black_04.png"
+   },
+   {
+    "name": "Hexolite",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_StainlessSteel.png"
+   }
+  ]
+ },
+ {
+  "level": 59,
+  "items": [
+   {
+    "name": "Advanced Chest",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_ItemChest_04.png"
+   },
+   {
+    "name": "Laser Gatling Cartridge",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_LaserGatlingBullet.png"
+   },
+   {
+    "name": "Laser Gatling Gun",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_LaserGatlingGun.png"
+   },
+   {
+    "name": "Hexolite Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_SFArmor.png"
+   },
+   {
+    "name": "Kitsun Noct Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_AmaterasuWolf_Dark_icon_normal.png"
+   },
+   {
+    "name": "Jormuntide Ignis Saddle",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Umihebi_Fire_icon_normal.png"
+   },
+   {
+    "name": "Thermal Core",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_Thermal_Core.png"
+   }
+  ]
+ },
+ {
+  "level": 60,
+  "items": [
+   {
+    "name": "Extravagant Vegetable Cake",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_food_Cake04.png"
+   },
+   {
+    "name": "Feybreak Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_DarkIsland_Flag.png"
+   },
+   {
+    "name": "Hexolite Helmet",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_SFHelmet.png"
+   },
+   {
+    "name": "Advanced Shield",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_06.png"
+   },
+   {
+    "name": "Faleris Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Horus_icon_normal.png"
+   },
+   {
+    "name": "Faleris Aqua Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Horus_Water_icon_normal.png"
+   },
+   {
+    "name": "Silvegis Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WhiteShieldDragon_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 61,
+  "items": [
+   {
+    "name": "Double Air Dash Boots",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_AirDash.png"
+   },
+   {
+    "name": "Plasma Cartridge",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_EnergyLauncherBullet.png"
+   },
+   {
+    "name": "Plasma Cannon",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_EnergyRocketLauncher.png"
+   },
+   {
+    "name": "Advanced Medicine Workbench",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MedicineFacility_03.png"
+   },
+   {
+    "name": "Revival Potion",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Consume_PalRevive.png"
+   },
+   {
+    "name": "Advanced Recovery Meds",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Food_Potion_Extreme.png"
+   },
+   {
+    "name": "Necromus Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlackCentaur_icon_normal.png"
+   },
+   {
+    "name": "Paladius Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SaintCentaur_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 62,
+  "items": [
+   {
+    "name": "Hexolite Quartz Mine",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_CrystalPit.png"
+   },
+   {
+    "name": "Advanced Workshop",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Factory_Hard_04.png"
+   },
+   {
+    "name": "Coralum Ingot",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_ManganeseIngot.png"
+   },
+   {
+    "name": "Futuristic Structure Set",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SF_foundation.png"
+   },
+   {
+    "name": "Powerful Fishing Magnet",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Salvage_TreasureBoxKey02.png"
+   },
+   {
+    "name": "Frostallion Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_icon_normal.png"
+   },
+   {
+    "name": "Frostallion Noct Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceHorse_Dark_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 63,
+  "items": [
+   {
+    "name": "Energy Shotgun",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_EnergyShotgun.png"
+   },
+   {
+    "name": "Energy Shotgun Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_EnergyShotgunBullet.png"
+   },
+   {
+    "name": "Ultra Grappling Gun",
+    "cost": 5,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_GrapplingGun.png"
+   },
+   {
+    "name": "Megaboost Gun",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_PalDopingShot_2.png"
+   },
+   {
+    "name": "Heat Resistant Hexolite Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_SFArmorHeat.png"
+   },
+   {
+    "name": "Advanced Weapon Assembly Line",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_WeaponFactory_Dirty_04.png"
+   }
+  ]
+ },
+ {
+  "level": 64,
+  "items": [
+   {
+    "name": "Frostallion Statue",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_IceHorseStatue.png"
+   },
+   {
+    "name": "Overheat Rifle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_OverheatRifle.png"
+   },
+   {
+    "name": "Overheat Rifle Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_OverheatRifleBullet.png"
+   },
+   {
+    "name": "Cold Resistant Hexolite Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_SFArmorCold.png"
+   },
+   {
+    "name": "Univolt Cryst Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_Kirin_Ice_icon_normal.png"
+   },
+   {
+    "name": "Neptilius Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_PoseidonOrca_icon_normal.png"
+   },
+   {
+    "name": "Japanese-Style Hot Spring",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Spa3.png"
+   }
+  ]
+ },
+ {
+  "level": 65,
+  "items": [
+   {
+    "name": "Triple Air Dash Boots",
+    "cost": 6,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_AirDash.png"
+   },
+   {
+    "name": "Rocket Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Launcher_Default.png"
+   },
+   {
+    "name": "Charge Rifle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_ChargeLaserRifle.png"
+   },
+   {
+    "name": "Charge Rifle Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_ChargeLaserRifleBullet.png"
+   },
+   {
+    "name": "Rocket Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_ExplosiveBullet.png"
+   },
+   {
+    "name": "Lightweight Hexolite Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_SFArmorWeight.png"
+   },
+   {
+    "name": "Solmora Saddle",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingSunfish_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 66,
+  "items": [
+   {
+    "name": "Ancient Furnace",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientBlastFurnace.png"
+   },
+   {
+    "name": "Xenolord Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_DarkMechaDragon_icon_normal.png"
+   },
+   {
+    "name": "Solmora Lux Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_KingSunfish_Thunder_icon_normal.png"
+   },
+   {
+    "name": "Dynamoff Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ThunderFluffyBird_icon_normal.png"
+   },
+   {
+    "name": "Soralite Ingot",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_SkyislandIngot.png"
+   }
+  ]
+ },
+ {
+  "level": 67,
+  "items": [
+   {
+    "name": "AI Core",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_AIcore.png"
+   },
+   {
+    "name": "Ancient Workbench",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientWorkBench.png"
+   },
+   {
+    "name": "Ancient Structure Set",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ancient_foundation.png"
+   },
+   {
+    "name": "Sol Sphere",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Ancient_1.png"
+   },
+   {
+    "name": "Mechanical Bow",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkyBow.png"
+   },
+   {
+    "name": "Mechanical Bow Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SkyBowArrow.png"
+   }
+  ]
+ },
+ {
+  "level": 68,
+  "items": [
+   {
+    "name": "Ancient Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_AncientArmor.png"
+   },
+   {
+    "name": "Ancient Helm",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_AncientHelmet.png"
+   },
+   {
+    "name": "Eidrolon Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_icon_normal.png"
+   },
+   {
+    "name": "Combat SMG",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkySubmachineGun.png"
+   },
+   {
+    "name": "Combat SMG Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SkySubmachineGunBullet.png"
+   },
+   {
+    "name": "Enhanced Lily's Spear",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_Spear_ForestBoss2.png"
+   }
+  ]
+ },
+ {
+  "level": 69,
+  "items": [
+   {
+    "name": "Large Fishing Pond",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_FishingPond2.png"
+   },
+   {
+    "name": "Dualith Noct Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GrassGolem_Dark_icon_normal.png"
+   },
+   {
+    "name": "Prototype Shotgun",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkyShotgun.png"
+   },
+   {
+    "name": "Prototype Shotgun Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SkyShotgunBullet.png"
+   },
+   {
+    "name": "Homing Module",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_SphereModule_Homing.png"
+   }
+  ]
+ },
+ {
+  "level": 70,
+  "items": [
+   {
+    "name": "Triple Jump Boots",
+    "cost": 6,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_JumpCount_Increase.png"
+   },
+   {
+    "name": "Ancient Kitchen",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientCookingStove.png"
+   },
+   {
+    "name": "Jetragon Statue",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_JetDragonStatue.png"
+   },
+   {
+    "name": "Jetragon's Missile Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_JetDragon_icon_normal.png"
+   },
+   {
+    "name": "Hartalis Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_LegendDeer_icon_normal.png"
+   },
+   {
+    "name": "Moldron Cryst Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_VolcanoDragon_Ice_icon_normal.png"
+   },
+   {
+    "name": "Heavy Assault Rifle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkyAssaultRifle.png"
+   },
+   {
+    "name": "Heavy Assault Rifle Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SkyAssaultRifleBullet.png"
+   }
+  ]
+ },
+ {
+  "level": 71,
+  "items": [
+   {
+    "name": "Ancient Monitoring Stand",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_BaseCampWorkHard03.png"
+   },
+   {
+    "name": "Skillfruit Orchard",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Farm_SkillFruits.png"
+   },
+   {
+    "name": "Ancient Shield",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_Shield_07.png"
+   },
+   {
+    "name": "Whalaska Ignis Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_IceNarwhal_Fire_icon_normal.png"
+   },
+   {
+    "name": "Beakon Cryst Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ThunderBird_Ice_icon_normal.png"
+   },
+   {
+    "name": "Azure Covenant Flag Set",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SkyIsland_Flag.png"
+   }
+  ]
+ },
+ {
+  "level": 72,
+  "items": [
+   {
+    "name": "Ophydia Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_LotusDragon_icon_normal.png"
+   },
+   {
+    "name": "Roujay Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_ThiefBird_icon_normal.png"
+   },
+   {
+    "name": "Tactical Grenade Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkyGrenadeLauncher.png"
+   },
+   {
+    "name": "Tactical Grenade Launcher Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_SkyGrenadeLauncherBullet.png"
+   },
+   {
+    "name": "Soralite Quarry",
+    "cost": 7,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_SkyIslandOrePit.png"
+   }
+  ]
+ },
+ {
+  "level": 73,
+  "items": [
+   {
+    "name": "Ancient Clinic",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ancient_Clinic.png"
+   },
+   {
+    "name": "Ancient Pal Bed",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ancient_MedicalPalBed.png"
+   },
+   {
+    "name": "Gold Coin Assembly Line",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Factory_Money.png"
+   },
+   {
+    "name": "Bastigor's Hammer",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_SnowTigerBeastman_icon_normal.png"
+   },
+   {
+    "name": "Laser Sword",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_SkyBeamSword.png"
+   }
+  ]
+ },
+ {
+  "level": 74,
+  "items": [
+   {
+    "name": "Ancient Relic Recycler",
+    "cost": 3,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientRelicRecycler.png"
+   },
+   {
+    "name": "Special Cake",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_food_Cake05.png"
+   },
+   {
+    "name": "Ancient Sphere",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_PalSphere_Ancient_2.png"
+   },
+   {
+    "name": "Paloxite Ingot",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_WorldTreeIngot.png"
+   }
+  ]
+ },
+ {
+  "level": 75,
+  "items": [
+   {
+    "name": "Heat-Resistant Ancient Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_AncientArmorHeat.png"
+   },
+   {
+    "name": "Ancient Power Generator",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientElectricGenerator.png"
+   },
+   {
+    "name": "Tetroise Primo Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_CubeTurtle_Neutral_icon_normal.png"
+   },
+   {
+    "name": "Beam Scatter",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_WidePenetrateShotgun.png"
+   },
+   {
+    "name": "Beam Scatter Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_WidePenetrateShotgunBullet.png"
+   }
+  ]
+ },
+ {
+  "level": 76,
+  "items": [
+   {
+    "name": "Explosion-Resistant Undershirt",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_ExplosionResist.png"
+   },
+   {
+    "name": "Ancient Hot Spring",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_Ancient_Spa.png"
+   },
+   {
+    "name": "Corrosive Mist Mask",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Accessory_GasMask.png"
+   },
+   {
+    "name": "Ancient Hatchery",
+    "cost": 8,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_MultiElectricHatchingPalEggWithBreed.png"
+   },
+   {
+    "name": "Eidrolon Ignis Saddle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_GhostDragon_Fire_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 77,
+  "items": [
+   {
+    "name": "Cold-Resistant Ancient Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_AncientArmorCold.png"
+   },
+   {
+    "name": "Drone Launcher",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_DroneLauncher.png"
+   },
+   {
+    "name": "Shaolong Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_BlueSkyDragon_icon_normal.png"
+   },
+   {
+    "name": "Starryon Primo Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_NightBlueHorse_Neutral_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 78,
+  "items": [
+   {
+    "name": "Ancient Farm",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientFarmBlock.png"
+   },
+   {
+    "name": "Ancient Material Synthesizer",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_icon_buildObject_AncientMultiProduct.png"
+   },
+   {
+    "name": "Plasma Rifle",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_ElectricArcAssaultRifle.png"
+   },
+   {
+    "name": "Plasma Rifle Ammo",
+    "cost": 1,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_ElectricArcAssaultRifleBullet.png"
+   },
+   {
+    "name": "Celesdir Noct Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_WhiteDeer_Dark_icon_normal.png"
+   }
+  ]
+ },
+ {
+  "level": 79,
+  "items": [
+   {
+    "name": "Lightweight Ancient Armor",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Armor_AncientArmorWeight.png"
+   },
+   {
+    "name": "Aegidron Saddle",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/full_palicon/T_DomeArmorDragon_icon_normal.png"
+   },
+   {
+    "name": "Nutrient Tonic",
+    "cost": 4,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_food_Supplement.png"
+   }
+  ]
+ },
+ {
+  "level": 80,
+  "items": [
+   {
+    "name": "Beam Launcher",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Weapon_BeamLauncher.png"
+   },
+   {
+    "name": "Beam Launcher Ammo",
+    "cost": 2,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Ammo_BeamLauncherBullet.png"
+   },
+   {
+    "name": "Wing Pack",
+    "cost": 9,
+    "ancient": true,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Glider_WingGlider.png"
+   },
+   {
+    "name": "Wing Cell",
+    "cost": 5,
+    "ancient": false,
+    "icon": "https://palworld.gg/images/items/T_itemicon_Material_WingGlider_Fuel.png"
+   }
+  ]
+ }
+];
